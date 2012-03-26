@@ -1,0 +1,852 @@
+@misc{itu_11,
+author = {ITU-R},
+title ={Methodology for the subjective assessment of the quality of television pictures},
+publisher = {International Telecommunication Union},
+address = {Genebra - Suiça},
+year = {2002}
+}
+
+@misc{itu:00,
+author = "ITU-T",
+title ="ITU-T Recommendation P.910, Subjective video quality assessment methods for multimedia applications",
+publisher = "International Telecommunication Union",
+address = {Genebra - Suiça},
+year =1999
+}
+
+@mastersthesis{dlc:09,
+author = "Leonardo Crauss Daronco",
+title ="Avaliação Subjetiva de Qualidade Aplicada à Codificação de Vídeo Escalável",
+school = "UFRGS",
+address = {Porto Alegre - Brasil},
+year =2009
+}
+
+@misc{h264:09,
+author = "Ricardo L. de Queiroz",
+title ="Especificações Finais das Simulações e da Infraestrutura Necessária",
+publisher = "H.264-Setup",
+address = {Brasília - Brasil},
+year =2009
+}
+@misc{rud:08,
+author = "Rudinei Goularte",
+title = "Percepção Estereoscópica Anaglífica em Vídeos Digitais Comprimidos com Perda",
+adress = {São Carlos - Brasil},
+year = 2008
+}
+
+@unpublished{bru:10,
+author= "Bruno George de Moraes",
+title= "Uma métrica para Taxa de Distorção voltada para codificação de vídeo perceptiva",
+note = "TCC",
+year = 2010
+}
+
+@misc{wan:00,
+author = "Yubing Wang",
+title = "Survey of Objective Video Quality Measurements ",
+adress = {MA - USA},
+}
+
+@misc{Fragoso,
+author = "Miguel Fragoso and Pedro Cruz and Vasco Marcelino",
+title = "{Televisão 3D}",
+adress = {Lisboa, Portugal},
+}
+
+@BOOK{Parente1999,
+  title = {A Estereoscopia no Brasil 1850-1930},
+  publisher = {Sextante},
+  year = {1999},
+  author = {Parente, J. I.},
+  address = {Rio de Janeiro, Brasil},
+  isbn = {},
+}
+
+@BOOK{Zone2007,
+  title = {Stereoscopic cinema and the origins of 3-D film, 1838-1952},
+  publisher = {The University Press of Kentucky},
+  year = {2007},
+  author = {Zone, R.},
+  address = {Kentucky, USA},
+  isbn = {0813124611},
+}
+
+
+@MISC{Dodgson1998,
+  author = {Dodgson, N. A.},
+  title = {Autostereoscopic Image Compressiom.},
+  howpublished = {http://www.cl.cam.ac.uk/nad/compr/compr.html Acesso em: 10 mai. 2009.},
+  local ={Rainbow Graphics Researchs Group, Computer Laboratory,
+University of Cambridge, St. Pembroke},
+  year = {1998},
+}
+
+
+
+
+@ARTICLE{Perlin.2001,
+  author = {Ken Perlin and Chris Poultney and Joel S. Kollin and Daniel T. Kristjansson and Salvatore Paxia},
+  title = {Recent Advances in the NYU Autostereoscopic Display.},
+  journal = {Proceedings of the SPIE},
+  year = {2001},
+  month = {<http://www.mrl.nyu.edu/publications/autostereo/spie2001.p
+df>. Acesso em: 10 mai. 2009},
+}
+
+@MASTERSTHESIS{Mancini1994,
+  author = {Mancini, A.},
+  title = {{Disparity Estimation and Intermediate View Reconstruction for Novel Applications Stereoscopic Video.}},
+  school = {Engineering McHill University},
+  year = {1994},
+  type = {Thesis of Mestre},
+  address = {Montreal, Canadá},
+}
+
+@misc{itu_247,
+author = {ITU-T Recommendation J.247:},
+title ={Objective perceptual multimedia video quality measurement in the presence of a full reference},
+publisher = {International Telecommunication Union},
+address = {},
+year = {2008}
+}
+
+@misc{itu_144,
+author = {ITU-T Recommendation J.144:},
+title ={Objective perceptual video quality measurement techniques for digital cable television in the presence of a full reference.},
+publisher = {International Telecommunication Union},
+address = {Genebra},
+year = {2004}
+}
+
+
+
+@misc{itu_500,
+author = {ITU-R Recommendation BT.500-11:},
+title ={Methodology for the subjective assessment of the quality of television pictures.},
+publisher = {International Telecommunication Union},
+address = {Genebra},
+year = {2002}
+}
+
+@BOOK{Stereographics1997,
+  title = {Stereographics Developers' Handbook: Background
+on Creating Imagens for CrystalEyes and SimulEyes.},
+  publisher = {},
+  year = {1997},
+  author = {StereoGraphics Corporation},
+  address = {http://www.stereographics.com/support/downloads\_support/handbook.pdf},
+  isbn = {},
+}
+
+@article{Johanson2001,
+author = {Mathias Johanson},
+title = {Stereoscopic Video Transmission over the Internet},
+journal ={IEEE Workshop on Internet Applications},
+volume = {0},
+isbn = {0-7695-1137-6},
+year = {2001},
+pages = {0012},
+doi = {http://doi.ieeecomputersociety.org/10.1109/WIAPP.2001.941865},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},}
+
+@BOOK{Tori2006,
+  title = {Fundamentos e Tecnologia de Realidade Virtual e Aumentada},
+  publisher = {},
+  year = {2006},
+  author = {Romero Tori and Claudio Kirner and Robson Siscoutto},
+  address = {http://www.ckirner.com/realidadevirtual/ ?\%26nbsp\%3B\_LIVROS\_E\_CAP\%CDTULOS:Livro\_de\_RV\_2006},
+  isbn = {},
+}
+
+%@ARTICLE{Zhang2011, 
+%author={Liang Zhang and Vazquez, C. and Knorr, S.}, 
+%journal={IEEE Transactions on Broadcasting}, 
+%title={3D-TV Content Creation: Automatic 2D-to-3D Video Conversion}, 
+%year={2011}, 
+%month={june }, 
+%volume={57}, 
+%number={2}, 
+%pages={372 -383}, 
+%keywords={2D image;2D video;3D display;3D-TV content creation;automatic 2D-to-3D video conversion;backward-compatible distribution system;backward-compatible transmission system;depth information extraction;high-quality 3D program material;monoscopic image;stereoscopic image;three-dimensional television;feature extraction;stereo image processing;three-dimensional television;video signal processing;}, 
+%doi={10.1109/TBC.2011.2122930}, 
+%ISSN={0018-9316},}
+
+@INPROCEEDINGS{Harman2009, 
+author={Harman, P.}, 
+booktitle={Proceedings International Conference on Image Processing, 2000.}, 
+title={Home based 3D entertainment-an overview}, 
+year={2000}, 
+month={}, 
+volume={1}, 
+number={}, 
+pages={1 -4 vol.1}, 
+keywords={2D material;3D broadcasting service;3D content;3D display technologies;3D transmissions;autostereoscopic techniques;glasses based techniques;high resolution video images;home based 3D entertainment;live 3D images capture;minimal bandwidth overhead;stereo cameras;consumer electronics;entertainment;television broadcasting;three-dimensional displays;video signal processing;}, 
+doi={10.1109/ICIP.2000.900877}, 
+ISSN={},}
+
+@ARTICLE{Liang2011, 
+author={Liang Zhang and Vazquez, C. and Knorr, S.}, 
+journal={IEEE Transactions on Broadcasting}, 
+title={3D-TV Content Creation: Automatic 2D-to-3D Video Conversion}, 
+year={2011}, 
+month={june }, 
+volume={57}, 
+number={2}, 
+pages={372 -383}, 
+keywords={2D image;2D video;3D display;3D-TV content creation;automatic 2D-to-3D video conversion;backward-compatible distribution system;backward-compatible transmission system;depth information extraction;high-quality 3D program material;monoscopic image;stereoscopic image;three-dimensional television;feature extraction;stereo image processing;three-dimensional television;video signal processing;}, 
+doi={10.1109/TBC.2011.2122930}, 
+ISSN={0018-9316},}
+
+@INPROCEEDINGS{Liang2004, 
+author={Liang Zhang and Tam, W.J. and Wang, D.}, 
+booktitle={International Conference on Image Processing, 2004. ICIP '04}, 
+title={Stereoscopic image generation based on depth images}, 
+year={2004}, 
+month={oct.}, 
+volume={5}, 
+number={}, 
+pages={ 2993 - 2996 Vol. 5}, 
+keywords={ asymmetric filter; depth-image-based rendering system; geometric distortion; image quality; image warping; stereoscopic virtual view; rendering (computer graphics); smoothing methods; stereo image processing;}, 
+doi={10.1109/ICIP.2004.1421742}, 
+ISSN={1522-4880},}
+
+@ARTICLE{Chan2007, 
+author={Chan, S.C. and Heung-Yeung Shum and King-To Ng}, 
+journal={IEEE Signal Processing Magazine}, 
+title={Image-Based Rendering and Synthesis}, 
+year={2007}, 
+month={nov. }, 
+volume={24}, 
+number={6}, 
+pages={22 -33}, 
+keywords={3DTV;image-based rendering;multiview imaging;object-based IBR system;photorealistic visualization;stereo matching;image matching;image representation;rendering (computer graphics);stereo image processing;three-dimensional television;}, 
+doi={10.1109/MSP.2007.905702}, 
+ISSN={1053-5888},}
+
+@ARTICLE{Ens1993, 
+author={Ens, J. and Lawrence, P.}, 
+journal={IEEE Transactions on Pattern Analysis and Machine Intelligence }, 
+title={An investigation of methods for determining depth from focus}, 
+year={1993}, 
+month={feb}, 
+volume={15}, 
+number={2}, 
+pages={97 -108}, 
+keywords={RMS error;border effects;deconvolving;defocus operator;depth from focus;focal parameters;frequency domain representation;inverse filtering;matrix-based method;windowing effects;computer vision;image recognition;}, 
+doi={10.1109/34.192482}, 
+ISSN={0162-8828},}
+
+@INPROCEEDINGS{Guo2008, 
+author={Ge Guo and Nan Zhang and Longshe Huo and Wen Gao}, 
+booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing, 2008. ICASSP 2008.}, 
+title={2D to 3D convertion based on edge defocus and segmentation}, 
+year={2008}, 
+month={31 2008-april 4}, 
+volume={}, 
+number={}, 
+pages={2181 -2184}, 
+keywords={2D to 3D image conversion;Lipschitz regularity;depth estimation method;edge defocussing;edge segmentation;two-dimensional wavelet analysis;edge detection;estimation theory;image segmentation;wavelet transforms;}, 
+doi={10.1109/ICASSP.2008.4518076}, 
+ISSN={1520-6149},}
+
+@ARTICLE{Pentland1987, 
+author={Pentland, Alex Paul}, 
+journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+title={A New Sense for Depth of Field}, 
+year={1987}, 
+month={july }, 
+volume={PAMI-9}, 
+number={4}, 
+pages={523 -531}, 
+keywords={}, 
+doi={10.1109/TPAMI.1987.4767940}, 
+ISSN={0162-8828},}
+
+@ARTICLE{Torralba2002, 
+author={Torralba, A. and Oliva, A.}, 
+journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+title={Depth estimation from image structure}, 
+year={2002}, 
+month={sep}, 
+volume={24}, 
+number={9}, 
+pages={ 1226 - 1238}, 
+keywords={3D model;absolute depth measurements;absolute mean depth;binocular disparity;cues;defocus;discrete Fourier transform;image motion;image representation;image size;image structure depth estimation;object detection;object recognition;scene recognition;scene structure;shading;discrete Fourier transforms;image representation;object detection;object recognition;}, 
+doi={10.1109/TPAMI.2002.1033214}, 
+ISSN={0162-8828},}
+
+@INPROCEEDINGS{Cozman1997, 
+author={Cozman, F. and Krotkov, E.}, 
+booktitle={IEEE Computer Society Conference on Computer Vision and Pattern Recognition, 1997.}, 
+title={Depth from scattering}, 
+year={1997}, 
+month={jun}, 
+volume={}, 
+number={}, 
+pages={801 -806}, 
+keywords={atmospheric scattering;autonomous vehicles;depth cues;image understanding;outdoor scenes;image reconstruction;scattering;}, 
+doi={10.1109/CVPR.1997.609419}, 
+ISSN={},}
+
+@ARTICLE{Konrad2007, 
+author={Konrad, J. and Halle, M.}, 
+journal={IEEE Signal Processing Magazine }, 
+title={3-D Displays and Signal Processing}, 
+year={2007}, 
+month={nov. }, 
+volume={24}, 
+number={6}, 
+pages={97 -111}, 
+keywords={electronic 3-D display;signal processing;signal processing;three-dimensional displays;}, 
+doi={10.1109/MSP.2007.905706}, 
+ISSN={1053-5888},}
+
+@ARTICLE{Benzie2007, 
+author={Benzie, P. and Watson, J. and Surman, P. and Rakkolainen, I. and Hopf, K. and Urey, H. and Sainov, V. and von Kopylow, C.}, 
+journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
+title={A Survey of 3DTV Displays: Techniques and Technologies}, 
+year={2007}, 
+month={nov. }, 
+volume={17}, 
+number={11}, 
+pages={1647 -1658}, 
+keywords={3DTV displays;acoustooptic spatial light modulators;digital micromirror;holography;image acquisition;image coding transmission;image compression;image reproduction;optically addressed liquid crystal;stereoscopic display;volumetric displays;data compression;holography;image coding;liquid crystal displays;micromirrors;spatial light modulators;stereo image processing;television displays;}, 
+doi={10.1109/TCSVT.2007.905377}, 
+ISSN={1051-8215},}
+
+@ARTICLE{andller2011, 
+author={Mu andller, K. and Merkle, P. and Wiegand, T.}, 
+journal={Proceedings of the IEEE}, 
+title={3-D Video Representation Using Depth Maps}, 
+year={2011}, 
+month={april }, 
+volume={99}, 
+number={4}, 
+pages={643 -656}, 
+keywords={3D video representation;3D video technology;autostereoscopic multiview displays;depth maps;receiver displays;render arbitrary numbers;stereo systems;stereo video coding;stereoscopic displays;transmission bit rate;video signal;stereo image processing;three-dimensional displays;video coding;}, 
+doi={10.1109/JPROC.2010.2091090}, 
+ISSN={0018-9219},}
+
+@ARTICLE{Yasakethu2009, 
+author={Yasakethu, S.L.P. and Fernando, W.A.C. and Kamolrat, B. and Kondoz, A.}, 
+journal={IEEE Transactions on Consumer Electronics}, 
+title={Analyzing perceptual attributes of 3d video}, 
+year={2009}, 
+month={may }, 
+volume={55}, 
+number={2}, 
+pages={864 -872}, 
+keywords={2D video applications;3 dimensional video technologies;3D video coding;3D video quality;Gaussian mathematical models;WiMAX based communication channel;channel bit rate;joint source channel coding scheme;linear polynomial mathematical models;media content;perceptual attributes analyzation;subjective quality;time-consuming subjective evaluation;Gaussian processes;WiMax;combined source-channel coding;image colour analysis;video coding;}, 
+doi={10.1109/TCE.2009.5174467}, 
+ISSN={0098-3063},}
+
+@BOOK{Richardson2003a,
+  title = {{H.264 and MPEG-4} Video Compression -- Video Coding for Next-generation
+	Multimedia},
+  publisher = {John Wiley \& Sons Ltd},
+  year = {2003},
+  author = {Richardson, Iain E. G.},
+}
+
+@INPROCEEDINGS{Murad1998, 
+author={Murad, A.H. and Fuja, T.E.}, 
+booktitle={Information Theory Workshop, 1998}, 
+title={Joint source-channel decoding of variable-length encoded sources }, 
+year={1998}, 
+month={jun}, 
+volume={}, 
+number={}, 
+pages={94 -95}, 
+keywords={Huffman codes;MAP decoding;Markov sources;Viterbi structure;channel code;channel decoder;channel encoder;convolutional codes;data redundancy;imperfect compression;joint source-channel decoding;maximum a posteriori decoding;memoryless sources;residual redundancy;robustness;simulation results;source coding;source decoder;source model;tandem decoding;trellis codes;variable-length encoded sources;variable-length source code;Huffman codes;Markov processes;combined source-channel coding;convolutional codes;decoding;memoryless systems;trellis codes;variable length codes;}, 
+doi={10.1109/ITW.1998.706451}, 
+ISSN={},}
+
+@ARTICLE{Bystrom2000, 
+author={Bystrom, M. and Modestino, J.W.}, 
+journal={Selected Areas in Communications, IEEE Journal on}, 
+title={Combined source-channel coding schemes for video transmission over an additive white Gaussian noise channel}, 
+year={2000}, 
+month={jun}, 
+volume={18}, 
+number={6}, 
+pages={880 -890}, 
+keywords={AWGN;DBS channel;FEC coding;additive white Gaussian noise channel;channel error protection;combined source-channel coding schemes;degradation;digital video;direct broadcast satellite;distortion;forward error-control coding;information-theoretic performance bounds;optimal bit allocation;real-world transmission media;source coding accuracy;transmission bandwidth;transmitted bitstream;universal operational distortion-rate characteristics;video transmission;AWGN channels;combined source-channel coding;digital communication;forward error correction;rate distortion theory;video coding;visual communication;}, 
+doi={10.1109/49.848242}, 
+ISSN={0733-8716},}
+
+@INPROCEEDINGS{Regis2009a,
+  author = {Regis, C.D.M. and Morais, D.C. and Alencar, M.S. and Farias, M.C.Q.},
+  title = {Objective and subjective assessment of space-transcoded videos for
+	mobile receivers},
+  booktitle = {IEEE International Symposium on Broadband Multimedia Systems and
+	Broadcasting, 2009. BMSB '09.},
+  year = {2009},
+  pages = {1-6},
+  month = {May},
+  __markedentry = {[danilo]},
+  doi = {10.1109/ISBMSB.2009.5133796},
+  keywords = {image resolution, mobile television, television receivers, transcoding,
+	video codingbit rates, digital television scenario, encoding formats,
+	median filters, mobile TV, mobile phone, mobile receivers, sigma
+	filters, space-transcoded videos, spatial resolutions, video transcoding},
+  owner = {danilo},
+  timestamp = {2010.02.19}
+}
+
+
+@INPROCEEDINGS{Tikanmaki2008, 
+author={Tikanmaki, A. and Gotchev and A. and Smolic, A. and Miller, K.}, 
+booktitle={IEEE International Symposium on Consumer Electronics, (ISCE)}, 
+title={Quality assessment of 3D video in rate allocation experiments}, 
+year={2008}, 
+month={april}, 
+volume={}, 
+number={}, 
+pages={1 -4}, 
+keywords={H.264 encoder;encoded 3D video;monoscopic color video;virtual view quality metrics;visual quality;image colour analysis;video coding;}, 
+doi={10.1109/ISCE.2008.4559441}, 
+ISSN={},}
+
+@ARTICLE{Tam2011, 
+author={Tam, W.J. and Speranza and F. Yano and S. and Shimono, K. and Ono, H.}, 
+journal={IEEE Transactions on Broadcasting}, 
+title={Stereoscopic 3D-TV: Visual Comfort}, 
+year={2011}, 
+month={june }, 
+volume={57}, 
+number={2}, 
+pages={335 -346}, 
+keywords={broadcaster;content creator;display manufacturer;program provider;stereoscopic 3D-TV;stereoscopic displays;three-dimensional television;visual comfort;visual communication;human factors;stereo image processing;three-dimensional displays;three-dimensional television;visual communication;}, 
+doi={10.1109/TBC.2011.2125070}, 
+ISSN={0018-9316},}
+
+@article{Kuze2008,
+title = {Subjective evaluation of visual fatigue caused by motion images},
+author = {J. Kuze and K. Ukai},
+journal = {Displays},
+volume = {29},
+number = {2},
+pages = {159 - 166},
+year = {2008},
+note = {Health and Safety Aspects of Visual Displays},
+issn = {0141-9382},
+doi = {10.1016/j.displa.2007.09.007},
+url = {http://www.sciencedirect.com/science/article/pii/S0141938207000984},
+keywords = {Visual fatigue},
+}
+
+@ARTICLE{Simon2009, 
+author={Simon P. Liversedge and Nicolas S. Holliman and Hazel I. Blythe,}, 
+journal={Proc. SPIE 7237}, 
+title={Binocular coordination in response to stereoscopic stimuli}, 
+year={2009}, 
+month={ }, 
+volume={}, 
+number={}, 
+pages={}, 
+keywords={}, 
+doi={doi:10.1117/12.807251}, 
+ISSN={},}
+
+@ARTICLE{Tam2007, 
+author={Wa James Tam and Carlos Vázquez and Filippo Speranza}, 
+journal={Proc. SPIE 6490}, 
+title={Surrogate depth maps for stereoscopic imaging:different edge types}, 
+year={2007}, 
+month={ }, 
+volume={}, 
+number={}, 
+pages={}, 
+keywords={}, 
+doi={10.1117/12.70449}, 
+ISSN={},}
+
+
+@INPROCEEDINGS{Kung2003, 
+author={Kung, M.L. and Alvarez, T.L. and Semmlow, J.L.}, 
+booktitle={Bioengineering Conference, 2003 IEEE 29th Annual, Proceedings of}, 
+title={Interaction of disparity and accommodative vergence}, 
+year={2003}, 
+month={march}, 
+volume={}, 
+number={}, 
+pages={ 29 - 30}, 
+keywords={ accommodative vergence; disparity; eye movements; independent component analysis; response steady state portion; signal-processing algorithm; underlying neural subcomponents; biomechanics; eye; independent component analysis; neurophysiology;}, 
+doi={10.1109/NEBC.2003.1215976}, 
+ISSN={},}
+
+@ARTICLE{Holliman2011, 
+author={Holliman, N.S. and Dodgson, N.A. and Favalora, G.E. and Pockett, L.}, 
+journal={IEEE Transactions on Broadcasting,}, 
+title={Three-Dimensional Displays: A Review and Applications Analysis}, 
+year={2011}, 
+month={june }, 
+volume={57}, 
+number={2}, 
+pages={362 -371}, 
+keywords={3D display;Benton taxonomy;image delivery;three-dimensional display;image resolution;stereo image processing;three-dimensional displays;}, 
+doi={10.1109/TBC.2011.2130930}, 
+ISSN={0018-9316},}
+
+@MISC{ITU-R2002,
+  author = {ITU-R},
+  title = {{ITU-R BT.500-11 - Methodology for the subjective assessment of
+	the quality of television pictures.}},
+  year = {2002},
+}
+
+@MISC{ITU-T2000,
+  author = {ITU-T},
+  title = {{ITU-T Video coding for low bit rate communication}},
+  month = {November},
+  year = {2000},
+}
+
+@MISC{ITU-T1999,
+  author = {ITU-T},
+  title = {{ITU-T Recommendation P.910, Subjective video quality assessment methods for multimedia applications}},
+  month = {September},
+  year = {1999},
+}
+
+@TECHREPORT{ITU-T2003,
+  author = {Joint Video Team of ITU-T and ISO/IEC JTC 1},
+  title = {{Draft ITU-T Recommendation and Final Draft International Standard
+	of Joint Video Specification (ITU-T Rec. {H.264} ISO/IEC 14496-10
+	AVC) -- Fidelity Range Extensions documents JVT-L047}},
+  institution = {{ISO/IEC MPEG and ITU-T VCEG}},
+  year = {2003},
+  month = {Julho},
+}
+
+@TECHREPORT{ITU-T2003a,
+  author = {Joint Video Team of ITU-T and ISO/IEC JTC 1},
+  title = {{Draft {ITU-T} Recommendation and Final Draft International Standard
+	of Joint Video Specification ({ITU-T} Rec. {H.264} {ISO/IEC} 14496-10
+	{AVC})}},
+  institution = {{ISO/IEC MPEG and ITU-T VCEG}},
+  year = {2003},
+}
+
+@MISC{ITU-R2000,
+  author = {ITU-R},
+  title = {{Subjective Assessment of Stereoscopic Television Pictures. - ITU-R Recommendation BT.1438}},
+  year = {2000},
+}
+
+@MISC{ITU-R2010,
+  author = {ITU-R},
+  title = {{ITU-R BT.500-10 - Methodology for the subjective assessment of
+	the quality of television pictures.}},
+  year = {2010},
+}
+
+
+@misc{Frantisek2006,
+author = {Frantisek Miksicek},
+title ={Causes of Visual Fatigue and Its Improvements in Stereoscopy},
+address = {University of West Bohemia in Pilsen, Czech Republic, 
+Technical Report No. DCSE/TR-2006-0},
+year = {2006}
+}
+
+@ARTICLE{Tam2005, 
+author={Liang Zhang and Tam, W.J.}, 
+journal={IEEE Transactions on Broadcasting}, 
+title={Stereoscopic image generation based on depth images for 3D TV}, 
+year={2005}, 
+month={june}, 
+volume={51}, 
+number={2}, 
+pages={ 191 - 199}, 
+keywords={ 3D TV; artifact; asymmetric filter; depth map; depth-image-based rendering system; image quality; image warping; object boundary; smoothing method; stereoscopic image generation; three-dimensional television; rendering (computer graphics); smoothing methods; stereo image processing; three-dimensional television; visual perception;}, 
+doi={10.1109/TBC.2005.846190}, 
+ISSN={0018-9316},}
+
+@INPROCEEDINGS{Tam2006, 
+author={Tam, W.J. and Liang Zhang}, 
+booktitle={IEEE International Conference on Multimedia and Expo, 2006}, 
+title={3D-TV Content Generation: 2D-to-3D Conversion}, 
+year={2006}, 
+month={july}, 
+volume={}, 
+number={}, 
+pages={1869 -1872}, 
+keywords={2D-to-3D conversion;3D display;HDTV;backward-compatible transmission;depth extraction;distribution system;high-definition television;human visual system;image based rendering;stereoscopic three-dimensional television;feature extraction;high definition television;rendering (computer graphics);stereo image processing;three-dimensional displays;three-dimensional television;}, 
+doi={10.1109/ICME.2006.262919}, 
+ISSN={},}
+
+@ARTICLE{Ronald2008, 
+author={Ronald G. Kaptein and André Kuijsters and Marc T. M. Lambooij and Wijnand A. IJsselsteijn and Ingrid Heynderickx}, 
+journal={Proc. SPIE 6808, 680819}, 
+title={Performance evaluation of 3D-TV systems}, 
+year={2008}, 
+month={}, 
+volume={}, 
+number={}, 
+pages={}, 
+keywords={ 3D TV; artifact; asymmetric filter; depth map; depth-image-based rendering system; image quality; image warping; object boundary; smoothing method; stereoscopic image generation; three-dimensional television; rendering (computer graphics); smoothing methods; stereo image processing; three-dimensional television; visual perception;}, 
+doi={10.1117/12.770082}, 
+}
+
+@ARTICLE{Polonen2010, 
+author={Polonen, M. and Jarvenpaa, T. and Hakkinen, J.}, 
+journal={ Journal of Display Technology}, 
+title={Comparison of Near-to-Eye Displays: Subjective Experience and Comfort}, 
+year={2010}, 
+month={jan. }, 
+volume={6}, 
+number={1}, 
+pages={27 -35}, 
+keywords={NED-related opinion change;near-to-eye displays;subjective experience;wearable displays;display devices;}, 
+doi={10.1109/JDT.2009.2029123}, 
+ISSN={1551-319X},}
+
+@INPROCEEDINGS{Woods93,
+    author = {Andrew Woods and Tom Docherty and Rolf Koch},
+    title = {Image Distortions in Stereoscopic Video Systems},
+    booktitle = {STEREOSCOPIC DISPLAYS AND APPLICATIONS},
+    year = {1993},
+    publisher = {}
+}
+
+@INPROCEEDINGS{Quan2010, 
+author={Quan Huynh-Thu and Le Callet, P. and Barkowsky, M.}, 
+booktitle={17th IEEE International Conference on Image Processing (ICIP), 2010}, 
+title={Video quality assessment: From 2D to 3D -- Challenges and future trends}, 
+year={2010}, 
+month={sept.}, 
+volume={}, 
+number={}, 
+pages={4025 -4028}, 
+keywords={3DTV;limited bandwidth;perceptual video quality;video quality assessment;three-dimensional television;video signal processing;visual perception;}, 
+doi={10.1109/ICIP.2010.5650571}, 
+ISSN={1522-4880},}
+
+@INPROCEEDINGS{Meur2009, 
+author={Le Meur, O. and Le Callet, P.}, 
+booktitle={16th IEEE International Conference on Image Processing (ICIP), 2009}, 
+title={What we see is most likely to be what matters: Visual attention and applications}, 
+year={2009}, 
+month={nov.}, 
+volume={}, 
+number={}, 
+pages={3085 -3088}, 
+keywords={bottom-up models;computational modeling;computer vision community;image processing;video processing;visual attention modeling;visual system;computer vision;}, 
+doi={10.1109/ICIP.2009.5414481}, 
+ISSN={1522-4880},}
+
+@INPROCEEDINGS{Shao2009, 
+author={Hang Shao and Xun Cao and Guihua Er}, 
+booktitle={3DTV Conference: The True Vision - Capture, Transmission and Display of 3D Video, 2009}, 
+title={Objective quality assessment of depth image based rendering in 3DTV system}, 
+year={2009}, 
+month={may}, 
+volume={}, 
+number={}, 
+pages={1 -4}, 
+keywords={3D video;3DTV system;color distortion measurement;depth image based rendering;edge distortion;gray-scale depth image;monocular video augmention;objective quality assessment;distortion measurement;image colour analysis;quality management;rendering (computer graphics);three-dimensional television;}, 
+doi={10.1109/3DTV.2009.5069619}, 
+ISSN={},}
+
+@INPROCEEDINGS{Ozbek2008, 
+author={Ozbek, N. and Tekalp, A.M.}, 
+booktitle={IEEE International Conference on Multimedia and Expo, 2008}, 
+title={Unequal inter-view rate allocation using scalable stereo video coding and an objective stereo video quality measure}, 
+year={2008}, 
+month={23 2008-april 26}, 
+volume={}, 
+number={}, 
+pages={1113 -1116}, 
+keywords={jerkiness measure;objective stereo video quality measure;perceived-distortion performance;quantization resolution;rate allocation strategy;scalable stereo video coding;stereoscopic 3D video;unequal interview rate allocation;image resolution;quantisation (signal);stereo image processing;video coding;}, 
+doi={10.1109/ICME.2008.4607634}, 
+ISSN={},}
+
+@ARTICLE{Yasakethu2008, 
+author={Yasakethu, S.L.P. and Hewage, C. and Fernando, W. and Kondoz, A.}, 
+journal={Consumer Electronics, IEEE Transactions on}, 
+title={Quality analysis for 3D video using 2D video quality models}, 
+year={2008}, 
+month={november }, 
+volume={54}, 
+number={4}, 
+pages={1969 -1976}, 
+keywords={2D video quality models;3D video;3D video content;image quality;quality analysis;image sensors;video signal processing;}, 
+doi={10.1109/TCE.2008.4711260}, 
+ISSN={0098-3063},}
+
+@ARTICLE{Hewage2009, 
+author={Hewage, C.T.E.R. and Worrall, S.T. and Dogan, S. and Villette, S. and Kondoz, A.M.}, 
+journal={IEEE Journal of Selected Topics in Signal Processing}, 
+title={Quality Evaluation of Color Plus Depth Map-Based Stereoscopic Video}, 
+year={2009}, 
+month={april }, 
+volume={3}, 
+number={2}, 
+pages={304 -318}, 
+keywords={Internet protocol;color plus depth map;data compression;quality evaluation;rendering technique;stereoscopic video coding;video sequence;data compression;image colour analysis;image sequences;rendering (computer graphics);stereo image processing;video coding;}, 
+doi={10.1109/JSTSP.2009.2014805}, 
+ISSN={1932-4553},}
+
+@INPROCEEDINGS{Silva2010, 
+author={De Silva, D.V.S.X. and Fernando, W.A.C. and Nur, G. and Ekmekcioglu, E. and Worrall, S.T.}, 
+booktitle={17th IEEE International Conference on Image Processing (ICIP)}, 
+title={3D video assessment with Just Noticeable Difference in Depth evaluation}, 
+year={2010}, 
+month={sept.}, 
+volume={}, 
+number={}, 
+pages={4013 -4016}, 
+keywords={3D video assessment;3D video display system;3D video scene;auto stereoscopic display;compression artifact;depth evaluation;depth image compression;depth perception assessment;depth representation;just noticeable difference in depth;video color;data compression;image colour analysis;stereo image processing;video coding;}, 
+doi={10.1109/ICIP.2010.5653353}, 
+ISSN={1522-4880},}
+
+@INPROCEEDINGS{Leon2008, 
+author={Leon, G. and Kalva, H. and Furht, B.}, 
+booktitle={3DTV Conference: The True Vision - Capture, Transmission and Display of 3D Video}, 
+title={3D Video Quality Evaluation with Depth Quality Variations}, 
+year={2008}, 
+month={may}, 
+volume={}, 
+number={}, 
+pages={301 -304}, 
+keywords={3D video quality evaluation;autostereoscopic displays;depth image quality;depth quality variation;image motion;multiview point Philips 3D display;video compression;data compression;image motion analysis;stereo image processing;three-dimensional displays;video coding;visual perception;}, 
+doi={10.1109/3DTV.2008.4547868}, 
+ISSN={},}
+
+@ARTICLE{Pinson2004, 
+author={Pinson, M.H. and Wolf, S.}, 
+journal={IEEE Transactions on Broadcasting}, 
+title={A new standardized method for objectively measuring video quality}, 
+year={2004}, 
+month={sept.}, 
+volume={50}, 
+number={3}, 
+pages={ 312 - 322}, 
+keywords={ ANSI; American National Standards Institute; FR-TV test; ITU; International Telecommunication Union; NTIA; National Telecommunications And Information Administration; North American Standard; VQEG; draft recommendation; phase II full reference television; video quality estimation; video quality experts group; ANSI standards; digital video broadcasting; video coding;}, 
+doi={10.1109/TBC.2004.834028}, 
+ISSN={0018-9316},}
+
+@ARTICLE{Andrade2009, 
+author={ANDRADE, L. A. and GOULARTE, R.}, 
+journal={XV Simpósio Brasileiro de Sistemas Multimídia e Web - WebMedia}, 
+title={Percepção Estereoscópica Anaglífica em Vídeos Digitais Comprimidos com Perda}, 
+year={2009, Fortaleza}, 
+month={}, 
+volume={}, 
+number={}, 
+pages={}, 
+keywords={estereoscopia; Vídeo Estéreo; Vídeo digital; Multimidia}, 
+doi={}, 
+ISSN={21759642},}
+
+@ARTICLE{Varuna2011,
+author={De Silva, V. and Fernando, A. and Worrall, S. and Arachchi, H.K. and Kondoz, A.},
+journal={IEEE Transactions on Multimedia},
+title={Sensitivity Analysis of the Human Visual System for Depth Cues in Stereoscopic 3-D Displays},
+year={2011},
+month={june },
+volume={13},
+number={3},
+pages={498 -506},
+keywords={3D content production;binocular stereopsis;human visual perception;human visual system;just noticeable difference-in-depth;sensitivity analysis;stereoscopic 3D displays;sensitivity analysis;stereo image processing;three-dimensional displays;video signal processing;},
+doi={10.1109/TMM.2011.2129500},
+ISSN={1520-9210},}
+
+@BOOK{3DCommunication,
+  title = {3D Video Communication},
+  publisher = {Wiley},
+  year = {2005},
+  author = {Schreer, O. and Kauff, P. and Sikora T.},
+  address = {Berlin, Alemanha},
+  isbn = {},
+}
+
+@INPROCEEDINGS{Jiachen2009, 
+author={Jiachen Yang and Chunping Hou and Yuan Zhou and Zhuoyun Zhang and Jichang Guo}, 
+booktitle={3DTV Conference: The True Vision - Capture, Transmission and Display of 3D Video, 2009}, 
+title={Objective quality assessment method of stereo images}, 
+year={2009}, 
+month={may}, 
+volume={}, 
+number={}, 
+pages={1 -4}, 
+keywords={objective quality assessment;stereoscopic images;subjective assessment method;stereo image processing;}, 
+doi={10.1109/3DTV.2009.5069615}, 
+ISSN={},}
+
+
+@ARTICLE{Meesters2004, 
+author={Meesters, L.M.J. and IJsselsteijn, W.A. and Seuntiens, P.J.H.}, 
+journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
+title={A survey of perceptual evaluations and requirements of three-dimensional TV}, 
+year={2004}, 
+month={march}, 
+volume={14}, 
+number={3}, 
+pages={ 381 - 391}, 
+keywords={ 3D broadcast service; 3D image quality; 3D perception; broadcast-type multiple-viewer system; broadcast-type single-viewer system; cardboard effect; cross talk; depth-plane curvature; image flipping; keystone distortion; near-term displays; perceptual evaluation survey; picket-fence effect; puppet theater effect; shear distortion; stereoscopic artifacts; three-dimensional TV; visual comfort; crosstalk; data compression; digital video broadcasting; stereo image processing; three-dimensional television; video coding;}, 
+doi={10.1109/TCSVT.2004.823398}, 
+ISSN={1051-8215},}
+
+
+@INPROCEEDINGS{Benoit2008, 
+author={Benoit, A. and Le Callet, P. and Campisi, P. and Cousseau, R.}, 
+booktitle={Image Processing, 2008. ICIP 2008. 15th IEEE International Conference on}, 
+title={Using disparity for quality assessment of stereoscopic images}, 
+year={2008}, 
+month={oct.}, 
+volume={}, 
+number={}, 
+pages={389 -392}, 
+keywords={2D content quality estimation;3DTV;artifacts image;disparity distortion;image coding;image quality assessment;stereoscopic image;image coding;stereo image processing;three-dimensional television;}, 
+doi={10.1109/ICIP.2008.4711773}, 
+ISSN={1522-4880},}
+
+@ARTICLE{Yasakethu2010, 
+author={Yasakethu, S.L.P. and De Silva, D.V.S.X. and Fernando, W.A.C. and Kondoz, A.}, 
+journal={Electronics Letters}, 
+title={Predicting sensation of depth in 3D video}, 
+year={2010}, 
+month={10}, 
+volume={46}, 
+number={12}, 
+pages={837 -839}, 
+keywords={3D video;colour video;depth perception;depth sensation prediction;grey scale depth map;quality assessment model;image colour analysis;video signal processing;}, 
+doi={10.1049/el.2010.3540}, 
+ISSN={0013-5194},}
+
+
+@ARTICLE{Pinson2004, 
+author={Pinson, M.H. and Wolf, S.}, 
+journal={IEEE Transactions on Broadcasting}, 
+title={A new standardized method for objectively measuring video quality}, 
+year={2004}, 
+month={sept.}, 
+volume={50}, 
+number={3}, 
+pages={ 312 - 322}, 
+keywords={ ANSI; American National Standards Institute; FR-TV test; ITU; International Telecommunication Union; NTIA; National Telecommunications And Information Administration; North American Standard; VQEG; draft recommendation; phase II full reference television; video quality estimation; video quality experts group; ANSI standards; digital video broadcasting; video coding;}, 
+doi={10.1109/TBC.2004.834028}, 
+ISSN={0018-9316},}
+
+@ARTICLE{Sadka2011,
+author={A. S. Umar , R. M. Swash , A. H. Sadka},
+journal={IEEE Transactions on Multimedia},
+title={Subjective Quality Assessment of 3D Videos},
+year={2011},
+month={September },
+volume={},
+number={},
+pages={},
+keywords={3D video, Subjective quality assessment, Stereoscopic video},
+doi={},
+ISSN={}}
+
+
+
+
+

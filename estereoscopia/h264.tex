@@ -1,0 +1,30 @@
+\chapter{Codificação}
+
+\section{A codificação com H.264}
+O padrão para codificação de vídeo H.264/AVC, também conhecido por MPEG-4 Part 10, foi desenvolvido pelo JVT (Joint Video Team), composto por especialistas dos grupos VCEG (Video Coding Experts Group) e MPEG (Moving Picture Experts Group), respectivamente das organizações ITU-T e ISO/IEC~\cite{wiegand2003}.
+A estrutura básica do padrão H.264/AVC é similar a de padrões anteriores (H.261, MPEG-1, MPEG-2 / H.262, H.263 ou MPEG-4 part 2) [2], porém com uma maior eficiência na codificação, reduzindo o número de bits resultantes no vídeo codificado além de maior robustez a falhas na transmissão.
+Estas melhorias implicam em uma maior complexidade e consumo de recursos computacionais para o processo de codificação~\cite{wiegand2003}.
+
+\subsection{O padrão H.264}
+
+O padrão H.264 define a sintaxe e a semântica do vídeo codificado, tendo como foco o decodificador e as atividadesenvolvidas na decodificação~\cite{ostermann2004}.
+Cada quadro na entrada do codificador é dividido em macroblocos. Cada macrobloco é composto pelas componentes de luminância (Y) e de crominância (Cr e Cb). Para a componente de luminância, o macrobloco é composto de 16x16 amostras e para as componentes de crominância, o macrobloco é composto por 2 blocos contendo 8x8 amostras, e que são sub-amostrados por um fator de 2, na direção horizontal e vertical. O número de amostras das componentes pode variar dependendo do profile ou de extensões do padrão.
+Os macroblocos são processados em slices que geralmente são conjuntos de macroblocos~\cite{ostermann2004}.
+Um diagrama em blocos simplificado de um codificador H.264 é apresentado na figura abaixo. Na sequência apresenta-se uma breve descrição de cada etapa representada pelos blocos.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{h264}
+	\caption{Diagrama em bloco da codificação H.264/AVC.}
+	\label{h.264:h.264}
+\end{figure}
+
+Após a captura dos macroblocos na entrada do sistema, as amostras passam pela etapa de predição, que pode ser temporal ou espacial. Essas etapas são chamadas de predição Inter e Intra respectivamente. Na predição Inter, são consideradas as semelhanças entre macroblocos de quadros consecutivos de um fluxo de vídeo e a predição Intra realiza a predição de amostras do macrobloco com base em informações de macroblocos já transmitidos de um mesmo quadro, de forma análoga ao processo utilizado na codificação de imagens estáticas. A predição Inter utiliza-se de um mecanismo conhecido como compensação de movimento e gera um vetor de deslocamento que é transmitido com o vídeo codificado e posiciona o macrobloco atual em relação a um quadro de referência previamente codificado.
+A etapa de transformação permite diminuir a redundância espacial das amostras~\cite{ostermann2004} convertendo as amostras do sinal do domínio espacial para o domínio da frequência, utilizando a Transformação de Inteiros, em substituição a DCT (Discrete Cosine Tranform) utilizada em padrões anteriores.
+
+Na etapa de quantização, cada amostra é dividida pelo parâmetro de quantização (Qp) que pode ser diferente para cada macrobloco e que para amostras de 8-bits pode assumir 52 possíveis valores~\cite{sullivan2004}.
+Após a transformação e quantização, a varredura é realizada sobre a matriz resultante das etapas anteriores com o objetivo de colocar os coeficientes de maior variância no inicio da sequência de coeficientes. 
+
+A varredura também tem por objetivo, maximizar o número de coeficientes zerados consecutivos e assim representa-los de uma forma bastante compacta na etapa de codificação de entropia. O tipo de varredura também varia com o tipo de predição utilizada~\cite{sullivan2004}.
+A codificação de entropia é uma etapa que não gera perda de informação do vídeo e é responsável pela efetiva compactação dos dados. O objetivo principal é representar os dados de maior ocorrência na sequência pela menor representação binária possível. Diferente dos padrões anteriores, no H.264 utilizase uma codificação de entropia adaptativa ao contexto, sendo assim muito mais eficiente~\cite{ostermann2004}.
+Durante a predição do macrobloco, o H.264 testa todos os possíveis modos de codificação na seguinte ordem : SKIP, 16x16, 16x8, 8x16, 8x8, 8x4, 4x8, 4x4~\cite{spinsante2005}, o que demanda um alto custo computacional.

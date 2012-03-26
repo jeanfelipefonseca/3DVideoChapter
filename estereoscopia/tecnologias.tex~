@@ -1,0 +1,509 @@
+\chapter{Geração e Visualização de Vídeo 3D}
+
+\section{Visão estereoscópica humana}
+
+A capacidade de apreciar uma terceira dimensão usando um monitor de TV 3D  baseado nas características do sistema 
+visual humano. Uma vez que os olhos são posicionados horizontalmente na cabeça, o sistema visual recebe duas visões 
+da cena visual, ou seja, a visão do olho esquerdo e a do olho direito, que em grande parte se sobrepõem, mas um pouco 
+diferente porque eles se originam a partir de duas perspectivas diferentes. O sistema visual processa a informação 
+das duas imagens provenientes de duas perspectivas para a produção de profundidade estereoscópica~\cite{Tam2011}. 
+
+Os olhos movem-se constantemente, mesmo durante a fixação. No entanto, o sistema visual binocular é extremamente 
+bom em coordenar o movimento dos dois olhos~\cite{Simon2009}. Como resultado, a partir de um ponto de vista funcional, quando 
+nós fixamos binocularmente um ponto no espaço, as imagens se enquadram em um ponto, de ambos os olhos esquerdo e 
+direito, sobre a fóvea, que é a parte do fundo do olho (retina) que tem a maior acuidade. Assim, um 
+objeto fixado é fotografado nas mesmas coordenadas em relação a vista do olho esquerdo e do olho direito 
+e é percebido como uma simples percepção, ou seja,  visto como um simples objeto. 
+
+O ponto de fixação cai no \textit{horoptero}. O \textit{horopter}  é uma linha curva ou superfície que contém todos os pontos 
+que estão na mesma geometria (geometria \textit{horopter}) ou  distância (\textit{horopter} empírica) percebida 
+do ponto de fixação~\cite{Tam2011}. 
+
+Pontos localizados em frente ou atrás do \textit{horopter} são gravadas em diferentes posições relativas as 
+vistas do olho esquerdo e do olho direito. Estas diferenças nas posições relativas são chamadas de disparidades 
+da retina horizontal. A magnitude da disparidade da retina de um ponto aumenta com a distância do objeto a partir 
+do \textit{horopter}. Pontos na frente do \textit{horopter} dizem ter uma disparidade negativa ou cruzada, 
+enquanto pontos de objetos por trás dele é dito com disparidade positiva ou descruzadas (Apendice~\ref{fund_mat}). 
+Diz-se que uma melhor performance na visualização estereoscópica é obtida na disparidade positiva do que na disparidade
+negativa. O sistema visual humano usa essas disparidades para extrair a profundidade relativa dos objetos na cena visual, ou seja, 
+a posição em profundidade de um objeto com relação a outro objeto.
+
+Objetos que dão origem a produzir as disparidades em imagens diferentes nas retinas direita e esquerda. No entanto, 
+os objetos que estão localizados dentro de uma pequena região na frente e a atrás do plano de fixação da origem é a uma 
+percepção simples fundida. A região, dentro do qual os objetos são fundidos, apesar de ter 
+imagens diferentes nos dois olhos, é chamado de área de \textit{Panum's Funsional}. Objetos localizados fora da área 
+de \textit{Panum's Fusional} resultam na visão dupla, ou seja, \textit{diplopia}, mas ainda pode ser percebida em 
+profundidade. O tamanho da área de \textit{Panum's Funsional} não é fixa, mas sim depende das propriedades 
+espaciais e temporais da meta de fixação, tais como a duração da exposição, de resolução espacial, variação 
+da disparidade da frequência temporal~\cite{Tam2011}.
+
+Quando o ponto de fixação é alterado para olhar para um novo objeto localizado a uma distância diferente, os dois olhos 
+se movem simultaneamente e em direções opostas, para que o novo objeto seja fotografado no centro de cada fóvea. 
+Se o novo objeto é mais perto, os olhos se movem para 
+dentro em direção ao outro (convergência), enquanto que se o novo objeto está mais longe dos olhos se movem para fora, 
+longe uns dos outros (divergência). Este processo  chamado de convergência e está estreitamente relacionado com a acomodação. 
+Este último se refere ao processo pelo qual o poder óptico do olho é alterado para manter a visão clara, ou seja, uma 
+imagem nítida, de um objeto distante.
+
+Quando os olhos se fixam em um objeto, a forma do cristalino em cada olho é alterada 
+pelos músculos ciliares para que a imagem do objeto em foco seja fixado na parte traseira do olho, a retina. Pontos 
+localizados mais perto ou mais longe do que os pontos acomodados no são imagens corretas na retina e, portanto, sujeitas 
+a um grau crescente de borragem. No entanto, o sistema visual é tolerante a uma pequena quantidade de borramento~\cite{Tam2011}, e 
+pontos localizados dentro de uma pequena região ao redor do ponto de acomodação são percebidos a estar em foco. 
+
+O tamanho desta região, conhecida como a profundidade de campo (DOF -- \textit{Depth of Field}), varia inversamente com o diâmetro da pupila. 
+A profundidade de campo tem um correspondente, conjugada, é a região em torno do plano da retina, a região é chamada 
+de profundidade do foco.
+
+Em condições normais, mudanças na acomodação dos dois olhos e o processo de convergência ocorre de forma integrada: 
+mudanças na acomodação induz alterações na convergência e vice-versa~\cite{Kung2003}. No entanto, os dois processos podem 
+entrar em conflito quando assistir alvos estereoscópicos.
+
+Os nossos olhos estão separados de cerca de 7,5 cm entre si e isso implica que cada olho vê de uma perspectiva
+ligeiramente diferente a mesma cena. Isto pode ser observado com um simples experimento: alinhe o polegar da mão 
+esquerda com uma bandeirinha e seu nariz, e foque sua visão no dedo. Você verá a bandeirinha como 
+sendo duas, uma para cada olho (feche um olho e abra o outro e em seguida inverta), conforme a Figura~\ref{esquerdo}. 
+Agora direcione sua visão para a bandeirinha,  a visão que você terá com os dois olhos abertos é mostrada na Figura~\ref{direito}, 
+o polegar agora é visto como sendo dois.
+
+	\begin{figure}[!htb]
+	  \centering
+	  \subfloat[]{\includegraphics[scale=1]{imagens/olho_esquerdo} \label{esquerdo}}% neste comando o que está entre [] é o subtítulo da figura, caso você não queria nenhum subtítulo pode deixar em branco
+	  \subfloat[]{\includegraphics[scale=1]{imagens/olho_direito} \label{direito}} 
+	\caption{Na Figura~\ref{esquerdo} os olhos estão convergindo para o polegar e a bandeirinha é
+vista como dupla imagem. Na Figura~\ref{direito} os olhos agora estão convergindo para a
+bandeirinha e o polegar é visto como uma imagem dupla~\cite{Stereographics1997}.} % aqui nesta legenda eu me referi às imagens anteriores para mostrar como chamá-las no texto.
+	\label{bandeirinha}
+	\end{figure}
+
+Estas diferenças entre imagens geradas pelo olho direito e pelo olho esquerdo
+são processadas pelo cérebro nos dando uma noção de profundidade e, com isto, tem-se
+a idéia de imersão em um ambiente com objetos posicionados a distâncias diferentes.
+
+
+
+
+\section{Geração de Vídeos 3D}
+
+
+A TV-3D explora as características do sistema visual humano, recriando, embora não de forma verídica, 
+as condições que levam  percepção da profundidade relativa dos objetos na cena visual. Assim, o primeiro requisito 
+de imagens estereoscópicas é a captura de pelo menos dois pontos de vista da mesma cena a partir de duas câmeras 
+alinhadas horizontalmente. As imagens dos objetos na cena terá posições relativas diferentes nos dois olhos. Essa diferença
+é chamada de Paralaxe.
+
+O processo de geração de vídeos em 3D pode ser simulado por meio de duas câmeras organizadas com a mesma distância interocular 
+dos olhos humanos. Logo, colocando-se as câmeras separadas uma da outra com base nessa distância, é possível simular o 
+sistema visual humano.
+Quando cada imagem das câmeras for apresentada ao seu olho correspondente, as duas imagens serão fundidas em uma única
+imagem pelo cérebro, produzindo a ilusão da visão estereoscópica~\cite{Johanson2001}.
+
+Em~\cite{Johanson2001}, é apresentado dois tipos de configurações de câmeras passíveis para a captura de vídeo 
+estereoscópico:
+
+\begin{enumerate}
+ \item Câmeras em eixo paralelo;
+ \item Câmeras em eixo convergente (\textit{toed-in}).
+\end{enumerate}
+
+Na configuração de eixo paralelo, as câmeras são alinhadas de forma que os eixos centrais de suas lentes estejam em paralelo, 
+conforme a Figura~\ref{duas_cameras_paralelas}. A convergência das imagens é alcançada por meio de um pequeno deslocamento 
+dos sensores de captura das câmeras ou por meio de uma tradução horizontal (deslocamento horizontal das imagens para se alterar 
+a distância ou paralaxe entre os pontos correspondentes das imagens do olho direito e do esquerdo) e do corte das imagens
+resultantes. 
+
+	\begin{figure}[!htb]
+	  \centering
+	  \subfloat[]{\includegraphics[scale=1]{imagens/duas_cameras_paralelas} \label{duas_cameras_paralelas}}% neste comando o que está entre [] é o subtítulo da figura, caso você não queria nenhum subtítulo pode deixar em branco
+	  \subfloat[]{\includegraphics[scale=1]{imagens/duas_cameras} \label{duas_cameras}} 
+	\caption{Configuração de Câmeras:~\ref{duas_cameras_paralelas} Câmeras em Eixo Paralelo e~\ref{duas_cameras} Câmeras em Eixo Convergente
+	(\textit{toed in})~\cite{Johanson2001}.} 
+	\label{cameras}
+	\end{figure}
+
+Na segunda forma de configuração, eixo convergente, as duas câmeras são rotacionadas para que seus eixos centrais sejam 
+convergidos sobre um mesmo ponto no plano de projeção, conforme Figura~\ref{duas_cameras}. 
+O ponto em que a câmera converge vai ser trabalhada em relação as mesmas coordenadas na câmera da esquerda e da direita. 
+Portanto, tem paralaxe zero. Quando exibido estereoscopicamente, este ponto é um objeto representado no plano da tela. 
+Todos os pontos localizados a outras distâncias do objeto tem paralaxe negativo ou positivo que dependem das distâncias da 
+profundidade dos objetos e da separação horizontal dos pontos de vista do olho esquerdo e olho direito. Objetos desses pontos 
+aparecerão na frente ou atrás do plano da tela. As configurações do \textit{Toed-in} são fáceis de configurar e permitir que 
+um objeto de interesse possa ser posicionado no plano da tela, mas que geram distorções \textit{keystone} na câmera esquerda 
+e na câmera direita~\cite{Tori2006}. Distorções \textit{Keystone} transformam as imagens em formas semi-trapezoidal de tal 
+forma que as alturas verticais correspondam no mais entre os pontos de objetos correspondentes nas duas imagens. 
+Essas distorções podem afetar o conforto visual~\cite{Tam2011}.O problema é ilustrado na Figura~\ref{paralaxe}.
+
+
+	  \begin{figure}[!htb]
+	  \centering
+	  \subfloat[]{\includegraphics[scale=0.5]{imagens/paralaxe1} \label{paralaxe1}}% neste comando o que está entre [] é o subtítulo da figura, caso você não queria nenhum subtítulo pode deixar em branco
+	  \subfloat[]{\includegraphics[scale=0.5]{imagens/paralaxe2} \label{paralaxe2}} 
+	\caption{Paralaxe Vertical causada por Distorção \textit{ Keystone}: A Figura~\ref{paralaxe1} representa a Imagem
+Original e a Figura~\ref{paralaxe2} a Visão do olho esquerdo e direito sobrepostas~\cite{Tori2006}.} 
+	\label{paralaxe}
+	\end{figure}
+
+Para prevenir a ocorrência de distorções \textit{keystone}, as câmeras poderiam ser configuradas em uma configuração 
+paralela. Neste caso, os eixos ópticos das câmeras não convergem, mas são paralelas. Na configuração paralela, todos 
+os pontos do objeto tem alguma paralaxe, no entanto, as imagens obtidas com uma configuração em paralelo poderiam ser 
+modificadas para se alinhar horizontalmente as imagens de um objeto-alvo de interesse para ter paralaxe zero antes 
+de exibir, gerando assim uma distribuição de paralaxe comparável as distorções do \textit{toed-in}, mas sem 
+distorção de \textit{keystone}. 
+No caso da configuração de câmeras com eixos paralelos não ocorre paralaxe vertical, mas há necessidade de uma tradução 
+horizontal das imagens resultantes. Por causa dessa tradução, as imagens não são perfeitamente sobrepostas. Esse fato requer
+cortes nas imagens, de forma que somente um campo de visão comum seja apresentado. Dependendo de como as imagens são traduzidas,
+os planos de convergências podem ser posicionados em profundidades de percepção diferentes~\cite{Johanson2001}.
+
+Um requerimento básico para geração de vídeos 3D, é que o posicionamento das câmeras seja feito de tal forma, que o olho 
+esquerdo veja somente a imagem da câmera esquerda e o olho direito a imagem da câmera direita. Com as câmeras alinhadas 
+horizontal e verticalmente, a separação do intereixo deve ser de aproximadamente 65 milímetros, tornando a imagem produzida
+mais realista. Essa configuração é comum à todas as tecnologias estereoscopicas, incluindo a 3DTV~\cite{Holliman2011}. 
+
+\section{Visualização de Vídeos 3D}
+
+Na visualização do vídeo 3D para a televisão é necessário que o cérebro trabalhe da mesma maneira, com as 2 imagens.
+Para exibição do vídeo 3D existe duas vertentes: a estereoscopia que se refere a vídeo 3D (com óculos) e auto-estereoscopia 
+que representa vídeo 3D sem óculos.
+
+Na estereóscopia são utilizados óculos, passivos ou ativos. Os ativos devem ser alimentados normalmente por baterias, ao passo 
+que os passivos não requerem alimentação.
+
+\subsection{Óculos 3D Ativos}
+
+Os óculos obturadores (\textit{shutter glasses}) são os óculos ativos 3D mais comuns. As lentes são basicamente
+pequenos tela de LCD e por isso quando uma tensão é aplicada nas mesmas, as lentes escurecem, ou seja, o
+obturador fecha.
+
+% Em ambas as tecnologias, a separação olho é obtida por meio de óculos especiais que o telespectador precisa 
+% usar durante a exibição das imagens estereoscópicas. A primeira tecnologia usa uma \textbf{abordagem sequencial de tempo 
+% ativo}, em que os pontos da vista esquerda e direita são temporalmente alternados na tela em uma frequência muito alta. 
+% 
+Os óculos de cristal líquido obturadores ativos são usados para bloquear e desbloquear alternativamente a visibilidade 
+das imagens do olho esquerdo e do olho direito na sincronização com uma taxa de exibição do monitor. Assim, quando a vista 
+esquerda está sendo apresentada na tela, o obturador está aberto, deixando o obturador direito fechado, e 
+vice-versa. Como resultado, cada olho somente visualiza seu respectivo. 
+
+Taxas mais lentas (quadros/s) de atualização pode introduzir 
+\textit{flicker} (Cintilação indesejável na imagem que aparece na tela do monitor). Este, porém, geralmente não é visível, 
+desde que a frequência da mudança seja maior do que a frequência de \textit{flicker} crítica (CFF) do sistema visual humano~\cite{Tam2011}.
+
+As imagens sucedem-se com uma velocidade tal que o cérebro interpreta as duas imagens recebidas por cada
+olho em instantes de tempo consecutivos, em conjunto, gerando uma imagem 3D.
+
+Os óculos obturadores necessitam apresentar uma combinação transmissor-receptor que utilize tecnologia de
+infra-vermelhos, Bluetooth ou rádio. A televisão tem de enviar um sinal para os óculos se sincronizarem com a
+apresentação de imagens na tela. Usualmente é usado um feixe de infra-vermelhos que é difundido tal como nos
+comandos das TV's. Esse sinal é depois captado pelo receptor eletrônico presente nos óculos. A obturação de
+cada lente é comandada por sinais eléctricos alternados, o que está de acordo com o funcionamento dos LCD's~\cite{Fragoso}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.6]{imagens/xpand}
+\caption{Óculos obturadores da XpanD (únicos que podem ser usados
+tanto em cinema digital como em televisores)~\cite{Fragoso}.}
+\label{fig:xpand}
+\end{figure}
+
+A maior desvantagem do 3D ativo é que o conteúdo
+vai ser alternado entre os dois olhos ao ritmo em que o conteúdo é transmitido, ou seja, por exemplo se forem
+emitidas para o televisor 50 imagens por segundo, a cada olho apenas chegam 25 imagens por segundo. 
+
+A frequência de imagens em quadros por segundo (\textit{frame rate}) do ponto de vista do utilizador passou para metade.
+Em vez de 50 imagens 2D o utilizador passa a visualizar 25 imagens 3D. Esta quebra do ritmo tem
+consequências. Isto porque quanto maior esse ritmo, mais suaves são as transições entre imagens e portanto mais
+fluida é a visualização de movimento nos conteúdos emitidos.
+
+Assim todo o equipamento na cadeia de transmissão e recepção tem de ser capaz de processar imagens ao dobro
+do ritmo anterior para se manter a qualidade do vídeo. Isto significa que os requisitos de \textit{hardware} do
+equipamento a utilizar duplicam. O ritmo de atualização dos elementos de imagem (\textit{refresh rate do televisor}) é ao
+contrário do que acontece com o \textit{frame rate}, o suportado pelo televisor.
+
+Nos LCD's que suportam esta tecnologia o \textit{refresh rate} é usualmente elevado (de 100 Hz na Europa e de 120
+Hz na América). Isto para tornar as imagens mais nítidas e reduzir o efeito de \textit{motion blur} (o borramento da imagem
+quando as transições entre imagens são muito bruscas, devido ao movimento muito rápido da cena).
+
+Ainda que o \textit{refresh rate} seja elevado, a quebra do \textit{frame rate} nesta tecnologia pode ainda assim provocar
+ligeira trepidação (\textit{flicker}) em conteúdo apresentado em câmara lenta ou com rápido movimento~\cite{Fragoso}.
+
+Esta é a tecnologia de vídeo 3D com óculos que produz a melhor qualidade, sendo a tecnologia mais vulgar e
+mais cara no mercado dos televisores 3D.
+
+\textbf{Prós:} Excelente qualidade de imagem.
+
+\textbf{Contras:} televisor e óculos caros.
+
+% \subsection{Utilização de óculos ativos no cinema}
+% 
+% A tecnologia de \textit{shutter} LCD's ativa no cinema não requer o uso de uma tela de projeção especial como no
+% caso da tecnologia de luz polarizada. Contudo, os óculos são muito mais caros, o que requer que estes sejam
+% higienizados e reutilizados, ao contrário dos óculos de polarização que poderiam no limite ser descartáveis.
+% 
+% Os cinemas precisariam de implementar tecnologias anti-roubo para dissuadir os consumidores de levarem os
+% óculos consigo. Os óculos desta tecnologia contêm pequenas baterias que têm de ser substituídas
+% periodicamente e além disso, como qualquer tecnologia ativa às vezes simplesmente falham, tendo de ser
+% substituídos~\cite{Fragoso}.
+
+\subsection{Óculos 3D Passivos}
+
+ A tecnologia passiva é alcançada por polarização da luz e sinais de disparo eletrônico 
+ ou óptico, não obrigatórios. Neste método os filtros diferenciais das imagens da tela do olho esquerdo e do  
+ olho direito usam a polarização da luz, essas imagens são então vistas com filtros de polarização correspondentes 
+ colocado na frente do olho esquerdo e do olho direito. Os filtros circularmente polarizados são geralmente preferidos 
+ porque permitem movimentos a mais na cabeça sem afetar a separaçao da vista.
+
+\subsubsection{Óculos com filtros de cor}
+
+Os primeiros óculos 3D inventados usam um método denominado de Anaglífico de Cores Complementares.
+A tinta atua como um filtro de cor que consegue de alguma maneira filtrar uma imagem para o seu respectivo
+olho.
+
+O método de visualização estereoscópica anaglífica, é o mais simples dos métodos. Essa
+técnica caracteriza-se em colorizar com uma cor primária diferente cada uma das imagens referentes a cada olho, 
+de modo que o espectador possa separar cada uma das imagens que se
+encontram misturadas na tela utilizando óculos com uma lente vermelha e outra ciano~\cite{Mancini1994}.
+Para a visualização o espectador necessita utilizar óculos com um lado com lente vermelha (esquerda) e o outro 
+com lente ciano (luz ciano = luz verde + luz azul), como apresentado na Figura~\ref{fig:vermelhocyan}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.4]{imagens/vermelhocyan}
+\caption{Óculos com filtros de cor vermelho e cyan~\cite{Fragoso}.}
+\label{fig:vermelhocyan}
+\end{figure}
+
+Para a codificação do vídeo estereoscópico é necessário separar os canais
+RGB dos vídeos de cada umas das vistas (olho direito e olho esquerdo) do par estereoscópico, Figura~\ref{fig:LA2}. Compondo-se a componente
+do olho direito e a componente do olho esquerdo em um
+novo vídeo RGB. A imagem anaglífica resultante pode ser observada na Figura~\ref{fig:LA3}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.4]{imagens/LA2}
+\caption{Processo de extração do Canal Vermelho do vídeo 1 e do Canal Ciano do
+vídeo 2.}
+\label{fig:LA2}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.4]{imagens/LA3}
+\caption{Exemplo de um quadro anaglífico (a percepção de profundidade desta imagem pode
+ser observada com óculos anaglífico ciano-vermelho)}
+\label{fig:LA3}
+\end{figure}
+
+A lente vermelha deixa passar as "partes vermelhas" da imagem como partes claras (brancas) e a lente ciana
+deixa passar as "partes azuis e verdes" da imagem que aparecerão como
+claros e bloqueia as partes vermelhas da imagem que aparecerão como escuros.
+
+Deste modo cada olho vê uma imagem (claros e escuros) diferente, que interpretadas em conjunto pelo
+nosso cérebro dão origem a uma imagem 3D. O cérebro em todo este processo fornece uma
+adaptação de modo a dar cor à imagem. 
+
+Este formato de emissão 3D é limita a quantidade de cores que podem ser usadas para criar conteúdo, o que conduz a 
+que esta técnica não seja muito realista, sendo por isso pouco imersiva, razão pela qual já não se recorre a 
+ela quer nos cinemas quer nas TV's~\cite{Fragoso}.
+
+\textbf{Prós:} Barato e fácil de criar a ilusão 3D.
+
+\textbf{Contras:} Pode causar dores de cabeça ou náuseas e a qualidade do 3D é má devido à perda e falta de variedade de cor.
+
+% Nos Cinemas Dolby 3D recorre-se a uma tecnologia chamada ``Infitec'' (\textit{Interference Filter Technology}). Esta
+% tecnologia utiliza filtros de cor como nos óculos já mencionados mas utilizando um método muito mais
+% avançado e é pouco claro para nós o seu método de funcionamento~\cite{Fragoso}.
+% 
+% \begin{figure}[!htb]
+% \centering
+% \includegraphics[scale=0.4]{imagens/dolby}
+% \caption{Óculos Dolby 3D e a sua utilização no cinema~\cite{Fragoso}.}
+% \label{fig:dolby}
+% \end{figure}
+% 
+% No entanto recorrendo a esta tecnologia consegue-se produzir um 3D com cor realista. Ainda assim o 3D
+% produzido é inferior ao obtido por polarização ou por óculos activos.
+
+\subsubsection{Óculos de polarização 3D}
+
+Lentes linearmente polarizadas usam polarização vertical em uma lente e polarização horizontal na outra. Duas
+imagens são captadas de dois ângulos ligeiramente diferentes e são projetadas com um projetor cada.
+Cada imagem tem de ter sido previamente polarizada da mesma forma que as lentes dos óculos, de forma
+que cada imagem chegue ao seu respectivo olho. A superfície na qual as imagens são projetadas é coberta 
+com elementos químicos especiais para não afetar o efeito da polarização~\cite{Fragoso}.
+
+Assim produz-se um efeito 3D desde que os utilizadores mantenham a cabeça na posição correta. Inclinar a cabeça
+irá "estragar" o efeito 3D, o que se entende observando a Figura~\ref{fig:polarizadores}. Observe que se 
+o utilizador inclinar a cabeça, as lentes polarizadas já não coincidem com as respectivas
+imagens polarizadas~\cite{Fragoso}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.4]{imagens/polarization}
+\caption{Luz a passar por polarizadores~\cite{Fragoso}.}
+\label{fig:polarizadores}
+\end{figure}
+
+Nas lentes com polarização circular, uma lente é polarizada no sentido dos ponteiros do relógio, a outra no
+sentido contrário aos ponteiros do relógio. Com esta tecnologia, o efeito 3D é mantido se o utilizador inclinar a
+cabeça e além disso é apenas necessário um projetor. Um polarizador circular tem de ser colocado à frente do
+projetor. Este polarizador alterna rapidamente entre os dois sentidos de polarização para criar o efeito 3D,
+polarizando cada duas imagens consecutivas em sentidos inversos uma da outra.
+
+Os cinemas estão agora a fornecer óculos com lentes polarizadas para a visualização de filmes 3D. Foi esta a
+tecnologia que foi utilizada na transmissão e nos óculos que permitiram ver o filme
+Avatar nos cinemas em 3D~\cite{Fragoso}. Essa emissão foi de 24 imagens (\textit{frames}) por segundo para cada
+olho, ou seja, 48 imagens 2D correspondendo a 24 imagens 3D por segundo. Para reduzir o efeito de \textit{flicker}
+projeta-se cada imagem 3 vezes na tela~\cite{Fragoso}.
+
+Todo o equipamento envolvido em transmissões deste tipo no cinema é muito caro, excepto os óculos que são
+baratos. Esta tecnologia tem maior probabilidade de ser afetada por \textit{crosstalk} (Apêndice~\ref{crosstalk}) que a tecnologia ativa (imagem
+destinada a um olho ser parcialmente ou totalmente captada pelo outro, o que causa efeito fantasma).
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.4]{imagens/cinema_oculos}
+\caption{Óculos de polarização 3D no cinema~\cite{Fragoso}.}
+\label{fig:cinema_oculos}
+\end{figure}
+
+
+Ao ser usado apenas um projetor, os sistemas 3D de visualização de filmes no cinema que utilizam luz
+polarizada causando uma perda de brilho na tela ainda maior que no caso de uso de óculos ativos. Isto deve-se à
+distribuição do conteúdo entre os dois olhos e aos próprios filtros polarizadores nos óculos que bloqueiam ainda mais
+radiação. Isto pode ser corrigido recorrendo a projetores mais brilhantes.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.4]{imagens/oculos_realD}
+\caption{Óculos de polarização 3D~\cite{Fragoso}.}
+\label{fig:cinema_oculos}
+\end{figure}
+
+\textbf{Prós:} Óculos baratos e de peso leve, imagens com grande nível de detalhe e cor, boa 
+qualidade de imagem~\cite{Fragoso}.
+
+\textbf{Contras:} Maior probabilidade de ocorrer \textit{crosstalk}.
+
+
+
+Apenas a LG conseguiu até agora tornar a tecnologia de polarização circular viável para televisores. As
+restantes usam polarização linear e reduzem a resolução do conteúdo 3D
+a metade da resolução do conteúdo 2D equivalente. Isto porque é feito o entrelaçamento das duas vistas 2D na tela. 
+Além disso estes televisores contêm o problema da inclinação da cabeça
+estragar o efeito 3D, embora este tipo de visualização seja menos afetado pela perda de brilho~\cite{Fragoso}.
+
+\subsection{Tecnologias Sem Óculos}
+
+Como se sabe a necessidade de usar óculos 3D é uma das maiores barreiras para a aceitação em massa da televisão
+3D como um meio de entretenimento. Os óculos podem ser caros, desconfortáveis para alguns e a necessidade de
+usá-los significa que existe a obrigação de possuir múltiplos pares para se visualizar conteúdo 3D com a
+família ou amigos. 
+
+Nos \textit{displays} autoestereoscópicos, as visões esquerda e direita são multiplexadas
+espacialmente, permitindo ao observador visualizar uma imagem tridimensional sem a
+necessidade óculos especial. Cada imagem do par estéreo é ``fatiada'' e reside sobre as
+colunas pares e ímpares do monitor. As fatias são direcionados para o olho do
+observador por meio de uma película lenticular colocada na superfície do monitor
+(Figura~\ref{fig:autoestereoscopico}) ou pelo cálculo de distância e posicionamento dos olhos do observador.
+Maiores detalhes podem ser encontrados em~\cite{Tori2006}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=1]{imagens/autoestereocopico}
+\caption{Display Autoestereoscópico.~\cite{Tori2006}.}
+\label{fig:autoestereoscopico}
+\end{figure}
+
+\subsubsection{Tecnologia de Barreira de Paralaxe}
+
+Esta tecnologia funciona da seguinte forma: pequenas lentes são integradas na tela da TV. Essas lentes
+consistem em camadas de LCD's. Cada uma dessas camadas contém pequenas tiras que escondem pixels
+específicos (criando fendas de precisão) de forma que um conjunto de pixels só possa ser visualizado pelo olho
+esquerdo e outro conjunto de pixels só possa ser visualizado pelo olho direito~\cite{Fragoso}.
+
+
+Devido ao fato das lentes serem embutidas na tela, o uso de óculos para a visualização do 3D deixa de ser
+necessário. A principal desvantagem da tecnologia de barreira de paralaxe é que esta apenas funciona se o utilizador
+permanecer num local bem definido ("\textit{sweet spot}") sendo que o efeito 3D desvanece caso este se desloque para um
+outro local. Esse local é sensivelmente, em frente da tela, a uma certa (curta) distância. Por essa mesma razão os
+primeiros equipamentos do tipo fabricados pela Toshiba por exemplo, têm sido relativamente pequenos. O brilho
+da tela é também afetado nesta tecnologia como acontece em todas as outras~\cite{Fragoso}.
+
+Para se obter compatibilidade direta, é possível visualizar conteúdo 2D com esta tecnologia bastando
+tornar a barreira de paralaxe transparente, de forma que a luz a atravesse e os dois olhos vejam a mesma imagem
+2D. Isto pode ser feito com sinais elétricos uma vez que a barreira consiste em camadas LCD~\cite{Fragoso}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{imagens/paralaxe}
+\caption{Tecnologia de barreira de paralaxe~\cite{Fragoso}.}
+\label{fig:paralaxe}
+\end{figure}
+
+
+
+\subsubsection{Tecnologia de lentes lenticulares}
+
+Outro método de proporcionar 3D TV sem óculos é utilizar lentes lenticulares (lentes convexas), que são
+projetadas e realizadas para que uma imagem diferente seja recebida por cada olho dependendo do ângulo de
+visualização do utilizador.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=1]{imagens/lenticulares}
+\caption{Tecnologia de lentes lenticulares~\cite{Fragoso}.}
+\label{fig:lenticulares}
+\end{figure}
+
+As duas imagens 2D ligeiramente diferentes, a ser transmitidas para gerar uma imagem 3D, são alternadas
+em linhas (tiras) na tela. As lentes referidas são alinhadas com as imagens a ser transmitidas de tal 
+forma que a luz refletida por cada tira
+é refratada numa direção ligeiramente diferente, mas a luz refletida pelos \textit{pixels} que emitem a mesma imagem é
+enviada na mesma direção (ângulo). O resultado final é que cada olho vê uma imagem inteira diferente, o que
+conduz à visualização de uma imagem 3D.
+
+Com esta tecnologia consegue-se uma menor redução de brilho do que na tecnologia de barreira de paralaxe e
+consegue-se também uma maior abrangência de ângulos de visualização (permitindo que mais do que uma pessoa 
+visualize a emissão 3D ao mesmo tempo), que no caso do uso de tecnologias de
+barreira de paralaxe é muito restrito.
+
+A abordagem de vistas múltiplas com lentes lenticulares, reduz a resolução da imagem, porque muitos
+\textit{pixels} são utilizados para mostrar a mesma imagem 3D a ângulos diferentes. Ou seja, existe o dilema: a televisão
+necessita de suportar o efeito 3D para muitos ângulos de visualização para tornar a 3D TV sem óculos prática para
+vários utilizadores. No entanto, a resolução irá degradar-se à medida que mais ângulos são adicionados~\cite{Fragoso}.
+
+
+\subsubsection{Tecnologia de monitorização de utilizador}
+
+Esta tecnologia (denominada de \textit{head tracking} na linguagem anglo-saxônica) funciona por meio do uso de
+uma webcam que segue os olhos do utilizador e ajusta as imagens enviadas da tela para cada olho à medida que o
+utilizador se move para que este veja em 3D.
+
+Esta tecnologia só funciona claramente para um utilizador de cada vez, razão pelo qual parece mais
+adequada a utilizar em aparelhos mais pessoais, com telas pequenas como celulares (\textit{smartphone}) ou 
+computadores portáteis. De fato, já foram mostrados computadores portáteis 3D que recorrem a esta tecnologia. 
+Repare-se que assim já não existe mais o problema do ângulo de visualização do utilizador, como no caso do uso
+de barreira de paralaxe~\cite{Fragoso}.
+
+\subsubsection{Tecnologia de 3D automático}
+
+Para solucionar o problema de falta de conteúdos 3D disponibilizados pelo mercado, numa fase inicial alguns
+televisores 3D, da Samsung por exemplo, realizam  conversão de conteúdos emitidos em 2D para 3D em
+tempo real. Este método funciona com DVD's, Blu-Ray, e TV (\textit{broadcast}). No entanto, a precisão 
+obtida neste tipo de vídeo 3D nomeadamente no que toca à profundidade, está longe
+do verdadeiro 3D estereoscópico filmado com duas câmaras.
+
+O processo limita-se a simular um efeito 3D não contendo qualquer informação da profundidade da cena a
+ser exibida. Logo não se oferece a verdadeira informação de profundidade da cena ao contrário do que acontece
+com o verdadeiro 3D.
+
+
+\section{Conclusão}
+
+Garantindo que as diferentes visualizações são corretamente apresentados para os diferentes olhos, que provou ser um grande 
+desafio. Na verdade, com ambas as tecnologias passivas e ativas da separação dos olhos estão longe de ser perfeito, 
+pois algumas das informações destinados a um olho é visto pelos outro olho. Este vazamento de informações de um olho 
+para o outro olho é conhecido como \textit{crosstalk} (Apendice~\ref{crosstalk})~\cite{Tam2011}. Um dos requisitos mais 
+importantes de um sistema estereoscópico é a capacidade de limitar a quantidade de \textit{crosstalk}. Sabe-se que mesmo 
+uma pequena quantidade de \textit{crosstalk} pode ter um efeito negativo sobre a qualidade da imagem. No entanto,  menos claro qual 
+ a quantidade de \textit{crosstalk} tem um efeito negativo sobre o conforto~\cite{Tam2011}.
+

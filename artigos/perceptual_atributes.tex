@@ -1,0 +1,367 @@
+\chapter{Percepção dos 	Atributos do Vídeo 3D}
+
+% author={Yasakethu, S.L.P. and Fernando, W.A.C. and Kamolrat, B. and Kondoz, A.}, 
+% journal={IEEE Transactions on Consumer Electronics}, 
+% title={Analyzing perceptual attributes of 3d video}, 
+% year={2009}, 
+
+O vídeo 3D é um passo além do vídeo convencional (2D), fornecendo a percepção de profundidade da cena 
+para os usuários. Os recentes avanços tecnológicos, em aquisição de vídeo, processamento de imagem, 
+multimídia e \textit{displays}, significa que a prestação de serviços, tais como 3DTV (Televisão 
+3D), FVV (\textit{Free View point Video}) e conferência 3D estão agora tecnicamente viáveis. 
+
+A pesquisa em vídeo 3D tem recebido grande interesse na última década, a fim de oferecer aos 
+telespectadores uma visão mais realista do que o vídeo 2D. Com os recentes avanços na compressão 
+de vídeo digital e tecnologias de transmissão digital, como H.264/AVC e WiMAX, as aplicações de 
+transmissão de vídeo  3D em tempo real podem ser realizadas~\cite{Yasakethu2009}.
+
+O H.264/AVC é um padrão de compressão de vídeo, também conhecido como MPEG-4 Parte 10 - 
+\textit{Advanced Video Coding} (AVC). Ele tem muitas características novas para alcançar 
+melhoria significativa na eficiência de codificação em comparação com padrões anteriores. 
+Além disso, proporciona mais flexibilidade para aplicações em uma ampla variedade de 
+ambientes de rede usado a aplicação de um conceito de Camada de Adaptação da Rede (NAL -- 
+\textit{Network Adaptation Layer}). 
+
+A alta taxa de dados e Qualidade de Serviço (QoS) fornecido pela tecnologia WiMAX torna o 
+atraente para aplicações multimídia, como vídeo telefonia, vídeo, jogos e transmissão de vídeo. 
+O padrão IEEE 802.16e WiMAX, também conhecido como Wireless MAN, é capaz de suportar taxas de 
+dados de até 70 Mbps~\cite{Yasakethu2009}. 
+
+Vídeos com alta compressão são muito sensíveis a erros de canal~\cite{Richardson2003a}. Para 
+melhorar ainda mais o desempenho de transmissão de vídeo 3D sobre canal sem fio que é considerado 
+como largura de banda limitada e sujeito a erros, o JSCC (\textit{joint source channel coding}) é 
+um método eficaz para superar tais desafios~\cite{Bystrom2000,Murad1998}. O principal conceito da 
+JSCC é que tanto a codificação de fonte e quanto a codificação de canal são adaptados de acordo 
+com as condições de canal de forma a minimizar a distorção. 
+
+Distorções na comunicação por vídeo pode ser separado em dois tipos principais. O primeiro tipo 
+é a distorção de quantização introduzido pela codificação de fonte com perdas e o segundo tipo é 
+causado pelo ruído do canal. Essas distorções são chamados simplesmente de "distorção de origem" e
+"Distorção de canal". A distorção total é igual à adição de distorções fonte e canal. Uma medida 
+popular para a distorção é um erro quadrado médio (MSE). Mas é um fato bem conhecido que, devido 
+à falta de correlações com o sistema visual humano (HVS) o MSE não é possível avaliar a qualidade 
+de forma precisa~\cite{Regis2009a}. 
+
+\section{Produção de vídeo 3D}
+
+A última abordagem de transmissão de TV em 3D foi proposta pela Sociedade Europeia da Informação e 
+Tecnologia (IST) pelo projeto ``\textit{Advanced Technologies Tridimensional Television System} 
+(ATTEST)''~\cite{Yasakethu2009}. A representação 3D utilizada nesta abordagem, baseada em vídeo 
+monoscópico e informações associadas a profundidade para cada \textit{pixel}, é chamado de imagem 
+de profundidade com base na renderização (DIBR). O conceito de TV  3D ATTEST pode ser separada em 
+cinco seções: a criação de conteúdo 3D, codificação 3D, a transmissão, a síntese de visualização 
+virtual e o \textit{display} 3D. Na parte de codificação, o vídeo monoscópico é codificado pelo 
+MPEG-2 e as informações de profundidade são codificados com codec mais eficiente, tais como MPEG-4. 
+Posteriormente, os fluxos de dados codificados são transmitidos pela rede de transmissão de 
+vídeo digital (DVB). No receptor, os fluxos de dados recebidos são sintetizados e apresentados em uma tela 3D. 
+
+A TV digital convencional pode exibir o vídeo 2D, enquanto a informação de profundidade é ignorado. 
+A principal vantagem da técnica DIBR em comparação com a representação tradicional de vídeo 3D, 
+com os pontos de vista esquerda-direita, é que ele oferece o vídeo 3D de alta qualidade com menor 
+largura de banda necessária para a transmissão~\cite{Yasakethu2009}. 
+
+\textbf{Isso ocorre porque o mapa de profundidade pode ser codificado mais eficientemente que as duas 
+correntes de opiniões monoscópico se correlacionadas e as propriedades do mapa de profundidade 
+são identificadas corretamente.}
+
+Enquanto a cor é armazenada da mesma forma como no vídeo 2D normal, o mapa de profundidade é 
+armazenada usando apenas uma componente. Como 8 \textit{bits} de profundidade componente é usado, 
+256 valores de profundidade diferentes estão associados aos \textit{pixels} do mapa de profundidade. 
+
+
+Conceitualmente, o DIBR utiliza uma estrutura de profundidade para gerar 2 vistas virtuais a partir 
+da mesma visão de referência (original), uma para o olho esquerdo e outra para o olho direito~\cite{Yasakethu2009}. 
+Este processo pode ser descrito por um procedimento de 2 etapas seguintes. Em primeiro lugar, os 
+pontos da imagem original são re-projetados no domínio 3D, utilizando os valores de profundidade 
+respectivos. Posteriormente, esses pontos de espaço intermediário são projetados para o plano 
+da imagem de uma câmera virtual localizado na posição de visualização. Este procedimento 2-\textit{step} 
+é normalmente referido como ``entortar imagem 3D'' na literatura de computação gráfica. O 
+processo de geração de pontos de vista virtuais é apresentado na Figura~\ref{DIBR}. Neste processo, os 
+pontos da imagem original em locais ($x, y$) são transferidos para novos locais ($x_L, y$) e ($x_R, y$) 
+para a vista esquerda e direita, respectivamente. Este processo é definido por:
+
+\begin{equation}
+ x_L = x + \dfrac{\alpha_x t_c}{2} \left( \dfrac{1}{z} - \dfrac{1}{z_c}\right)
+\end{equation}
+
+\begin{equation}
+ x_R = x - \dfrac{\alpha_x t_c}{2} \left( \dfrac{1}{z} - \dfrac{1}{z_c}\right)
+\end{equation}
+em que $\alpha_x$ é o comprimento focal da câmera de referência, expressa em múltiplos da largura 
+de \textit{pixel} e $t_C$ é a distância entre as câmeras virtuais da esquerda e direita. O $Z_C$ é 
+a distância de convergência localizado na definição de paralaxe zero (ZPS, Apendice~\ref{fund_mat}) do plano e $Z$ é o 
+valor da profundidade de cada \textit{pixel} na exibição de referência. Observada que a componente 
+$y$ é constante desde as câmeras virtuais usadas para capturar os pontos de vista virtual 
+(esquerda-direita) estão a ser assumida localizado no mesmo plano horizontal. A qualidade de 
+pontos de vista virtual depende da qualidade da cor recebida e mapa de profundidade. Em um sistema 
+de transmissão de vídeo a deficiência de quadros sintetizado depende tanto a compressão e transmissão de processos.
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=1]{imagens/DIBR}
+\caption{Geração da visão virtual no processo DIBR~\cite{Yasakethu2009}.}
+\label{DIBR}
+\end{figure}
+
+
+% \section{medições de qualidade objetiva e subjetiva}
+% 
+% A avaliação de qualidade de vídeo podem ser divididos em duas classes, métodos subjetivos e objetivos. 
+% Intuitivamente pode-se dizer que o melhor avaliador da qualidade é o ser humano a si mesmo. É por isso 
+% que os métodos subjetivos seriam as medidas mais precisas de qualidade perceptual e até esta data as 
+% experiências subjetivas são o único método amplamente reconhecido de julgar a qualidade percebida [14]. 
+% Nestes experimentos os seres humanos estão envolvidos para avaliar a qualidade de um vídeo em um ambiente 
+% de teste controlado. Isto pode ser feito por meio de um vídeo com qualidade  distorcida que tem de ser 
+% avaliado pelo sujeito. Outra maneira é adicionalmente, oferecem uma referência/vídeo original que o 
+% sujeito pode usar para determinar a qualidade relativa do vídeo distorcidos. Estes métodos diferentes são 
+% especificados para imagens de televisão por porte ITU-R [15] e são, respectivamente, referidos como 
+% única avaliação da qualidade de estímulo contínuo (SSCQE) e estímulo dupla contínua de qualidade em escala (DSCQS).
+% 
+% Da mesma forma, para aplicações multimédia a classificação da categoria absoluto (ACR) e avaliação da 
+% degradação categoria (DCR) são recomendados por [16] ITU-T. Comum a todos os procedimentos é a partilha 
+% dos votos em uma pontuação média de opinião (MOS), que fornece uma medida de qualidade subjetiva sobre a 
+% mídia no conjunto de teste fornecido. Avaliação da qualidade subjetiva tem duas desvantagens óbvias. 
+% Primeiro, a avaliação da qualidade é caro e muito tedioso, uma vez que tem que ser feita com cautela, a 
+% fim de obter resultados significativos, o que leva tempo muito demorado para ser concluído. Segundo, é muito 
+% difícil de ser integrado no ciclo de desenvolvimento de aplicações em tempo real. Assim, são necessários métodos 
+% automatizados que tentam prever a qualidade como seria percebido por um observador humano. Nós nos referimos a 
+% eles como métricas de qualidade objetiva. Os métodos existentes têm um alcance enorme de computação e memória métodos 
+% numéricos eficientes para modelos altamente complexos aspectos incorporação do sistema visual humano (HVS) [17].
+% 
+% Nas últimas duas décadas, uma série de métricas objetivas têm sido propostos para avaliar a qualidade de imagem/vídeo. 
+% Eles podem ser divididos em duas categorias de métodos principais: saber psicofísicos e métodos estatísticos. 
+% Projeto métricas após a primeira abordagem é baseada principalmente na incorporação de vários aspectos da HVS 
+% que são considerados cruciais para a percepção visual. Isso pode incluir a modelagem de contraste e sensibilidade 
+% orientação, efeitos de máscara espacial e temporal, a seletividade de frequência e percepção das cores. Números 
+% de métricas de qualidade, tais têm sido propostas por diferentes autores na literatura, como Quality Video Mertic 
+% (VQM) [18], a Medida Qualidade Perceptual Video (PVQM) [19], e Moving Picture Qualidade Metric (MPQM) [20].
+% 
+% Métodos a seguir a abordagem estatística é baseada principalmente na análise de imagem e extração de características. 
+% Estes métodos também contêm certos aspectos dos parâmetros HVS também. As características extraídas e artefatos 
+% podem ser de diferentes tipos, tais como informação espacial e temporal. Enfim, independentemente da natureza da 
+% métrica objetivo, seu resultado pode ser conectado a percepção visual humana, relacionando-os a MOS obtidos em 
+% experimentos subjetivos.
+% 
+% Neste trabalho, três modelos de qualidade amplamente aceita objetivo são usados para investigar a sua correlação 
+% com a qualidade percebida de vídeo 3D. Uma descrição de cada um dos indicadores é dado abaixo.
+
+% B.3 Video Quality Metric (VQM)
+% 
+% Métrica de Qualidade de vídeo  (VQM) é desenvolvido pelo Instituto de Ciências Telecomunicações (ITS) e 
+% American National Standard Institute (ANSI) para fornecer uma medida objetiva de qualidade de vídeo percebida. 
+% VQM é um método padronizado que intimamente prevê as classificações de qualidade subjetiva, que seria obtido 
+% a partir de um painel de humanos [18]. VQM mede os efeitos de percepção de deficiências de vídeo, incluindo 
+% borragem, movimento espasmódico/artificial, ruído global, distorção bloco e distorção de cor, e os combina 
+% em uma única métrica. Devido ao seu excelente desempenho na Qualidade de Vídeo Especialista Internacional 
+% Grupo (VQEG) Fase II testes de validação [22], a NTIA / métodos SEUS VQM foram adotadas pelo ANSI como padrão 
+% nacional dos EUA e como recomendações internacionais da UIT, em 2004. Para mais informações sobre as 
+% calibrações VQM e qualidade técnicas de leitores de avaliação deve referir-se [18].
+% 
+% Estes três modelos de qualidade objetivas são usados para prever a qualidade do vídeo percebida 3D. Neste estudo, 
+% a relação de dois atributos de percepção 3D, tais como, qualidade de imagem e profundidade com a qualidade global 
+% 3D e a previsão desses percepção atributos usando medições de qualidade 2D objetivo são investigados.
+
+\section{Modelo de Simulação e resultados experimentais}
+
+\subsection{Avaliação do sistema JSCC ideal para cor e profundidade de vídeo baseado em 3D}
+
+Nesta seção o efeito de JSCC sobre a transmissão de vídeo 3D baseado DIBR é investigado. Para maximizar a 
+qualidade de vídeo 3D, quando a quantidade total de \textit{bits} é fixada, a alocação de \textit{bit} 
+otimizado é necessário para ambas as cores e mapas de profundidade. Nas abordagens convencionais, em que 
+são utilizados 8 \textit{bits} por \textit{pixel} para o mapa de profundidade, uma pequena mudança no 
+valor do \textit{pixel} para o mapa de profundidade não tem muito impacto sobre a qualidade de vídeo 3D 
+em geral. Na literatura, uma relação adequada para a taxa de \textit{bit} entre a cor e o mapa de profundidade, 
+foi encontrado experimentalmente~\cite{Tikanmaki2008}, considerando-se a mais alta qualidade de decodificação 
+para relações pouco diferente da taxa de cores e do mapa de profundidade. Tendo em conta estudos anteriores, 
+cores e mapa de profundidade são codificados por H.264/AVC com 80\% e 20\% do total taxa de \textit{bits} de 
+codificação de fonte, respectivamente~\cite{Tikanmaki2008}. Várias sequências de vídeo 3D são considerados. 
+Como sempre, ``Orbi'' (médio para alto movimento, alta variação de textura e movimento de câmera em paralelo) 
+e ``Interview'' (baixo movimento/ variação de textura com a câmera estática) foram as sequências de vídeo usados
+ em~\cite{Yasakethu2009}, considerando suas características de movimento diferentes, com 25 fps , resolução 
+CIF (352 $\times$ 288), 8-\textit{bits} por cada cor e componente de profundidade e há 30 P-quadros entre os quadros I.
+
+O orçamento total de \textit{bit} $B_{total}$  para transmissão é fixada em 2 Mbps. Vamos assumir que 
+as taxas de codificação de cores e mapa de profundidade são indicadas como $R_C$ e $R_D$, respectivamente. 
+A relação entre o tamanho total e a taxa de \textit{bit} de cor $B_C$ e da taxa de \textit{bit} do mapa de 
+profundidade $B_D$ é:
+
+\begin{equation}
+ \dfrac{B_C}{R_C} + \dfrac{B_D}{R_D} \approx B_{total}
+\end{equation}
+
+
+Quando a relação da cor e as taxas de profundidade de \textit{bit} do mapeamento é definida para 
+os valores otimizados da taxa total de codificação de fonte (80\% para o vídeo de cor e 20\% para 
+mapa de profundidade) $B_{C + D}$ a taxa de bits total é:
+
+\begin{equation}
+ \dfrac{0,8 B_{C+D}}{R_{C}} + \dfrac{0,2 B_{C+D}}{R_D} \approx B_{total}
+\end{equation}
+
+% O modelo geral do sistema considerado é ilustrada na Figura 2. O transmissor (Tx), a cor e o mapa de 
+% profundidade são separadamente comprimido por codificadores H.264/AVC e protegido por códigos LDPC. 
+% Os fluxos de \textit{bits} de saída são reorganizados para obter uma saída única no multiplexador. 
+% Posteriormente, a saída do multiplexador é transmitida por WiMAX em um canal com desvanecimento Rayleigh. 
+% No receptor (Rx), recebeu fluxo de dados é separado de volta para dois fluxos de dados antes de ser 
+% decodificado por LDPC e decodificadores H.264/AVC, respectivamente. Ao final do processo, a cor e o mapa 
+% de profundidade são reconstruídos. Neste experimento, cada quadro de ``Orbi'' e ``Interview'' está dividido 
+% em 18 fatias. Dados de cor e do mapeamento de profundidade são protegidos por código LDPC com taxas de 
+% codificação de 1/2 e 2/3. Com todas as combinações, 4 esquemas de proteção estão disponíveis 
+% (1/2 e 1/2, 1/2 e 2/3, 2/3 e 1/2, 2/3 e 2/3, em que $X$ e $Y$ referem-se a $R_C$ e $R_D$, respectivamente).
+%  
+% O WiMAX-LDPC é utilizado para transmitir fluxos de dados de cor e do mapeamento de profundidade em canal 
+% sem fio que tem a característica de desvanecimento Rayleigh. O tamanho do quadro WiMAX é definido para 
+% 1056 \textit{bits}. O fluxo de dados é modulada com 64-QAM. No receptor, o fluxo de dados é demodulado 
+% pelo algoritmo log-MAP e decodificado pelo algoritmo  soma-produto de decodificação com iteração máximo 
+% definido para 50. Além disso, supõe-se que todos os erros podem ser perfeitamente detectado e se for 
+% detectado um erro na fatia após decodificador de canal, a fatia inteira é simplesmente descartado. 
+% Finalmente, o modo 1 de ocultação de erro da versão do software de referência JM 10 [25] é aplicado 
+% simplesmente copiando a área do pixel do quadro de referência que está no mesmo local que o macrobloco na imagem atual. 
+% 
+% 
+% Testes subjetivos foram realizados para avaliar a qualidade do vídeo recebido. Para a análise subjetiva 
+% foi utilizada uma Philips 42" WOWvx multi-view display auto-estereoscópica (display de resolução de 
+% 1920x1080 e de proporção 16:9). A distância de visualização para os observadores é definida a 3m, o que é ótimo 
+% para a diplays óticos. O display 3-D é calibrado com uma GretagMacbeth Eye-One Display dispositivo de 
+% calibração 2. Luminância de pico do visor é de 200 cd/m2. A iluminação ambiental foi medido de 
+% 190 lux, que está mais próximo do valor recomendado (200 lux) em [15] para ambientes domésticos. 
+% A luminância de fundo da parede atrás do monitor é de 20 lux para as experiências subjetivas. Durante os 
+% testes de avaliação subjetiva, os observadores são solicitados a classificar as sequências de vídeo de 
+% acordo com a Escala de Qualidade de casal estímulo contínuo (DSCQS) método, como descrito na Recomendação 
+% ITU-BT.500-11 [15]. A qualidade da imagem percebida, a profundidade percebida e qualidade geral da 
+% experiência 3D (levando em conta todos os atributos multidimensional de vídeo 3D) são classificados 
+% em uma escala de qualidade categórico 1-5, onde 1 representa má percepção de qualidade de 
+% imagem/profundidade e 5 representa excelente qualidade de imagem/percepção de profundidade.
+% 
+% Além disso, a escala é rotulado com os termos adjetivo ou seja, [mau], [pobre], [razoável], [bom] e 
+% [excelente] de acordo com [15]. 25 observadores especialistas participaram em nossos experimentos. 
+% O conjunto de estímulo contém 12 sequências de vídeo prejudicada (4 esquemas JSCC e 3 condições de 
+% canal: SNR 10, 12 e 14dB) e a versão original, sem compressão de cada cena é utilizado como 
+% referência no teste de avaliação. Portanto, no total, duas sequências de teste, uma repetição e 
+% 4 esquemas JCSS, e três condições de canal são usados. Isto resultou em um conjunto de estímulos 
+% de 48 sequências de vídeo para os experimentos subjetivos. O conjunto de 48 sequências de vídeo 
+% estereoscópico é aleatória e apresentados sequencialmente. Durante a análise dos resultados, a 
+% diferença de avaliações subjetivas para as sequências de imagem prejudicada e as sequências de 
+% imagem original são calculados. Então a diferença é escalado em uma escala linear, que varia de 
+% 0 (excelente: mesma qualidade que a sequência original) a 100 (ruim: muito pior qualidade do que 
+% a sequência original). Em seguida, o Opinion Score média (MOS) para cada sequência de teste é obtida 
+% após média das pontuações de opinião para todos os assuntos. Os resultados são expressos na Figura 3 
+% pela MOS para diferentes canais de sinal-ruído relações com diferentes esquemas de proteção JCSS.
+% 
+% Quando o nível de proteção é variado, o desempenho do sistema podem ser resumidas como segue. O esquema de proteção "1/2 e 1/2" apresenta o melhor desempenho, especialmente na região de SNR baixo, uma vez que proporciona um nível de proteção semelhante para ambas as sequências de cores e de profundidade. No entanto, em melhores condições de canalizar o "1/2 e 2/3", que oferece menos proteção ao mapa de profundidade em comparação com a cor do vídeo, podendo obter um MOS satisfatória. Mas para "2/3 e 1/2", com menos proteção para a cor do vídeo se mostra um maior nível de insatisfação na qualidade de imagem e percepção de profundidade, empalando que o nível de proteção para o vídeo de cor é mais significativa do que para o mapa de profundidade para a geral experiência em 3D. O efeito desse fenômeno sobre a qualidade visual é apresentado na Figura Fig. 4 para o 15ª quadro  da cor, do mapa de profundidade, vista esquerda e direita. 
+% %%%%%%%%%%%%%%%%%
+% Para o caso de "1/2 e 2/3" e uma SNR de 10 dB, mesmo que sem nenhum mapa de profundidade é muito distorcida, a qualidade visual de pontos de vista sintetizado esquerda e direita é aceitável. 
+% %%%%%%%%%%%%%%%%%
+% No entanto, quando exibidos em 3D, os espectadores podem perceber alguma sensação de profundidade. 
+% Isto é devido ao fato de que, embora com a falta de informação do mapa de profundidade da sensação 
+% de profundidade a partir de disparidade binocular não está disponível, os indivíduos podem sentir 
+% a profundidade de outras sugestões de profundidade monocular como retina imagem gradiente de tamanho, 
+% textura e sobreposição de objetos de o vídeo de cor protegida. No caso de "2/3 e 1/2" para 10 dB de SNR, 
+% onde a qualidade da cor é elevada em comparação ao mapa de profundidade, a qualidade da vista reconstruída 
+% esquerda e direita é muito baixa. Assim, quando exibi-los em exibição em 3D, a qualidade do vídeo de cor 
+% domina a percepção geral 3D, resultando tanto má qualidade de imagem e percepção de profundidade. 
+% 
+% Portanto, de acordo com as condições dos diferentes canais  um regime adequado JSCC tem que ser considerada com um melhor nível de proteção para o vídeo de cor em comparação com o mapa de profundidade para maximizar a percepção 3D em transmissão constrange, como o orçamento disponível bit.
+
+\subsection{Investigação da relação entre qualidade de imagem e a percepção da profundidade com a percepção geral 3D}
+
+Um vídeo 3D pode ser descrito como uma combinação de vários atributos perceptivos como a qualidade geral da imagem,  
+profundidade percebida, a presença de naturalidade, e a fadiga do olho (\textit{eye strain}), etc. Neste estudo nós investigamos a 
+relação entre dois atributos dominantes de percepção, qualidade de imagem e percepção de profundidade, na 
+percepção 3D em geral.
+
+A qualidade subjetivamente (MOS) obtida para a qualidade de imagem percebida, a profundidade percebida e a 
+qualidade geral da experiência 3D são consideradas em~\cite{Yasakethu2009}. Neste trabalho os indivíduos foram 
+aconselhados ao avaliar a qualidade da experiência de vídeo 3D, levar em conta todos os atributos de vídeo 
+multidimensional 3D como a presença da naturalidade, e da fadiga do olho, além de qualidade da imagem e 
+da percepção de profundidade. Neste estudo várias funções matemáticas são consideradas, com as melhores 
+correlações sendo apresentadas abaixo:
+
+\begin{equation}
+ \mbox{Função polinomial:} ~~f(x) = ax +b 
+\end{equation}
+
+\begin{equation}
+ \mbox{Função exponencial:} ~~f(x) = ae^{bx} 
+\end{equation}
+
+\begin{equation}
+ \mbox{Função gaussiana:} ~~f(x) = ae^{\frac{-(x-b)^2}{c}} 
+\end{equation}
+em que $f(x)$ é o MOS normalizado para a percepção 3D em geral, $x$ é o MOS normalizado para o atributo de percepção 
+da qualidade do do vídeo 3D considerado (ou seja, quer a qualidade da imagem ou a percepção de profundidade) 
+e $a, b$ e $c$ são constantes. 
+
+As medidas quantitativas para cada modelo de previsão aproximada usando as 
+funções matemáticas são apresentadas na Tabela~\ref{exp_qual} e Tabela~\ref{exp_prof}. O Coeficiente de Correlação (CC), 
+a Taxa de Erro Quadrático Médio (RMSE) e a Soma dos Quadrados do erro (SSE) são utilizados como indicadores 
+de desempenho para avaliar a comparação  dos modelos matemáticos. Note-se que, CC = 1, RMSE = 0 e SSE = 0 e 
+CC = 0, RMSE = 1 e SSE = 1 indicará correlação perfeita e ruim, respectivamente. A comparação dos modelos matemáticos para 
+cada um dos atributos de percepção foi avaliado para todo o vídeo 3D distorcido considerando diferentes esquemas 
+de JSCC e as condições de canal e são generalizadas para as sequências de vídeo consideradas para uma análise mais 
+geral da qualidade.
+
+\begin{table}[!h]
+\caption{Relação entre a experiência 3D e a qualidade da imagem.}
+\label{exp_qual}
+\vspace{-0.5cm}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+f(x) & \multicolumn{3}{|c|}{Percepção 3D versus Qualidade da Imagem} \\ \cline{2-4}
+  & CC  & RMSE & SSE   \\ \hline
+Polinomial &  0,9207 &  0,0631 & 0,0832 \\ \hline
+Exponencial &  0,7814 &  0,172 & 0,2497 \\ \hline
+Polinomial&  0,8697 &  0,08819 & 0,136 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[!h]
+\caption{Relação entre a experiência 3D e a profundidade.}
+\label{exp_prof}
+\vspace{-0.5cm}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+f(x) & \multicolumn{3}{|c|}{Percepção 3D versus Percepção da profundidade} \\ \cline{2-4}
+  & CC  & RMSE & SSE   \\ \hline
+Polinomial &  0,8664 &  0,08863 & 0,154 \\ \hline
+Exponencial &  0,7938 &  0,104 & 0,2446 \\ \hline
+Polinomial&  0,912 &  0,0665 & 0,08711 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+De acordo com a Tabela~\ref{exp_qual} e~\ref{exp_prof}, os resultados mostram que um modelo polinomial linear 
+tem a melhor correlação com relação à qualidade geral 3D e qualidade da imagem. Para a relação entre a qualidade 
+do vídeo 3D e a percepção de profundidade, os resultados sugerem que um modelo de Gauss tem amelhor correlação 
+quando comparado com outros modelos. 
+
+\subsection{Investigar a possibilidade de prever a qualidade do vídeo 3D com medidas de qualidade de vídeo 2D}
+
+
+Neste estudo, a previsão de dois atributos 3D perceptual, qualidade de imagem e percepção de profundidade são 
+investigados por meio de medições de qualidade 2D objetivo. Os modelos de avaliação de qualidade objetiva 
+utilizados em nosso estudo para a previsão de atributos de qualidade percebida de vídeos 3D são a PSNR média, SSIM, 
+e VQM das vistas, esquerda e direita. A relação entre a qualidade percebida (isto é, MOS) e outras 
+medidas objetivas de distorção é aproximada por uma função logística simétrica (Equação~\ref{func_aprox}), como 
+descrito na ITU-R BT.500-11~\cite{Yasakethu2009},
+
+\begin{equation}
+ p = \dfrac{1}{[1 + \mbox{exp}(D - D_M)G]}
+\label{func_aprox}
+\end{equation}
+em que, $p$ é a pontuação da opinião normalizada, $D$ é o parâmetro de distorção, $D_M$ e $G$ são constantes e $G$ pode ser 
+positivo ou negativo. 
+
+De acordo com os resultados todos os três métodos de avaliação de qualidade são geralmente aceitáveis na 
+previsão dos atributos de qualidade perceptual dos vídeos 3D. No entanto, os resultados mostram que o VQM tem a melhor 
+correlação com respeito a avaliações subjetivas para a previsão de qualidade geral da imagem tanto para as vistas 
+esquerda e direita e para avaliação da cor e profundidade das sequências de imagens. Assim, a média VQM dos pontos 
+de vista esquerda e direita pode ser efetivamente usada para prever a qualidade geral da imagem em condições canal 
+diferentes. A percepção de profundidade, os resultados sugerem que todas as matrizes objetivas correlacionam 
+bem com MOS. No entanto, a métrica SSIM têm desempenho ligeiramente melhor em relaçoa a profundidade percebida. 
+Portanto, um modelo estatístico como SSIM pode ser usado na previsão de profundidade percebida de forma 
+assimétrica, por meio de canais de vídeo  codificados 3D propenso a erros.

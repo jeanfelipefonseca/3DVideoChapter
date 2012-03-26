@@ -1,0 +1,243 @@
+@mastersthesis{albini,
+author = {Fábio Luiz Pessoa Albini},
+title = {Geração e Avaliação de Artefatos em Vídeo Digital},
+school = {Universidade Tecnológica Federal do Paraná},
+year = {2009},
+type = {Dissertação de Mestrado},
+address = {Curitiba, Brasil},
+month = {Março},
+}
+
+@mastersthesis{regis2009,
+	author = {Carlos Danilo Miranda Regis},
+	title = {Avaliação de Técnicas de Redução da Resolução Espacial de Vídeos para Dispositivos Móveis},
+ 	school = {Universidade Federal de Campina Grande},
+ 	type = {Dissertação de Mestrado},
+ 	year = {2011},
+ 	address = {Campina Grande, Brasil},
+}
+
+@article{bovik2004,
+	Author = {Zhou Wang and Alan Conrad Bovik},
+	Title = {Video Quality Assessment Based On
+ Structural Distortion Measurement},
+ 	Journal = {Signal Processing: Image Communication},
+ 	Year = {2004},
+}
+
+@mastersthesis{cassius,
+	author = {Cassius Rodrigo Duque Estrada},
+	title = {Avaliação Automática de Qualidade de Videoconferências de Alta Definição},
+ 	school = {Universidade Federal do Rio de Janeiro},
+ 	type = {Dissertação de Mestrado},
+ 	year = {2009},
+ 	address = {Rio de Janeiro, Brasil},
+}
+
+
+
+@misc{ivquest,
+	Author = {Lina Karam and Adithya Murthy},
+	Title = {IVQUEST - Image and Video QUality Evaluation SofTware},
+	month = {Setembro},
+	year = {2011},
+	howpublished = {\textit{http://ivulab.asu.edu/Quality/IVQUEST}},
+	note = {},
+	annote = {}
+}
+
+@book{farias,
+	Autor = {Floriano De Rango},
+	Title = {Digital Video},
+	Publisher = {Intech},
+	Year = {2010},
+	Month = {Fevereiro},
+	Address = {India},
+}
+
+@article{chen2006,
+	Author = {Guan-Hao Chen and Chun-Ling Yang and Lai-Man Po and Sheng-Li Xie},
+	Title = {Edge-Based Structural Similarity for Image Quality Assessment},
+ 	Journal = {IEEE International Conference on Acoustics, Speech and Signal Processing},
+ 	Address = {Toulouse, França},
+ 	Year = {2006},
+}
+
+
+
+@mastersthesis{arthur2002,
+author = {Rangel Arthur},
+title = {Avaliação Objetiva de Codecs de Vídeo},
+school = {Universidade Estadual de Campinas - UNICAMP},
+year = {2002},
+type = {Dissertação de Mestrado},
+address = {Campinas, Brasil},
+month = {Abril},
+}
+
+@Misc{itut_910,      
+key = {},
+author = {ITU-T},
+title = {{ITU-T} Recommendation {P.910}, Subjective video quality assessment methods for multimedia applications},
+howpublished = {},
+month = {September},
+year = {1999},
+note = {},
+annote = {}
+}
+
+@mastersthesis{diss_roberto,
+author = {Roberto Nery da Fonseca},
+title = {Algoritmos para Avaliação da Qualidade de Vídeo em Sistemas de televisão Digital},
+year = {2008},
+school = {Escola Politécnica da Universidade de São Paulo},
+type = {Dissertação de Mestrado},
+address = {São Paulo, Brasil},
+month = {},
+}
+
+@ARTICLE{Zhou2,
+title={A universal image quality index},
+author={Zhou Wang and Bovik, A.C.},
+journal={Signal Processing Letters, IEEE},
+year={2002},
+month={Mar},
+volume={9},
+number={3},
+pages={81-84},
+keywords={image processingMATLAB implementation, contrast distortion, image distortion, image processing applications, loss of correlation, luminance distortion, universal image quality index},
+doi={10.1109/97.995823},
+ISSN={1558-2361}, }
+
+@ARTICLE{Vranjes,
+title={Objective video quality metrics},
+author={Vranjes, M. and Rimac-Drlje, S. and Zagar, D.},
+journal={49th International Symposium ELMAR, 2007},
+year={2007},
+month={Sept.},
+volume={},
+number={},
+pages={45-49},
+keywords={video signal processing objective quality methods, subjective quality evaluation, video content, video quality metrics},
+doi={10.1109/ELMAR.2007.4418797},
+ISSN={1334-2630}, }
+
+@article{WangBSS04,
+  author    = {Zhou Wang and
+               Alan C. Bovik and
+               Hamid R. Sheikh and
+               Eero P. Simoncelli},
+  title     = {Image quality assessment: from error visibility to structural
+               similarity},
+  journal   = {IEEE Transactions on Image Processing},
+  volume    = {13},
+  number    = {4},
+  year      = {2004},
+  pages     = {600-612},
+  ee        = {http://dx.doi.org/10.1109/TIP.2003.819861},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}
+
+@INPROCEEDINGS{Bovik2003, 
+author={Wang, Z. and Simoncelli, E.P. and Bovik, A.C.}, 
+booktitle={Signals, Systems and Computers, 2003. Conference Record of the Thirty-Seventh Asilomar Conference on}, title={Multiscale structural similarity for image quality assessment}, 
+year={2003}, 
+month={nov.}, 
+volume={2}, 
+number={}, 
+pages={ 1398 - 1402}, 
+keywords={ human visual system; image quality assessment; image synthesis method; multiscale structural similarity; structural information extracting; image processing;}, 
+doi={10.1109/ACSSC.2003.1292216}, 
+ISSN={ },}
+
+@ARTICLE{Bovik2009, 
+author={Sampat, M.P. and Zhou Wang and Gupta, S. and Bovik, A.C. and Markey, M.K.}, 
+journal={Image Processing, IEEE Transactions on}, title={Complex Wavelet Structural Similarity: A New Image Similarity Index}, 
+year={2009}, 
+month={nov. }, 
+volume={18}, 
+number={11}, 
+pages={2385 -2401}, 
+keywords={complex wavelet structural similarity;image distortion;image similarity index;image processing;wavelet transforms;Algorithms;Area Under Curve;Face;Image Processing, Computer-Assisted;Neoplasms;Pattern Recognition, Automated;ROC Curve;Signal Processing, Computer-Assisted;}, 
+doi={10.1109/TIP.2009.2025923}, 
+ISSN={1057-7149},}
+
+@article{3ssim2010,
+      Author = {Chaofeng Li and Alan Conrand Bovik},
+      Title = {Content-weighted video quality assessment
+  using a three-component image model},
+      Journal = {Journal of Electronic Imaging, Special Section on Image Quality, Vol: 19 No: 1},
+      Year = {Janeiro, 2010}
+}
+
+@Misc{video_sequences,      
+key = {},
+author = {Website Trace},
+title = {{YUV Video Sequences}},
+month = {Abril},
+year = {2008},
+howpublished = {\textit{http://trace.eas.asu.edu/yuv/index.html}},
+note = {},
+annote = {}
+}
+
+@INPROCEEDINGS{Simoncelli2005, 
+author={ Zhou Wang and Simoncelli, E.P.}, 
+booktitle={Acoustics, Speech, and Signal Processing, 2005. Proceedings. (ICASSP '05). IEEE International Conference on}, title={Translation Insensitive Image Similarity in Complex Wavelet Domain}, 
+year={2005}, 
+month={18-23,}, 
+volume={2}, 
+number={}, 
+pages={ 573 - 576}, 
+keywords={ complex wavelet domain; contrast change; image registration; luminance change; magnitude changes; phase changes; spatial rotation; spatial scaling; translation insensitive image similarity measure; wavelet filters; approximation theory; image processing; wavelet transforms;}, 
+doi={10.1109/ICASSP.2005.1415469}, 
+ISSN={1520-6149},}
+
+@INPROCEEDINGS{Xie2006, 
+author={Guan-Hao Chen and Chun-Ling Yang and Sheng-Li Xie}, 
+booktitle={Image Processing, 2006 IEEE International Conference on}, 
+title={Gradient-Based Structural Similarity for Image Quality Assessment}, 
+year={2006}, 
+month={oct.}, 
+volume={}, 
+number={}, 
+pages={2929 -2932}, 
+keywords={GSSIM;HVS;blurred image;gradient-based structural similarity;human visual system;image processing;image quality assessment;information extraction;computer vision;feature extraction;gradient methods;image restoration;}, 
+doi={10.1109/ICIP.2006.313132}, 
+ISSN={1522-4880},}
+
+@INPROCEEDINGS{Hemami2008, 
+author={Rouse, D.M. and Hemami, S.S.}, 
+booktitle={Image Processing, 2008. ICIP 2008. 15th IEEE International Conference on}, title={Understanding and simplifying the structural similarity metric}, 
+year={2008}, 
+month={oct.}, 
+volume={}, 
+number={}, 
+pages={1188 -1191}, 
+keywords={LIVE image database;common image artifacts;human visual system;linear correlation;multiscale extension;nonlinear mapping;quality assessment;spatial correlation;structural similarity metric;variance correlation;visual quality;image processing;visual databases;}, 
+doi={10.1109/ICIP.2008.4711973}, 
+ISSN={1522-4880},}
+
+@INPROCEEDINGS{Porikli2005, 
+author={Porikli, F.}, 
+booktitle={Computer Vision and Pattern Recognition, 2005. CVPR 2005. IEEE Computer Society Conference on}, title={Integral histogram: a fast way to extract histograms in Cartesian spaces}, 
+year={2005}, 
+month={june}, 
+volume={1}, 
+number={}, 
+pages={ 829 - 836 vol. 1}, 
+keywords={ Cartesian data spaces; data dimensions; exhaustive search process; histogram extraction; image retrieval; integral histogram; nonuniform bin formation; real-time search process; spatial arrangement; uniform bin formation; image processing; search problems; statistical analysis;}, 
+doi={10.1109/CVPR.2005.188}, 
+ISSN={1063-6919 },}
+
+@INPROCEEDINGS{Bovik2010, 
+author={Ming-Jun Chen and Bovik, A.C.}, 
+booktitle={Acoustics Speech and Signal Processing (ICASSP), 2010 IEEE International Conference on}, title={Fast structural similarity index algorithm}, 
+year={2010}, 
+month={march}, 
+volume={}, 
+number={}, 
+pages={994 -997}, 
+keywords={computational complexity;fast structural similarity index algorithm;full reference image quality algorithms;live image quality database;multiscale SSIM index;real-time image quality assessment algorithms;computational complexity;image processing;real-time systems;}, 
+doi={10.1109/ICASSP.2010.5495310}, 
+ISSN={1520-6149},}

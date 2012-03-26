@@ -1,0 +1,161 @@
+\chapter{Principais Conceitos}
+
+\section{Visão estereoscópica humana}
+
+A capacidade de apreciar uma terceira dimensão usando um monitor de TV 3D  baseado nas características do sistema 
+visual humano. Uma vez que os olhos são posicionados horizontalmente na cabeça, o sistema visual recebe duas visões 
+da cena visual, ou seja, a visão do olho esquerdo e a do olho direito, que em grande parte se sobrepõem, mas um pouco 
+diferente porque eles se originam a partir de duas perspectivas diferentes. O sistema visual processa a informação 
+das duas imagens provenientes de duas perspectivas para a produção de profundidade estereoscópica~\cite{Tam2011}. 
+
+Os olhos movem-se constantemente, mesmo durante a fixação. No entanto, o sistema visual binocular é extremamente 
+bom em coordenar o movimento dos dois olhos~\cite{Simon2009}. Como resultado, a partir de um ponto de vista funcional, quando 
+nós fixamos binocularmente um ponto no espaço, as imagens se enquadram em um ponto, de ambos os olhos esquerdo e 
+direito, sobre a fóvea, que é a parte do fundo do olho (retina) que tem a maior acuidade. Assim, um 
+objeto fixado é fotografado nas mesmas coordenadas em relação a vista do olho esquerdo e do olho direito 
+e é percebido como uma simples percepção, ou seja,  visto como um simples objeto. 
+
+O ponto de fixação cai no \textit{horoptero}. O \textit{horopter}  é uma linha curva ou superfície que contém todos os pontos 
+que estão na mesma geometria (geometria \textit{horopter}) ou  distância (\textit{horopter} empírica) percebida 
+do ponto de fixação~\cite{Tam2011}. 
+
+Pontos localizados em frente ou atrás do \textit{horopter} são gravadas em diferentes posições relativas as 
+vistas do olho esquerdo e do olho direito. Estas diferenças nas posições relativas são chamadas de disparidades 
+da retina horizontal. A magnitude da disparidade da retina de um ponto aumenta com a distância do objeto a partir 
+do \textit{horopter}. Pontos na frente do \textit{horopter} dizem ter uma disparidade negativa ou cruzada, 
+enquanto pontos de objetos por trás dele é dito com disparidade positiva ou descruzadas (Apendice~\ref{fund_mat}). 
+Diz-se que uma melhor performance na visualização estereoscópica é obtida na disparidade positiva do que na disparidade
+negativa. O sistema visual humano usa essas disparidades para extrair a profundidade relativa dos objetos na cena visual, ou seja, 
+a posição em profundidade de um objeto com relação a outro objeto.
+
+Objetos que dão origem a produzir as disparidades em imagens diferentes nas retinas direita e esquerda. No entanto, 
+os objetos que estão localizados dentro de uma pequena região na frente e a atrás do plano de fixação da origem é a uma 
+percepção simples fundida. A região, dentro do qual os objetos são fundidos, apesar de ter 
+imagens diferentes nos dois olhos, é chamado de área de \textit{Panum's Fusional}. Objetos localizados fora da área 
+de \textit{Panum's Fusional} resultam na visão dupla, ou seja, \textit{diplopia}, mas ainda pode ser percebida em 
+profundidade. O tamanho da área de \textit{Panum's Funsional} não é fixa, mas sim depende das propriedades 
+espaciais e temporais da meta de fixação, tais como a duração da exposição, de resolução espacial, variação 
+da disparidade da frequência temporal~\cite{Tam2011}.
+
+Quando o ponto de fixação é alterado para olhar para um novo objeto localizado a uma distância diferente, os dois olhos 
+se movem simultaneamente e em direções opostas, para que o novo objeto seja fotografado no centro de cada fóvea. 
+Se o novo objeto é mais perto, os olhos se movem para 
+dentro em direção ao outro (convergência), enquanto que se o novo objeto está mais longe dos olhos se movem para fora, 
+longe uns dos outros (divergência). Este processo  chamado de convergência e está estreitamente relacionado com a acomodação. 
+Este último se refere ao processo pelo qual o poder óptico do olho é alterado para manter a visão clara, ou seja, uma 
+imagem nítida, de um objeto distante.
+
+Quando os olhos se fixam em um objeto, a forma do cristalino em cada olho é alterada 
+pelos músculos ciliares para que a imagem do objeto em foco seja fixado na parte traseira do olho, a retina. Pontos 
+localizados mais perto ou mais longe do que os pontos acomodados no são imagens corretas na retina e, portanto, sujeitas 
+a um grau crescente de borragem. No entanto, o sistema visual é tolerante a uma pequena quantidade de borramento~\cite{Tam2011}, e 
+pontos localizados dentro de uma pequena região ao redor do ponto de acomodação são percebidos a estar em foco. 
+
+O tamanho desta região, conhecida como a profundidade de campo (DOF -- \textit{Depth of Field}), varia inversamente com o diâmetro da pupila. 
+A profundidade de campo tem um correspondente, conjugada, é a região em torno do plano da retina, a região é chamada 
+de profundidade do foco.
+
+Em condições normais, mudanças na acomodação dos dois olhos e o processo de convergência ocorre de forma integrada: 
+mudanças na acomodação induz alterações na convergência e vice-versa~\cite{Kung2003}. No entanto, os dois processos podem 
+entrar em conflito quando assistir alvos estereoscópicos.
+
+Os nossos olhos estão separados de cerca de 7,5 cm entre si e isso implica que cada olho vê de uma perspectiva
+ligeiramente diferente a mesma cena. Isto pode ser observado com um simples experimento: alinhe o polegar da mão 
+esquerda com uma bandeirinha e seu nariz, e foque sua visão no dedo. Você verá a bandeirinha como 
+sendo duas, uma para cada olho (feche um olho e abra o outro e em seguida inverta), conforme a Figura~\ref{esquerdo}. 
+Agora direcione sua visão para a bandeirinha,  a visão que você terá com os dois olhos abertos é mostrada na Figura~\ref{direito}, 
+o polegar agora é visto como sendo dois.
+
+	\begin{figure}[!htb]
+	  \centering
+	  \subfloat[]{\includegraphics[scale=1]{imagens/olho_esquerdo} \label{esquerdo}}% neste comando o que está entre [] é o subtítulo da figura, caso você não queria nenhum subtítulo pode deixar em branco
+	  \subfloat[]{\includegraphics[scale=1]{imagens/olho_direito} \label{direito}} 
+	\caption{Na Figura~\ref{esquerdo} os olhos estão convergindo para o polegar e a bandeirinha é
+vista como dupla imagem. Na Figura~\ref{direito} os olhos agora estão convergindo para a
+bandeirinha e o polegar é visto como uma imagem dupla~\cite{Stereographics1997}.} % aqui nesta legenda eu me referi às imagens anteriores para mostrar como chamá-las no texto.
+	\label{bandeirinha}
+	\end{figure}
+
+Estas diferenças entre imagens geradas pelo olho direito e pelo olho esquerdo
+são processadas pelo cérebro nos dando uma noção de profundidade e, com isto, tem-se
+a idéia de imersão em um ambiente com objetos posicionados a distâncias diferentes.
+
+
+
+
+\section{Geração de Vídeos 3D}
+
+
+A TV-3D explora as características do sistema visual humano, recriando, embora não de forma verídica, 
+as condições que levam  percepção da profundidade relativa dos objetos na cena visual. Assim, o primeiro requisito 
+de imagens estereoscópicas é a captura de pelo menos dois pontos de vista da mesma cena a partir de duas câmeras 
+alinhadas horizontalmente. As imagens dos objetos na cena terá posições relativas diferentes nos dois olhos. Essa diferença
+é chamada de Paralaxe.
+
+O processo de geração de vídeos em 3D pode ser simulado por meio de duas câmeras organizadas com a mesma distância interocular 
+dos olhos humanos. Logo, colocando-se as câmeras separadas uma da outra com base nessa distância, é possível simular o 
+sistema visual humano.
+Quando cada imagem das câmeras for apresentada ao seu olho correspondente, as duas imagens serão fundidas em uma única
+imagem pelo cérebro, produzindo a ilusão da visão estereoscópica~\cite{Johanson2001}.
+
+Em~\cite{Johanson2001}, é apresentado dois tipos de configurações de câmeras passíveis para a captura de vídeo 
+estereoscópico:
+
+\begin{enumerate}
+ \item Câmeras em eixo paralelo;
+ \item Câmeras em eixo convergente (\textit{toed-in}).
+\end{enumerate}
+
+Na configuração de eixo paralelo, as câmeras são alinhadas de forma que os eixos centrais de suas lentes estejam em paralelo, 
+conforme a Figura~\ref{duas_cameras_paralelas}. A convergência das imagens é alcançada por meio de um pequeno deslocamento 
+dos sensores de captura das câmeras ou por meio de uma tradução horizontal (deslocamento horizontal das imagens para se alterar 
+a distância ou paralaxe entre os pontos correspondentes das imagens do olho direito e do esquerdo) e do corte das imagens
+resultantes. 
+
+	\begin{figure}[!htb]
+	  \centering
+	  \subfloat[]{\includegraphics[scale=1]{imagens/duas_cameras_paralelas} \label{duas_cameras_paralelas}}% neste comando o que está entre [] é o subtítulo da figura, caso você não queria nenhum subtítulo pode deixar em branco
+	  \subfloat[]{\includegraphics[scale=1]{imagens/duas_cameras} \label{duas_cameras}} 
+	\caption{Configuração de Câmeras:~\ref{duas_cameras_paralelas} Câmeras em Eixo Paralelo e~\ref{duas_cameras} Câmeras em Eixo Convergente
+	(\textit{toed in})~\cite{Johanson2001}.} 
+	\label{cameras}
+	\end{figure}
+
+Na segunda forma de configuração, eixo convergente, as duas câmeras são rotacionadas para que seus eixos centrais sejam 
+convergidos sobre um mesmo ponto no plano de projeção, conforme Figura~\ref{duas_cameras}. 
+O ponto em que a câmera converge vai ser trabalhada em relação as mesmas coordenadas na câmera da esquerda e da direita. 
+Portanto, tem paralaxe zero. Quando exibido estereoscopicamente, este ponto é um objeto representado no plano da tela. 
+Todos os pontos localizados a outras distâncias do objeto tem paralaxe negativo ou positivo que dependem das distâncias da 
+profundidade dos objetos e da separação horizontal dos pontos de vista do olho esquerdo e olho direito. Objetos desses pontos 
+aparecerão na frente ou atrás do plano da tela. As configurações do \textit{Toed-in} são fáceis de configurar e permitir que 
+um objeto de interesse possa ser posicionado no plano da tela, mas que geram distorções \textit{keystone} na câmera esquerda 
+e na câmera direita~\cite{Tori2006}. Distorções \textit{Keystone} transformam as imagens em formas semi-trapezoidal de tal 
+forma que as alturas verticais correspondam no mais entre os pontos de objetos correspondentes nas duas imagens. 
+Essas distorções podem afetar o conforto visual~\cite{Tam2011}.O problema é ilustrado na Figura~\ref{paralaxe}.
+
+
+	  \begin{figure}[!htb]
+	  \centering
+	  \subfloat[]{\includegraphics[scale=0.5]{imagens/paralaxe1} \label{paralaxe1}}% neste comando o que está entre [] é o subtítulo da figura, caso você não queria nenhum subtítulo pode deixar em branco
+	  \subfloat[]{\includegraphics[scale=0.5]{imagens/paralaxe2} \label{paralaxe2}} 
+	\caption{Paralaxe Vertical causada por Distorção \textit{ Keystone}: A Figura~\ref{paralaxe1} representa a Imagem
+Original e a Figura~\ref{paralaxe2} a Visão do olho esquerdo e direito sobrepostas~\cite{Tori2006}.} 
+	\label{paralaxe}
+	\end{figure}
+
+Para prevenir a ocorrência de distorções \textit{keystone}, as câmeras poderiam ser configuradas em uma configuração 
+paralela. Neste caso, os eixos ópticos das câmeras não convergem, mas são paralelas. Na configuração paralela, todos 
+os pontos do objeto tem alguma paralaxe, no entanto, as imagens obtidas com uma configuração em paralelo poderiam ser 
+modificadas para se alinhar horizontalmente as imagens de um objeto-alvo de interesse para ter paralaxe zero antes 
+de exibir, gerando assim uma distribuição de paralaxe comparável as distorções do \textit{toed-in}, mas sem 
+distorção de \textit{keystone}. 
+No caso da configuração de câmeras com eixos paralelos não ocorre paralaxe vertical, mas há necessidade de uma tradução 
+horizontal das imagens resultantes. Por causa dessa tradução, as imagens não são perfeitamente sobrepostas. Esse fato requer
+cortes nas imagens, de forma que somente um campo de visão comum seja apresentado. Dependendo de como as imagens são traduzidas,
+os planos de convergências podem ser posicionados em profundidades de percepção diferentes~\cite{Johanson2001}.
+
+Um requerimento básico para geração de vídeos 3D, é que o posicionamento das câmeras seja feito de tal forma, que o olho 
+esquerdo veja somente a imagem da câmera esquerda e o olho direito a imagem da câmera direita. Com as câmeras alinhadas 
+horizontal e verticalmente, a separação do intereixo deve ser de aproximadamente 65 milímetros, tornando a imagem produzida
+mais realista. Essa configuração é comum à todas as tecnologias estereoscopicas, incluindo a 3DTV~\cite{Holliman2011}. 
+

@@ -1,0 +1,167 @@
+\section{Predição da sensação da profundidade}
+
+% author={Yasakethu, S.L.P. and De Silva, D.V.S.X. and Fernando, W.A.C. and Kondoz, A.}, 
+% journal={Electronics Letters}, 
+% title={Predicting sensation of depth in 3D video}, 
+
+Em~\cite{Yasakethu2010} é apresentado um novo modelo de avaliação da qualidade para prever a sensação de profundidade em vídeos 3D 
+no formato de vídeo de cor (monocular) com o acréscimo do mapa de profundidade em escala de cinza. A técnica proposta 
+é capaz de avaliar as contribuições tanto monoscópica e estereoscópico para a percepção de profundidade. Os 
+resultados mostram que a sensação de profundidade pode ser efetivamente modelada com o modelo proposto, 
+combinando características visualmente importantes para o cérebro.
+
+Esse novo modelo surgi da avaliação da qualidade de vídeo 3D não ser completamente investigada até esta data. 
+Hoje é difícil avaliar a qualidade de vídeo 3D 
+sem recorrer a testes subjetivos. Estes teste subjetivos de avaliação demoram mais tempo 
+e esforço para medir a qualidade usando observadores humanos. Isso tem alguns efeitos negativos sobre o 
+desenvolvimento e avanço das tecnologias de vídeo 3D e produtos de consumo 3D. Embora alguns pesquisadores 
+usam atualmente a PSNR para avaliar a qualidade de vídeo 3D, as limitações de PSNR na avaliação da qualidade têm sido 
+demonstrados pela Video Experts Group Qualidade (VQEG)~\cite{Yasakethu2010}.
+
+\subsection{Modelagem da técnica proposta} 
+
+A sensação de profundidade de um vídeo 3D é afetado tanto pelo vídeo
+(sinais monocular) e quanto pelo mapa de profundidade (pistas binocular). Experimentos com estereograma de ponto aleatório mostram que  
+as profundidades binoculares e as monoculares são independentemente percebidas. 
+De maneira semelhante, o cérebro humano terá a percepção independente da degradação monocular e binocular 
+em um vídeo 3D~\cite{Yasakethu2010}. Assim, a sensação de percepção de profundidade pode ser modelada como segue:
+
+\begin{equation}
+D_{tot} = D_{M}^{\alpha}D_{B}^{\beta}
+\label{sens_perc}
+\end{equation}
+em que o $D_{tot}$ refere-se a sensação avaliada objetivamente da percepção da profundidade e $D_M$ e $D_B$ referem-se 
+à percepção de profundidade objetivamente avaliada devido aos sinais monocular e binocular, respectivamente e 
+$\alpha$ e $\beta$ são constantes positivas. Nesse método foi proposto usar a \textit{Video quality metric} (VQM)~\cite{Pinson2004}, para avaliar 
+a contribuição da cor do vídeo na sensação geral de profundidade, devido ao seu excelente desempenho 
+em testes de validação VQEG Fase II~\cite{Yasakethu2010}. 
+
+O uso de métricas de qualidade objetiva existentes em 2D não é 
+adequado para avaliar a contribuição do mapa de profundidade das \textbf{pistas} binocular (estereopsia, por 
+exemplo). Isto porque os mapas não são imagens de profundidade natural. Assim, é proposto um modelo de 
+distorção da disparidade (DDM -- \textit{Disparity Distortion Model}) composta de três técnicas de medição entre o original 
+e o correspondente mapa de profundidade processado após a degradação~\cite{Yasakethu2010}. 
+
+Quanto a experiência com vídeos 3D, o sistema visual humano (HVS) identifica a sensação de profundidade com o devido reconhecimento 
+visual dos planos de profundidade do conteúdo estéreo. As distâncias relativas dos diferentes planos de profundidade e a 
+consistência do conteúdo em planos identificados são o auxilio na visualização da profundidade do conteúdo estéreo. 
+Para identificar a profundidade, os olhos convergem para uma região, combinando a informação visual projetada em ambas as retinas. 
+No entanto, as células binoculares aparecem pela primeira vez numa fase tardia das vias visuais, a área $V1$ do córtex cerebral. 
+Nesta fase, apenas as informações estruturais extraídas separadamente para cada olho estão disponíveis para 
+o cérebro, para a dedução de disparidade da imagem. Assim, acredita-se que HVS é altamente otimizado em extrair 
+informação estrutural a partir do campo de visão para a percepção de profundidade.
+
+A tentativa de projetar um modelo de qualidade objetiva é combinar esses recursos visuais importantes, para o 
+cérebro. O diagrama do sistema proposto de avaliação da qualidade é apresentado na Figura~\ref{prop_measurement}. O $X$ e $Y$ referem-se 
+aos sinais de disparidade original e degradada (mapas de profundidade), respectivamente. O sistema separa a tarefa da 
+técnica de medição em três comparações:
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.4]{imagens/prop_measurement}
+\caption{Diagrama de bloco do sistema de avaliação~\cite{Yasakethu2010}.}
+\label{prop_measurement}
+\end{figure}
+@article{bovik2004,
+	Author = {Zhou Wang and Alan Conrad Bovik},
+	Title = {Video Quality Assessment Based On
+ Structural Distortion Measurement},
+ 	Journal = {Signal Processing: Image Communication},
+ 	Year = {2004},
+}
+
+
+\begin{itemize}
+\item $M_1$: a distorção da distância relativa no eixo de profundidade entre os planos de profundidade; 
+\item $M_2$: a distorção da consistência da profundidade percebida dos conteúdos nos planos de profundidade, e 
+\item $M_3$: erros estruturais do mapa de profundidade. 
+\end{itemize}
+
+Para identificar os planos de profundidade visualmente reconhecido, um histograma do sinal de disparidade sem distorções é examinado. 
+Examinando a distribuição dos valores de disparidade por \textit{pixel} do sinal, os planos de profundidade visualmente 
+reconhecidos são identificados. Depois de identificar a variação de \textit{pixels} em planos diferentes de profundidade, o mapa 
+de profundidade é segmentado. Primeiro, a medida $M_1$ é avaliada, um valor de profundidade $z$ é representado por um valor 
+$m$ de 8-\textit{bit} sem sinal e a relação entre $m$ e $z$ é a seguinte~\cite{Yasakethu2010}:
+
+\begin{equation}
+ z = \dfrac{m}{255} (k_{near}W + k_{far}W) - k_{far}W
+\end{equation}
+$k_{near}$ e $k_{far}$ especificam o intervalo da informação de profundidade, respectivamente, atrás e na frente da imagem, 
+em relação à exibição de largura $W$. A intensidade média dos planos de profundidade segmentados são calculados para 
+ambos os sinais original e degradado, $m_{x}^{i}$ e $m_{y}^{i}$ , em que $i$ denota o índice de plano de profundidade.
+
+Assim, a distorção da distância relativa (DRD -- \textit{Distortion of the ralative distance}) no eixo de profundidade para 
+os planos de profundidade $i$ e $i + 1$, em comparação com o mapa de profundidade original, pode ser identificados como
+
+\begin{equation}
+\mbox{DRD}^{i,i+1} = \dfrac{k_{near}W + k_{far}W}{255} |(m_x^i - m_x^{i+1})-(m_y^i - m_y^{i+1})|         
+\end{equation}
+
+Somando os valores das DRD para todos os planos de profundidade adjacente é avaliado a medida $M_1$:
+
+\begin{equation}
+ M_1 = \sum_{i=1}^{n} \mbox{DRD}^{i , i+1}
+\end{equation}
+em que $n$ refere ao número de planos de profundidade visualmente reconhecido. Em segundo lugar, é removido a 
+intensidade média dos sinais $X^i$ e $Y^i$. $X^i$ e $Y^i$ referem-se aos sinais de disparidade do plano de profundidade 
+$i$th. A intenção é modelar as três técnicas de medição relativamente independente. Para modelar a distorção 
+da consistência da profundidade percebida avaliamos o desvio padrão do sinal de erro de cada um dos planos de
+profundidade identificadas. A soma dos desvio padrões do erro para todos os planos de profundidade define $M_2$:
+
+\begin{equation}
+M_2 = \sum_{i=1}^{n} \left[\dfrac{1}{N} \sum_{j=1}^{N} (e^i_j - \mu_e^i)\right]^{\frac{1}{2}} 
+\end{equation}
+em que $e^i = x^i - y^i$. O $\mu_e^i$ é o valor médio do sinal de erro para o plano $i$ e $j$, $N$ refere-se ao \textit{pixel} indexado 
+e o número total de \textit{pixels} do plano de profundidade correspondente. Em terceiro lugar, para avaliar $M_3$, após 
+a remoção da intensidade média de sinais $X$ e $Y$, que estão normalizados pelo seu desvio padrão próprio, assim, os 
+dois sinais que estão sendo comparados têm desvio padrão unitário. A comparação da estrutura é conduzida nesses 
+sinais de profundidade da imagem normalizados. Cada imagem de profundidade é dividida em macroblocos de 16 $\times$ 16  
+e o erro estrutural é calculado em uma base de macrobloco. Erro estrutural do quadro de profundidade é avaliada 
+como o erro médio estrutural ao longo dos macroblocos e é definido da seguinte forma:
+
+\begin{equation}
+M_3 = \dfrac{1}{m} \sum_{j=1}^{m} \dfrac{\sigma_{xy}^{i} +k_1}{\sigma_x^j \times \sigma_y^j + k_1}
+\end{equation}
+$\sigma_{x}$, $\sigma_{y}$ e $\sigma_{xy}$ representam os desvios-padrões e a covariância dos sinais $X$ e $Y$. 
+$m$ e $j$ referem-se ao número de macroblocos e seu índice, respectivamente. Uma constante pequena é introduzida 
+no numerador e no denominador para evitar a instabilidade quando $\sigma_x^j \times \sigma_y^j$ está muito próximo 
+de zero. Nós escolhemos $k_1 = (c \times l)^2$, em que $c$ é a faixa dinâmica dos valores dos \textit{pixels} 
+(255 por 8 \textit{bits} de representação) e $l$ como $0,001$. Finalmente, os três componentes relativamente 
+independentes são combinados e o valor médio é calculado para produzir um modelo de distorção total da disparidade 
+(DDM) para a sequência inteira de profundidade:
+
+\begin{equation}
+ \mbox{DDM}(X,Y) = \dfrac{1}{L} \sum_{j=1}^{L} \dfrac{M_3 (x,y)}{M_1 (x,y) M_2 (x,y) + k_2}
+\end{equation}
+Uma constante, $k_2 = 1$, é introduzida no denominador para limitar a avaliação da qualidade da profundidade entre 
+0 e 1, e para evitar instabilidade quando $M_1 \times M_2$ está perto de zero. $L$ e $j$ referem-se ao número de quadros e 
+seu índice. DDM = 1 e DDM = 0 implica na máxima e na mínima sensação de profundidade a partir do mapa de profundidade, 
+respectivamente. Assim, como mostrado na equação~\ref{sens_perc}, a sensação geral de profundidade a partir de vídeo 3D pode ser 
+modelada como segue:
+
+\begin{equation}
+ D_{tot} = \mbox{VQM}^{\alpha}\mbox{DDM}^{\beta}
+\label{sens_perc_final}
+\end{equation}
+
+\subsection{Resultados}
+Experiências subjetivas foram realizadas de acordo com o método DSCQS, 
+como descrito na Recomendação ITU-BT.500-11~\cite{itu_500}, para investigar o desempenho do modelo proposto. Várias sequências de
+ vídeo 3D, com características de movimento diferentes, foram consideradas e o conjunto de estímulos continha 75 sequências 
+ de vídeo modificada e a versão original, sem distorções da cena. A classificação de qualidade média de vídeo prestados 
+ à esquerda e direita com PSNR, SSIM~\cite{bovik2004} e VQM~\cite{Pinson2004} foram usados para comparação de desempenho do modelo proposto. 
+
+A relação entre as classificações subjetivas de sensação de profundidade e os modelos de avaliação foram aproximados por uma função 
+ logística simétrica descrito em~\cite{itu_500}. O desempenho de cada modelo, aproximada usando a função simétrica de logística, é 
+ apresentado na Tabela 1. Métricas de desempenho de comparação (CC, RMSE, SSE) para cada técnica de previsão são avaliadas 
+ para todas as sequências de vídeo para uma análise mais geral de qualidade. O $\alpha$ e $\beta$ em~\ref{sens_perc_final} são avaliados experimentalmente, 
+ variando cada parâmetro de $0 - 5$ em passos de 1 e  $\alpha = \beta = 1$ revelou a melhor correlação com as classificações subjetivas. Resultados 
+ implicam que o modelo proposto é mais adequado para predizer a sensação de profundidade de cor e vídeo baseada profundidade 
+ 3D em comparação com as metodologias existentes.
+ 
+%  Conclusão: Esta carta tem abordado a possibilidade de modelagem da sensação de profundidade de cor e profundidade de vídeo 3D, 
+%  o que poderia acelerar o desenvolvimento de serviços de vídeo 3D e produtos de consumo. Nós apresentamos um quadro de avaliação 
+%  de qualidade que poderia estimar separadamente as contribuições monoscópica e estereoscópica. Enquanto o primeiro avalia as 
+%  distorções monoscópicas percebidas causada pelo borramento, ruído, e alterar o contraste, o último avalia a degradação percebida visualmente 
+%  reconhecido os planos de profundidade do conteúdo 3D. Resultados implicam que o modelo composto proposto pode ser efetivamente usado 
+%  para prever a sensação de profundidade de cor e vídeo baseada profundidade 3D.

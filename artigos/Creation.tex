@@ -1,0 +1,149 @@
+\chapter{Conversão de vídeos 2D para 3D}
+
+% %opening
+% \title{3D-TV Content Creation: Automatic 2D-to-3D Video Conversion}
+% \author{Liang Zhang, Senior Member, IEEE, Carlos Vázquez, Member, IEEE, and Sebastian Knorr}
+
+
+
+A adoção bem sucedida de TV-3D pelo público em geral dependerá não só dos avanços tecnológicos em \textit{displays} 3D e em sistemas de radiodifusão de 
+TV-3D~\cite{Liang2011}, mas também da disponibilidade de uma ampla variedade de conteúdo no formato  estereoscópico  para os serviços 3D 
+(S3D)~\cite{Harman2009}.  A oferta de conteúdos S3D será especialmente importante nos estágios iniciais de implantação da TV-3D, de forma a 
+garantir que o público  tenha interesse em adiquirir os \textit{displays} 3D e os serviços de TV-3D. No entanto, um certo período de 
+tempo será necessário para os provedores de conteúdo gravar e criar com câmeras estereoscópicas o material S3D suficiente. 
+
+Consideramos que a conversão de imagens/vídeos de 2D para 3D é uma maneira de aliviar este problema difícil. Desta forma, a vasta coleção de 
+materiais em 2D que existe atualmente, na forma de programas de televisão e filmes para cinema, e a sua conversão em imagens estereoscópicas deve
+ minimizar esse efeito.
+
+As técnicas de conversão de 2D para 3D podem ser rentável para os provedores de conteúdo que estão sempre à procura de novas fontes de receita para a 
+sua vasta biblioteca de materiais de vídeo. Este mercado potencial está atraindo muitas empresas a investir seus recursos humanos e dinheiro para 
+o desenvolvimento de técnicas de conversão de 2D para 3D.
+
+O princípio fundamental das técnicas de conversão de 2D para 3D se baseia no fato de que o sistema visual humano transforma as pequenas 
+diferenças na distancia da informação da imagem (pixel desloca horizontal) do olho esquerdo e do olho direito tal que os objetos são percebidos 
+em diferentes profundidades e fora do plano 2D. Assim, a conversão de imagens 2D para imagens estereoscópicas em 3D envolve o princípio 
+subjacente de deslocamento horizontal dos \textit{pixels} para criar uma nova imagem, de modo que existem disparidades horizontal 
+entre a imagem original e uma nova versão dele. A extensão  do deslocamento horizontal do \textit{pixel} depende não apenas da distância 
+de um objeto para a câmera estereoscópica, mas também sobre a separação inter-lente que determina o ponto de vista da nova imagem.
+
+Várias abordagens para a conversão de 2D para 3D têm sido propostas. Estas abordagens podem ser classificados em três esquemas: conversão manual, 
+humana assistida e automática~\cite{Liang2011}. O sistema manual é para mudar os \textit{pixels} na horizontal com um valor de profundidade 
+escolhidos para diferentes regiões/objetos na imagem, gerando uma nova imagem~\cite{Harman2009}, mas é muito 
+demorado e caro. 
+
+O esquema humana assistida converte imagens 2D para 3D estereoscópico com algumas correções feitas "manualmente" por um operador~\cite{Liang2011}. 
+Mesmo que este esquema reduza o tempo consumido em comparação com o regime de conversão manual, uma quantidade significativa de esforço humano 
+ainda é necessário para concluir a conversão. 
+
+Para converter a vasta coleção de materiais disponíveis de 2D para 3D de uma forma econômica, um esquema 
+de conversão automática é desejada. O esquema de conversão automática explora informações detalhadas originado de uma única imagem ou de um fluxo de 
+imagens, para gerar uma nova projeção da cena com uma câmera virtual de um ponto de vista um pouco diferente (na horizontal deslocado). Pode ser 
+feito em tempo real ou em um processo mais demorado (\textit{off-line}). A qualidade do produto resultante está relacionada com o nível de 
+processamento envolvido, por isso os sistemas de tempo real normalmente produzem a conversão de menor qualidade. 
+
+Há duas questões importantes a serem considerados para as técnicas automáticas de conversão de 2D para 3D : recuperar a profundidade de uma 
+imagem ou vídeo 2D~\cite{Liang2011}, e a forma de gerar imagens de alta qualidade estereoscópica em novos pontos de vista virtual~\cite{Liang2004}. 
+
+\section{\textit{Framework} para a Conversão de Vídeo de 2D para 3D}
+
+A conversão de vídeo de 2D para 3D pode ser visto, pelo menos conceitualmente, como um caso 
+especial de modelagem de imagem baseadas em técnicas de renderização, desenvolvido para fornecer novos pontos de vistas virtuais 
+de um determinado conjunto de imagens. Com base na modelagem de imagens e das técnicas de renderização podem ser classificadas em três 
+categorias principais, de acordo com a quantidade de informação sobre a geometria explicitamente utilizados no processo~\cite{Chan2007}:
+
+\begin{enumerate}
+\item Métodos que usam um modelo da imagem 3D completo: Esta categoria exige a reconstrução completa e precisa de um modelo geométrico para 
+a imagem capturada. Esse modelo irá conter todas as informações necessárias para a prestação de uma nova visão virtual a partir de um ponto 
+de vista dado. Estrutura da \textit{silhouette}, por exemplo, é uma técnica comumente usada para construir modelos de objetos 3D. 
+Dado o modelo 3D e as condições de iluminação da imagem, uma nova visão virtual pode ser facilmente construida a partir de um ponto de vista 
+desejado, usando técnicas convencionais de computação gráfica. No contexto de conversão de vídeo 2D para 3D, geralmente é extremamente 
+difícil e propenso a erros a recuperação da estrutura da imagem completa em 3D a partir de uma sequência de imagens ou vídeo único, exceto se 
+o vídeo for capturado em condições rigorosas. É, portanto, impraticável usar uma abordagem de modelo 3D completa para a conversão automática 
+de vídeo 2D para 3D.
+
+\item Métodos que usam apenas imagens e nenhuma informação explícita da geometria: Esta categoria diretamente torna novas vistas virtuais 
+a partir de um conjunto de imagens capturadas, geralmente centenas de milhares de imagens são necessários, com nenhuma ou muito pouca informação 
+geométrica, por exemplo, \textit{Lightfields} e \textit{Lumigraph}. Na conversão de vídeo de 2D para 3D, o número de imagens disponíveis para renderização 
+é normalmente pequena, fazendo esta abordagem impraticável para a conversão automática de vídeo 2D para 3D.
+
+\item Métodos híbridos que, explicitamente, utilizam as informações geométricas: Esta categoria utiliza uma abordagem geométrica híbrida  
+e baseado em imagem. Novas exibições virtuais são renderizadas a partir de um número limitado de imagens com a ajuda de informações geométricas 
+incompletas da cena. Nesta categoria os métodos incluem profundidade de imagem baseada em processamento (DIBR) [16], profundidade  de imagens 
+em camadas (LDI), e reconstrução intermediária da visualização  (IVR). A maior parte dos algoritmos de conversão de vídeo propostos 
+de 2D para 3D usam uma estrutura que se enquadra nessa categoria, uma abordagem de geometria híbrido e baseado em imagem.
+
+\end{enumerate}
+
+O quadro comumente utilizado para a conversão automática de vídeo 2D para 3D, basicamente, consiste de dois elementos (Figura~\ref{fig:2d_3d}): a extração de 
+informações de profundidade e de geração de imagens estereoscópicas, de acordo com informações da profundidade estimada e das condições de visualização 
+esperada. 
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=1]{imagens/2d_3D}
+\caption{Diagrama de conversão automática de 2D para 3D~\cite{Liang2011}.}
+\label{fig:2d_3d}
+\end{figure}
+
+A extração de informações de profundidade visa explorar pistas pictóricas\footnote{Uma imagem é pictórica quando produzida por ordenação de pigmentos 
+sobre algum suporte, geralmente utilizando técnicas de fotografia, desenho, pintura, gravura e outras das Artes Visuais. A imagem pictórica pode ser 
+figurativa, se representar algo existente materialmente na natureza (ou supostamente existente, como no caso de figuras mitológicas, ou abstrata, 
+se não se prender a nenhuma representação material).} e a paralaxe de movimento, contido em uma única imagem  ou 
+vídeo em 2D, para recuperar a estrutura de profundidade da imagem. A informação de profundidade recuperada é então convertida em uma representação adequada 
+para uso no processo de conversão de vídeo 2D para 3D. 
+
+
+\section{Modelos de extração de profundidade}
+
+\subsection{Profundidade De Foco/Defoco}
+
+Como visto no capítulo de introdução, acomodação é o mecanismo do olho humano usado para se concentrar em um dado plano de profundidade. 
+Câmeras de abertura real fazem o mesmo,centrando-se em um dado plano. Este mecanismo pode ser explorado para a geração de informações 
+detalhadas a partir de imagens captadas, que contêm um plano focado e objetos fora do plano focado. 
+Este tópico é conhecido na literatura como \textit{depth-from-focus/defocus}, que é um dos primeiros mecanismos a serem empregados 
+para recuperar a profundidade das imagens individuais~\cite{Ens1993},~\cite{Guo2008}.
+
+Na prática, existem duas abordagens principais que são usados para implementar este mecanismo. A primeira emprega várias imagens com 
+enfoques em diferentes características a fim de extrair a variação do borrado para uma característica determinada da imagem por meio 
+das imagens disponíveis. Esta variação pode ser traduzida em profundidade, encontrando o ponto em que o recurso especial deve ser o 
+foco~\cite{Liang2011}. Embora essa abordagem seja confiável e forneça estimativa de boa profundidade, a exigência de ter várias imagens da mesma 
+cena, capturadas com diferentes sistemas ópticos simultaneamente é uma restrição para qualquer aplicação prática no problema de conversão 2D para 3D.
+
+A segunda abordagem tenta extrair as informações da borragem a partir de uma única imagem, medindo a quantidade do desfoco associado 
+a cada \textit{pixel} e então mapear as medidas de borragem da profundidade desse \textit{pixel}. Um processo de deconvolução no domínio da 
+frequência usando a filtragem inversa foi introduzido em~\cite{Pentland1987} para recuperar a quantidade de desfoco em uma imagem. Para resolver a 
+instabilidade relacionada com a filtragem inversa no domínio da frequência uma abordagem de regularização foi proposto um 
+método de controle local para detectar bordas em diferentes níveis de desfoco e para 
+calcular o desfoco associado a essas arestas. 
+
+A indefinição gaussiana de kernel foi usada para modelar o desfoco das bordas e sua 
+segunda derivada foi usado para medir a \textbf{propagação da borda}, a fim de extrair o nível de desfoco. Mais recentemente foi proposta uma 
+abordagem baseada em \textit{wavelet}, em que uma decomposição de \textit{wavelet} em macro-blocos dentro de uma imagem foi
+ realizada para recuperar o conteúdo de alta frequência desse macro-bloco e o número de coeficientes \textit{wavelet} de alto valor  foi 
+contado para ser usado como uma medida de borragem. Uma abordagem semelhante foi usada para a 
+análise \textit{wavelet} 2D para a detecção e análise de bordas e usar a cor baseado em segmentação para adicionar consistência ao mapa de 
+profundidade. Estatísticas de ordem superior também tem sido utilizado para estimar a quantidade de desfoco em imagens convertidas de 2D 
+para 3D~\cite{Liang2011}.
+
+Embora a abordagem da recuperação da profundidade pelo foco/desfoco seja relativamente simples, ela sofre uma grande desvantagem, em 
+distinguir o primeiro plano do fundo, quando a quantidade de desfoco é semelhante. Em muitos casos o primeiro plano corresponde ao plano 
+de focagem, mas quando isso não é o caso, então é impossível distinguir uma região fora de foco no primeiro plano de uma região fora de
+ foco no segundo plano.
+
+
+\subsection{Profundidade a partir de dicas \textbf{Pictorial}}
+
+As pistas da profundidade pictórica são os elementos em uma imagem que nos permitem perceber a profundidade em uma representação 2D da imagem. 
+Esta tem sido conhecida há séculos e tem sido amplamente aplicada em artes visuais para melhorar a percepção de profundidade. Percepção de 
+profundidade pode está relacionada as características físicas do Sistema Visual Humano (HVS), tais como a percepção de profundidade por 
+acomodação ou pode ser aprendido com a experiência adquirida com a percepção da altura relativa dos objetos na imagem, perspectiva, 
+sombras e outros sinais pictóricos~\cite{Liang2011}. 
+
+A geração de informações de profundidade a partir de pistas pictóricas embutido em uma imagem pode ser subdividida em duas abordagens. 
+O primeiro se refere à extração de informações de profundidade "real" a partir de pistas disponíveis em uma imagem pictórica. Por "real", 
+queremos dizer profundidade relativa entre os objetos na cena. É impossível obter mais profundidades absolutas, sem o conhecimento da posição 
+e das características ópticas do dispositivo de captura. A segunda abordagem cria informações detalhadas artificial ou não-verídicas, 
+explorando pistas pictóricas que são comumente encontrados em todas as cenas de uma determinada categoria, como paisagens ou interiores. 
+Discutiremos três categorias de sinais pictóricos comumente usado para extração de informações detalhadas nas subseções a seguir.
+

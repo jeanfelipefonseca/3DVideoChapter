@@ -1,0 +1,161 @@
+ %================================================================================
+%
+%	Modelo para Relatórios Oficiais (TCC, Estágio, Dissertação,Teses e Projetos)
+%	Autor: Carlos Danilo M. Regis
+%
+%================================================================================
+
+\documentclass[a4paper,12pt,titlepage]{report} %declaração da classe do documento
+
+%============================== Pacotes adicionados =============================
+
+\usepackage[brazil]{babel} % português brasileiro 
+\usepackage[latin1]{inputenc} % acentuação direta
+\usepackage[T1]{fontenc} % codificação de fonte (fonte de 8 bits, util para PDF)
+\usepackage{geometry} % dimensionamento da página e das margens
+\usepackage{indentfirst} % identação do 1ª parágrafo
+\usepackage{amsmath,amssymb,amsfonts} % recursos matemáticos (amsmath->recursos avançados, amssymb->símbolos adicionais e amsfonts->fontes adicionais)
+\usepackage{graphicx} % uso de gráficos 
+%\usepackage{wrapfig} %uso de figura ao lado de texto
+\usepackage{setspace} % espaço entre linhas(\singlespacing, \onehalfspacing ou \doublespacing)
+\usepackage{titlesec} % para criar titulo de capitulo personalisado
+\usepackage{setspace} % para controlar o espacamento.
+\usepackage{ulem} % sublinhado
+\usepackage{fancybox} % box enfeitada tal como shadowbox
+% A última fonte usada é a mostrada no resutado da comppilação
+%\usepackage{times} %times new roman
+%\usepackage{emerald} %fonte intuada, tipo manuscrita
+%\usepackage{newcent} % permite o uso da família Times(helvetica, Times e courier)
+% sera a usada na dissertacao
+\usepackage{fancyhdr} %cabecalho
+\usepackage{bookman} %melhor fonte para a apostila
+%\usepackage[mtbold]%{mathtime}  % modifica as fontes matematicas
+\usepackage{pifont} %uso de dingbats
+\usepackage{wasysym} %mais figurinhas
+\usepackage{marvosym}
+\usepackage{textcomp}
+\usepackage{gensymb} % define simbolos como \ohm, que gera o omega grande sem usar modo matematico, e \micro que gera o 'mu' sem usar modo matemático
+\usepackage{hyperref} % Cria os hyperlinks
+\usepackage{subfig}
+%\usepackage{glossary} %glossário
+
+
+% ============================ Configurações ==========================
+
+%------------------------------------Margens----------------------------------------
+% Acerto de margens, usando o comando \geometry{}:
+% lmargin -> left (esquerda). Interna, se frente/verso
+% rmargin -> right (direita). Externa, se frente/verso
+% tmargin -> top (superior).
+% bmargin -> bottom (inferior).
+% headsep = espaço entre o cabeçalho e o texto
+% footskip = espaço entre o texto e o rodapé
+\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm, lmargin=3cm,rmargin=2cm,headsep=5mm,footskip=0cm}
+
+%---------------------------------------Ajuste do texto------------------------------------------
+% Controlar linhas orfas e viuvas, que as vezes sobram no começo ou no fim de uma página.
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+\setlength{\parindent}{1.25cm} % indentação do parágrafo
+
+\renewcommand{\contentsname}{Índice}
+
+
+
+%========================================= Capítulo Enfeitado ==========================================
+\titleformat{\chapter}[display]
+{\bfseries\Large\filcenter}
+{{\Large\scshape\chaptertitlename~\thechapter}} % denominacao "capitulo" e numeracao de capitulo
+{1pc}
+  % o que vai fazer antes de por o titulo
+{\titlerule[1.5pt]
+  \vspace{2pt}
+  \titlerule
+  \vspace{1pc}%
+  \Huge} % apos este, insere o titulo...
+  [\vspace{1pc} % o que fazer depois do titulo
+   \titlerule]
+
+%---------------------------------------------------- Marcadores----------------------------------------------
+\newcommand{\ponto}{\item[{\large \ding{252}}]} % a ser usado em listas
+
+%---------------------------------------------------- Espaçamento entre parágrafos ------------------------
+\setlength{\parskip}{0pt} 
+
+\begin{document}
+
+%-------------------------------------------- Comandos de ajuste da bibliografia usando o abntex ------------------------------------------------
+
+\include{capas}
+
+%%
+%% Parte pré-textual - tudo que vier descrito após esse comando é considerado como pré-texto e, sendo assim,
+%% sua numeração será diferenciada, no caso, será romana.
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+%\include{agradecimentos}
+
+% Sumário
+% Comente para ocultar
+\tableofcontents
+%
+% Lista de figuras
+% Comente para ocultar
+\listoffigures
+
+% Lista de tabelas
+% Comente para ocultar
+\listoftables
+
+\onehalfspacing
+
+%\include{abreviaturas}
+
+%% Parte textual - tudo que vier descrito após esse comando é considerado como texto prppriamente dito e, sendo 
+%% assim, sua numeração será diferenciada, no caso, será arabica.
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\include{introducao/introducao}
+\include{estereoscopia/tecnologias}
+
+\include{artigos/Creation}
+
+%\include{artigos/perceptual_atributes}
+\include{estereoscopia/h264}
+%\include{artigos/confort}
+\include{artigos/ASSESSMENT}
+\include{estereoscopia/exibicao}
+\include{artigos/Representation}
+%%
+%% Parte pós-textual
+%%
+
+\appendix 
+\include{apendice/Efeito_Crosstalk}
+\include{apendice/fund_mat}
+\include{apendice/ishihara}
+
+% Bibliografia
+% É aconselhável utilizar o BibTeX a partir de um arquivo, digamos "biblio.bib".
+% Para ajuda na criação do arquivo .bib e utilização do BibTeX, recorra ao
+% BibTeXpress em www.cin.ufpe.br/~paguso/bibtexpress
+%\nocite{*}
+%
+\bibliographystyle{plain}
+%
+%%\bibliographystyle{unsrtnat}
+%
+\bibliography{Bibliografia/danilo}
+%\bibliography{Bibliografia/metricas}
+\addcontentsline{toc}{chapter}{Referências Bibliográficas}
+
+\appendix 
+
+%\include{apendice/clarke}
+
+\end{document}
+

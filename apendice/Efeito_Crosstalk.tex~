@@ -1,0 +1,35 @@
+\chapter{Efeito Crosstalk}
+\label{crosstalk}
+
+Cross-talk ou imagem com fantasma é causada principalmente por: (i)  persistência de fósforo em monitores CRT e (ii) técnicas imperfeitas de separação 
+da imagem no qual a visão do olho esquerdo vaza até o ponto de vista do olho direito e vice-versa. 
+Cross-talk é percebida como um fantasma,sombra ou contornos duplos e é provavelmente um dos principais fatores que causam a má qualidade 
+de imagem e desconforto visual.No entanto, para as técnicas de polarização linear o posicionamento incorreto da cabeça do observador 
+(cabeça, por exemplo, inclinado) também causa o efeito fantasma de imagens. 
+Infelizmente, devido às limitações da tecnologia atual em dispositivos de apresentação,como monitores de vídeo, a separação das imagens esquerda 
+e direita pode originar dois problemas. No primeiro, como os monitores são usados em alta frequência (de 100 a 120 Hz), os fósforos da tela não
+têm tempo suficiente para retornar ao seu estado de baixa energia entre as apresentações da imagem esquerda e da imagem direita.
+No segundo problema, os obturadores de cristal líquido dos óculos não podem bloquear 100\% a passagem da luz. Parte da luz (aproximadamente 10\%) 
+pode passar por meio dos obturadores, permitindo que o olho veja, parcialmente, a outra imagem apresentada.
+O efeito crosstalk não está restrito apenas a imagens estereoscopicas que necessitem de óculos para serem visualizadas, podendo acorrer em imagens 
+autoestereóscopicas dependendo das técnicas de endereçamento utilizadas para cada olho.
+Ambos os problemas acabam possibilitando que cada olho veja sua própria imagem, mais uma sobreposição, ou um "fantasma", da imagem do outro olho. 
+Esse defeito, conhecido como efeito \textit{Crosstalk}, não impede a visualização estereoscópica, mas causa desconforto visual no observador~\cite{Tori2006}.
+Algumas soluções já foram desenvolvidas para que esse problema seja minimizado. 
+
+
+
+
+Isto pode ser evitado pelo uso de técnicas de polarização circular. 
+Pastoor (1995) demonstraram que a capacidade de percepção do cross-talk aumenta com um contraste cada vez maior e os valores de disparidade. 
+O autor sugere que o cross-talk de uma tela não deve ir além de um limiar de 0 a 3. 
+
+
+Exibe autostereoscopic também sofrem de cross-talk, às vezes até de forma significativa assim. 
+Isso pode ter uma variedade de razões, dependendo da técnica olho específicos de endereçamento usado. 
+Um problema em exposições controladas, por exemplo, é a latência no sistema de acompanhamento e / ou no mecanismo de direção das lentes direcional 
+apoio paralaxe movimento do observador (s).
+Como uma solução potencial, Konrad et al. (2000) propuseram um algoritmo para compensar cross-talk em imagens estereoscópicas. 
+Os autores mostram que a supressão do cross-talk aumenta o conforto visual. 
+O principal problema de cross-talk, no entanto, é que as soluções precisam ser específicas do sistema, isto é, um algoritmo para compensar ele 
+precisa ser adaptado especificamente para cada tipo de exibição e / ou óculos.

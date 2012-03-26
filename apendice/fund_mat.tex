@@ -1,0 +1,86 @@
+\chapter{Fundamentos Matemáticos}
+\label{fund_mat}
+
+Existem diferenças entre imagens formadas nas retinas de cada olho quando sobrepostas. 
+Estas diferenças são na direção horizontal. A disparidade é zero para objetos em que os 
+olhos convergem. 
+
+Já a paralaxe é a distância entre os pontos correspondentes das 
+imagens do olho direito e do esquerdo na imagem projetada na tela. Em outras palavras, 
+disparidade e paralaxe são duas entidades similares, com a diferença que paralaxe é 
+medida na tela do computador e disparidade, na retina. É a paralaxe que produz a 
+disparidade, que por sua vez, produz o estéreo. Os três tipos básicos de paralaxe são:
+
+\begin{itemize}
+ \item Paralaxe zero: conhecida como ZPS (\textit{Zero Paralax Setting}). Um
+    ponto com paralaxe zero se encontra no plano de projeção, tendo a mesma
+     projeção para os dois olhos (Figura~\ref{paral_zero}).
+\item Paralaxe negativa: significa que o cruzamento dos raios de projeção para cada
+     olho encontra-se entre os olhos e a tela de projeção, dando a sensação de o
+        objeto estar saindo da tela (Figura~\ref{paral_neg}).
+\item Paralaxe positiva: o cruzamento dos raios é atrás do plano de projeção, dando a
+       sensação de que o objeto está atrás da tela de projeção (Figura~\ref{paral_pos}).
+\end{itemize}
+
+	\begin{figure}[!htb]
+	  \centering
+	  \subfloat[]{\includegraphics[scale=0.5]{imagens/paral_zero} \label{paral_zero}}% neste comando o que está entre [] é o subtítulo da figura, caso você não queria nenhum subtítulo pode deixar em branco
+	  \subfloat[]{\includegraphics[scale=0.5]{imagens/paral_neg} \label{paral_neg}} 
+	  \subfloat[]{\includegraphics[scale=0.5]{imagens/paral_pos} \label{paral_pos}} 	
+	  \caption{Tipos de paralaxe:~\ref{paral_zero} Paralaxe zero (ZPS),~\ref{paral_neg} Paralaxe negativa e~\ref{paral_pos} Paralaxe positiva~\cite{Stereographics1997}.} % aqui nesta legenda eu me referi às imagens anteriores para mostrar como chamá-las no texto.
+	\label{tipos_paral}
+	\end{figure}
+
+A paralaxe positiva $P$ pode apresentar problema quando comparada à distância
+interaxial ($t_c$), distância entre os olhos. Quando $P$ tem valor menor, mas próximo a $t_c$ o
+resultado é ruim, a menos que se queira posicionar o objeto no infinito. Se $P$ for maior
+que $t_c$, significa que há um erro, pois é um caso degenerado. Estes casos estão ilustrados
+na Figura~\ref{prob_paral_pos}.
+
+	\begin{figure}[!htb]
+	  \centering
+	 \includegraphics[scale=1]{imagens/probl_paral_pos} 	
+	  \caption{Problemas com paralaxe positiva~\cite{Stereographics1997}.} % aqui nesta legenda eu me referi às imagens anteriores para mostrar como chamá-las no texto.
+	\label{prob_paral_pos}
+	\end{figure}
+
+Deve-se tomar cuidado para que as projeções sempre caiam no retângulo que
+define o campo de visão no plano de projeção. Caso isto não ocorra, significando que
+apenas um dos olhos esteja vendo o ponto, a noção de estereoscopia é perdida. Isto
+apenas é aceitável para pontos que se movam rapidamente.
+
+Um fator importante que deve ser levado em consideração é que a distância do
+observador à tela afeta o efeito de estereoscopia. Quanto maior a distância à tela, maior
+será o efeito estereoscópico (tanto positivo quanto negativo). 
+
+Um grande desafio da estereoscopia é gerar maior efeito de profundidade com
+menor valor de paralaxe devido ao espaço físico limitado da tela e da distância máxima que
+um ambiente comporta para os observadores. Em regra geral, o ângulo de paralaxe ($\beta$)
+deve estar no intervalo [-1,5°, 1,5°], definindo paralaxes mínimas e máximas. O
+esquema de controle da paralaxe é ilustrado na Figura 11.23, em que $d$ é a distância do
+observador à tela.
+
+
+
+	\begin{figure}[!htb]
+	  \centering
+	 \includegraphics[scale=0.8]{imagens/ang_paralaxe} 	
+	  \caption{Intervalo de controle do ângulo de paralaxe~\cite{Stereographics1997}.} 
+	\label{ang_paralaxe}
+	\end{figure}
+	
+	Portanto	$P = 2 * d * tan(\frac{\beta}{2})$.
+
+
+Em uma situação com um \textit{desktop}, normalmente $d = 60cm$. Portanto o valor máximo
+de paralaxe $P_{max}$ é 1,57 cm. Em uma sala de visualização com distância média de 3~m, o
+valor máximo de paralaxe $P_{max}$ é 7,85 cm. Esta paralaxe é relativa ao mundo físico,
+em que são feitas as projeções. Para transformar para o mundo virtual temos que dividir
+esta grandeza pela largura da tela de projeção e multiplicar pelo número de pontos
+horizontais.
+
+A distância interaxial também influencia a paralaxe. Quanto maior a distância
+interaxial, maior é a paralaxe e, consequentemente, maior a sensação de estéreo.
+Contudo sempre se deve obedecer aos limites para a paralaxe positiva, mencionados
+anteriormente.
+

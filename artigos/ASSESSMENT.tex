@@ -1,0 +1,532 @@
+\chapter{Avaliação da Qualidade de Vídeos 3D}
+
+%author={Quan Huynh-Thu and Le Callet, P. and Barkowsky, M.}, 
+%booktitle={17th IEEE International Conference on Image Processing (ICIP), 2010}, 
+%title={Video quality assessment: From 2D to 3D -- Challenges and future trends},
+
+Avaliação da qualidade é um componente chave de qualquer sistema de serviço relacionado a vídeo. 
+A avaliação da qualidade de vídeo 3D e imagens estéreo é alcançável através de avaliação subjetiva ou através de
+métricas objetivas. A melhor maneira de avaliar a qualidade do vídeo seria executar testes subjetivos de acordo com protocolos padronizados,
+que são definidos a fim de obter correta avaliação da qualidade e confiabilidade de vídeo através de participantes.
+Enquanto os resultados dos testes subjetivos continuam a ser os melhores padrões de medição de qualidade em pesquisa de vídeo, 
+as métricas objetivas são de extrema importância para o desenvolvimento de tecnologias de vídeo 3D. 
+
+Os métodos de avaliação da qualidade de imagem 2D não são adequados para medir a qualidade da imagem em 3D, uma
+vez que a profundidade (o fator mais importante em um sistema 3D) e as distorções típicas da estereoscopia 
+(por exemplo, \textit{crosstalk}) não são incorporadas~\cite{Meesters2004}. Até agora, poucos métodos objetivos de avaliação 
+de imagens estéreo foram apresentadas~\cite{Benoit2008}, que usaram o mapa de profundidade para avaliar 
+o sentido estéreo. O Mapa de profundidade, trará três questões: primeiro, o processo de encontrar os 
+mapas de profundidade das imagens é um processo altamente intensivo e demorado. Em segundo lugar, não é 
+fácil calcular com precisão o mapa de profundidade, por causa da oclusão, do ruído da câmera, e assim 
+por diante. Terceiro, é difícil decidir qual o grau de profundidade é bom, e quanto mais, melhor ou menos é melhor.
+
+A avaliação subjetiva da qualidade do vídeo pode produzir medidas de qualidade perfeita e desejada. No entanto, o uso do testes subjetivos 
+é demorado devido aos preparativos para o teste, requisitos, custo e consumo de tempo. 
+Além disso, a análise dos dados coletados não é tão simples e há uma demanda crescente para o uso de avaliações objetivas de qualidade(AOQ). 
+
+A tecnologia 2D atualmente existente mede a qualidade objetiva de cores individuais e as sequências de mapa de profundidade não representam a 
+verdadeira qualidade da imagem percebida pelos usuários. Embora alguns pesquisadores usem relação sinal-ruído de pico (PSNR) para avaliar vídeos 3D, 
+as limitações de PSNR também foram analisadas para vídeos 2D.
+
+Estas limitações são similares as avaliações da qualidade de imagem em vídeos 3D, e o PSNR não fornece informações sobre a percepção de profundidade.
+Com a abordagem AOQ, algoritmos computacionais são usados para estimar a qualidade dos vídeos sem a necessidade de usar seres humanos. 
+Assim, utilizamos a avaliação da qualidade subjetiva (ASQ) para confirmar a avaliação da qualidade objetiva (AOQ) das sequências de vídeo 3D e imagens.
+ 
+Muitas acadêmias e as comunidades industriais tem concentrado esforços para desenvolver modelos de testes subjetivos que avaliem ambas as sequências de 
+vídeo 2D e 3D, de forma que esse modelos tenham uma melhor qualidade no processamento e no recebimento dos dados. 
+
+Com o advento da tecnologia 3D aplicada a diferentes áreas como esportes, eventos corriqueiros, filmes, séries de TV e documentários, aplicações médicas, 
+jogos, as imagens 3D e vídeos precisam ser processadas, transmitidas e distribuídas para vários usuários. 
+Portanto, é importante definir procedimentos subjetivos e objetivos para avaliar a qualidade do processamento de vídeos estéreos. 
+
+Os atributos multidimensionais, tais como bloqueio e ruído associado com vídeo 2D não pode ser usado 
+para medir as qualidades perceptualmente importantes do vídeo 3D, como noção de percepção de presença, nitidez naturalidade e profundidade 
+que está relacionado com a sensação de imersão no cenário 3D.
+
+As diferentes tecnologias de \textit{displays} 3D que são baseados nessas diferentes características levam em consideração o impacto de cada tecnologia 
+na visualização pelo usuário e que fatores devem ser analisados para medir a qualidade de vídeo 3D e como eles impactam na percepção visual. 
+
+\section{Avaliação Subjetiva}
+
+Em vídeos 3D a extração de cores e mapas de profundidade tem atraído grande atenção nos últimos 10 anos, já que pode reduzir os requisitos de armazenamento 
+e largura de banda para a transmissão de conteúdo estereoscópico através de canais sem fio, como redes celulares. 
+
+Investigação no campo da avaliação de vídeo 3D de qualidade depende sobre a disponibilidade de pontos subjetivos, \textit{Mean Opinion Score} (MOS), 
+coletados por meio de experimentos onde grupos de pessoas são convidadas a avaliar a qualidade do 3D nas sequências de vídeo. 
+A fim de recolher dados significativos que são confiáveis e estatísticos, testes subjetivos devem ser cuidadosamente projetados e realizadas,
+e requerem um número relevante de participantes.
+
+Estes testes são bastante demorado, no entanto, são fundamentais para testar e comparar o desempenho do algoritmos objetivos,ou seja, que tentam prever
+a qualidade de vídeo 3D através da percepção humana, analisando o vídeo em 3D.
+Durante a fase de testes, o conforto torna-se essencial, pois alguns observadores apresentam fadiga visual com sintomas 
+como cansaço visual, dor de cabeça ou náuseas. Este efeito é muitas vezes medido por meio de questionários~\cite{Polonen2010}. 
+Esses questionários ajudam a identificar as necessidades, exigências, expectativa de vídeo 3D em geral qualidade, conforto visual, a percepção de preferência, e
+satisfação dos usuários 3D~\cite{Sadka2011}.
+
+Além de auxiliar na melhora do desempenho de avaliações objetivas, as métricas de qualidade subjetiva são extremamente importantes no que diz respeito
+ao tempo de resposta, ou seja, a opinião do usuário é automaticamente produzida após o teste. 
+
+Selecionado os grupos de usuários para o experimento, eles serão submetidos a um questionário de perguntas referente aos vídeos visualizados, em que 
+o questionário é baseado na escala definida logo a seguir.
+
+\begin{itemize}
+ \item Excelente, Bom, Razoável, Não Sabe, Ruim;
+ \item Impacto Alto, Impacto moderado, Pouco Impacto, Não Sabe, Nenhum impacto;
+ \item Muito importante, Importante, Pouco importante, Não Sabe, Nenhuma importância;
+ \item Concordo totalmente, Concordo, Discordo, Discordo totalmente; 
+\end{itemize}
+
+
+ 
+
+Após o preenchimento do questionário e a sumarização dos pontos, é calculado o MOS para cada condição de teste de acordo com a fórmula~\ref{f7}.
+
+\begin{equation}
+ MOS_j = \dfrac{\sum_{i=1}^{N} m_{ij}}{N} 
+ \label{f7}
+\end{equation}
+em que, $N$ é o número de indivíduos, $m_{ij}$ a pontuação por assunto $i$ para cada teste $j$.
+
+A relação entre os valores médios estimados com base em uma amostra da população (isto é, os indivíduos que participam e completam o questionário da pesquisa)
+e os verdadeiros valores médios de toda a população é dada pelo intervalo de confiança da média estimada. A média é estimada utilizando alguma distribuição de
+probabilidade. Em~\cite{Sadka2011}, foi utilizado a distribuição de probabilidade T-Student.
+
+Contudo, a medição de qualidade de vídeo subjetiva também pode ser um desafio, porque ele pode exigir pessoas capacitadas e treinadas para julgar a sua qualidade. 
+Muitas medidas de qualidade subjetiva de vídeo são descritos na seção de recomendação do ITU-T BT.500.
+Sua ideia principal é o mesmo que no \textit{Mean Opinion Score} para sequências de vídeo que são apresentados ao grupo de telespectadores e, em seguida, 
+sua opinião é gravada e gerada a média para se avaliar a qualidade de cada sequência de vídeo. 
+
+Otimização de sistemas de vídeo 3D em tempo hábil é muito importante, portanto,é necessário que as medidas subjetivas de confiança sejam calculadas com
+base na análise estatística. Testes subjetivos são realizados para verificar a qualidade de vídeo 3D e a percepção de profundidade de uma série de 
+sequências de vídeo codificados de maneira diferente, com taxas de perda de pacotes que variam de 0\% a 20\%. 
+Os resultados de qualidade subjetiva são usados para determinar com mais precisão a qualidade das métricas de avaliação objetiva para sequências de vídeo 3D, 
+como o média PSNR, as semelhanças estruturais (SSIM), \textit{Mean Square Error (MSE)}.
+
+Na avaliação subjetiva das imagens em 3D e sequências de vídeo, a qualidade do vídeo é mais próximo do conceito de qualidade da 
+experiência e deve ser considerada multi-dimensional: a qualidade visual, qualidade da profundidade/percepção e conforto. A primeira 
+dimensão pode ser considerada a qualidade visual, no sentido de 2D. O valor acrescentado de 
+profundidade foi, muitas vezes proposta como um segundo critério, e o termo "naturalidade"  foi proposto para expressar a combinação 
+da profundidade percebida e a qualidade geral~\cite{Ronald2008}. 
+
+Como a tecnologia de exibição 3D ainda está em avanço, existem diferentes tecnologias e nenhuma pode ser recomendada como uma referência. 
+O ângulo de visão, o campo de visão, a quantidade de \textit{crosstalk} e o brilho são muitas vezes fatores limitantes.
+
+\section{Métricas Objectivas: De 2D para 3D}
+
+
+Em comparação com o vídeo 2D, a avaliação objetiva de vídeo em 3D é mais complexa:
+
+\begin{itemize}
+\item Opinião do observador pode ser considerado como multidimensional, incluindo fatores como a fadiga visual e a percepção de profundidade;
+\item Mais aspectos do HVS precisam ser abordadas, por exemplo, rivalidade binocular e a supressão binocular.
+\end{itemize}
+
+Na cadeia de transmissão em 3D, artefatos visíveis ocorrem em vários locais. Na captura da câmera ou nas etapas de conversão e renderização 
+tem-se a introdução das degradações geométricas~\cite{Woods93,Quan2010}.
+
+Deve ser mencionado que o conteúdo do vídeo em si tem um impacto maior sobre a qualidade percebida visual em 3D do que em 2D. 
+
+Estudos têm indicado que os telespectadores tendem a focar sua atenção em áreas específicas de interesse na imagem e modelos de 
+atenção visual têm sido propostas~\cite{Meur2009}. Há um interesse crescente na utilização de modelos de atenção visual (mapas saliência) 
+no interior de modelos de avaliação de qualidade de vídeo, a fim de melhorar sua precisão. Atenção visual é sem dúvida 
+também um fator crucial na percepção de vídeo 3D~\cite{Quan2010}.
+
+\section{Métricas Objetivas de qualidade em 3D}
+
+Em~\cite{Quan2010} é apresentado que existe uma falta de metodologias confiáveis para a avaliação subjetiva de vídeos em 3D e que
+essa falta de metodologias pode afetar o valor de validação das métricas objetivas. No entanto, novas métricas estão sendo desenvolvidas
+afim de que se produzam técnicas subjetivas mais confiáveis e qualidade dos vídeos 3D seja melhorada.
+
+Um algoritmo de avaliação objetiva, que utiliza o mapa de profundidade, bem como a visão estereoscópica é proposto em~\cite{Shao2009}. 
+Inclui as partes do índice de similaridade estrutural (SSIM) e a detecção de degradações borda e cor.
+
+A supressão binocular indica que um ponto de vista do par estéreo pode ser transmitido a uma qualidade visual pior do que  
+outro. Esta investigação é realizada em~\cite{Ozbek2008} usando um modelo de taxa de distorção com base na estimativa da 
+qualidade visual com um sinal de pico adaptado para ruído (PSNR) e uma métricas de \textit{jerkiness}. 
+
+A aplicabilidade da PSNR e de modelos de vídeo 2D (SSIM e VQM) para o 3D foi investigada em um conjunto de dados pequeno, tanto 
+para o caso de vídeo estereoscópico, quanto para vídeo com informações de profundidade monoscópico~\cite{Yasakethu2008}. Os 
+resultados mostram que a qualidade de vídeo 3D pode ser estimada a partir de avaliação separada de cada vista, enquanto 
+modelos para 2D também poderia ser usado para estimar a qualidade de percepção de profundidade. Uma análise similar é feita 
+em~\cite{Hewage2009}, na qual foram realizados os experimentos subjetivos com um dispositivo Philips com tela de 42 polegadas 
+auto-estereoscópica para apresentar o conteúdo 2D mais profundidade. No entanto, um estudo mostrou que os indivíduos preferem 
+desligar o efeito 3D no \textit{display}~\cite{Quan2010}.
+
+% author={De Silva, D.V.S.X. and Fernando, W.A.C. and Nur, G. and Ekmekcioglu, E. and Worrall, S.T.}, 
+% booktitle={17th IEEE International Conference on Image Processing (ICIP)}, 
+% title={3D video assessment with Just Noticeable Difference in Depth evaluation}, 
+
+\section{Avaliação da profundidade}
+
+Avaliação da qualidade de vídeo 3D representa novos desafios para a comunidade científica 3DTV, dentre elas a avaliação 
+da percepção da profundidade permanece sendo um problema sem resposta. Enquanto os seres humanos usam diferentes cálculos 
+fisiológicos e psicológicos para perceber a profundidade~\cite{Silva2010}, a estereoscopia binocular é a sugestão de profundidade 
+fornecida pelos modernos \textit{displays} 3D estereoscópico, em comparação aos tradicionais \textit{displays} 2D. 
+Estereoscopia binocular é a sensação pela qual o cérebro interpreta as informações de profundidade, fazendo uso dos 
+dois pontos de vista ligeiramente diferentes visto pelos dois olhos. Assim, o cérebro humano é capaz de perceber 
+a profundidade por meio da análise das disparidades de diferentes objetos nas vistas estereoscópicas. 
+
+Um dos primeiros estudos explorou a variação da experiência humana em três atributos específicos 
+do vídeo 3D. Esses atributos são a percepção da presença de profundidade e a naturalidade da profundidade. 
+Foi mostrado que com o aumento da profundidade se obtém um maior sentido de presença, desde que a profundidade é percebida 
+como natural~\cite{Silva2010}. 
+
+O efeito da qualidade da percepção da profundidade da imagem 3D foi apresentado em~\cite{Leon2008}. A profundidade foi 
+quantizada em diferentes taxas de \textit{bits} e avaliados subjetivamente para a percepção 3D em geral. 
+Concluiu-se em~\cite{Leon2008}, que a imagem de profundidade pode ser significativamente quantizada sem afetar a qualidade da 
+percepção 3D. 
+
+Em~\cite{Hewage2009}, a correlação entre as métricas de qualidade existentes de vídeo 2D e os resultados subjetivos  
+ da percepção do atributo da cor \textit{plus} do vídeo com profundidade estereoscópica, foi analisada. E foi concluído 
+que, das métricas 2D avaliadas, o \textit{Video Quality Metric} (VQM)~\cite{Pinson2004} da componente de cor é fortemente 
+correlacionada com a percepção geral da profundidade. 
+
+Em~\cite{Tikanmaki2008}, foi relatado que as distorções na profundidade do vídeo 3D são menos significativas do que as distorções 
+de cor e que a percepção da profundidade não muda com diferentes níveis de quantização da imagem de profundidade, não explicando 
+a razão. 
+
+%Esta seção fornece detalhes de um conjunto de experiências subjetivas realizadas para avaliar a percepção do usuário da profundidade 
+%em vídeo 3D. Em particular, é investigado como os usuários reagem à alterações nas imagens de profundidade, que são causados durante 
+%a compressão.
+%
+%\subsection{O Setup Experimental}
+%
+%Um experimento subjetivo foi realizado de acordo com a ITU-T BT.500-11~\cite{itu_500} em~\cite{Silva2010}. O experimento foi realizado 
+%por 16 observadores (6 peritos e 10 não peritos) que participaram de todos os testes. Em contraste com o padrão, alguns especialistas 
+%foram selecionados para o experimento, considerando a natureza específica de vídeo 3D. Todos os participantes têm uma boa acuidade 
+%visual ($> 0,7$, como testado com um quadro Snellen~\footnote{O teste de Snellen é o sistema padrão universal para avaliar a visão. 
+%Este teste consiste em ler linhas de letras cujo tamanho vai diminuindo e as quais estão penduradas a uma distância padronizada da 
+%pessoa a ser testada. Cada linha na tabela diz respeito a uma graduação que representa a acuidade visual.}), boa visão estéreo 
+%($< 30$ segundos de arco, como testado com o teste de estéreo Randot~\footnote{O teste Stereo Randot avalia a percepção da profundidade 
+%estéreo, exigindo que os pacientes a identifiquem seis formas geométricas de origem aleatória (500 a 20 segundos de arco). O Teste Randot 
+%Stereo oferece precisão e confiabilidade em testes de estereoscopia. Padrões de pontos aleatórios requer que o indivíduo binocular extraia 
+%dados de um fundo em justaposição imediata, de tal forma que qualquer que qualquer influência da distância sobre o julgamento seja 
+%eliminado.}) e boa visão de cores (como testado com o teste Ishihara (Apendice~\ref{Ishihara})). O experimento foi realizado em um 
+%dispositivo Philips 42" WOWvx com multi-vista auto-estereoscópica, com taxa de aspecto de 16:9 e com a luminosidade de pico é de 200 
+%cd/m2. A distância de visualização foi de 3m a partir do plano da tela. Para esta representação, o mapa de profundidade tem 256 
+%(0-255) níveis de profundidade diferentes. Objetos de vídeo que têm um nível de profundidade de 128, tem zero disparidade 
+%(co-planar com o plano da tela). A iluminação ambiental foi medido 200 lux, que é o recomendado em~\cite{itu_500} para ambientes domésticos.
+%
+%\subsection{O Experimento}
+%
+%Várias sequências de vídeo 3D são considerados para testes subjetivos. No entanto, os resultados são apresentados para as sequências 
+%de "Breakdancers" (alto movimento, com alta variação da profundidade da câmara estática), "Chess" (baixo movimento, alta variação da 
+%profundidade e movimento de câmera paralela), "World Cup" (movimento médio, baixa variação da profundidade e câmera estática) e 
+%"Interview" (baixo movimento, com baixa variação da profundidade da câmara estática), considerando suas características diferentes. 
+%
+%Em cada teste de avaliação subjetiva, os observadores são convidados a avaliar a profundidade percebida na sequência de vídeo 
+%modificada em relação ao original. Foi usado o método DSCQS~\cite{itu_500}, 
+%que tem uma escala que varia de um a cinco.
+%
+%\section{avaliação do Comportamento JNDD -- \textit{Just Noticeable Difference in Depth}}
+%
+%Para explicar os resultados subjetivos apresentados na seção anterior, foi realizada uma experiência subjetiva para compreender 
+%a sensibilidade dos seres humanos às mudanças de profundidade em uma cena de vídeo 3D.  
+%
+%\subsection{O Experimento de Avaliação JNDD}
+%
+%Os sujeitos são convidados a assistir a uma sequência de imagens sintéticas com dois objetos, ambos representando uma imagem 
+%sintética de um carro. Inicialmente, os dois objetos são colocados no mesmo nível de profundidade em relação à tela. 
+%A profundidade do objeto certo é gradualmente alterada (aumentada ou diminuída) em uma taxa predeterminada, enquanto a 
+%profundidade do objeto do lado esquerdo é mantido inalterado. 
+%
+%Os avaliadores fazem um sinal para o coordenador, quando sentem uma mudança na diferença de nível de profundidade entre os dois objetos. 
+%Eles são perguntados se o objeto direito se move para a frente ou para trás em relação ao objeto esquerda. Para garantir a 
+%confiabilidade dos resultados experimentais, as respostas dos sujeitos (no total de 2) que respondem a esta pergunta de forma 
+%incorreta são descartados da análise final.
+%
+%No experimento, a profundidade do objeto certo é alterada em incrementos no nível de profundidade. A cor da imagem não 
+%é alterado durante toda a sequência. O nível de profundidade do objeto direito é alterado a cada 1,5 segundo.
+%
+%\subsection{Resultados do Experimento de Avaliação JNDD}
+%
+%Os resultados do experimento são descritos em uma Tabela no artigo~\cite{Silva2010}. Os resultados são apresentados nas unidades de 
+%níveis de profundidade, em que cada nível de profundidade nesta configuração experimental corresponde a cerca de 1,2 milímetro 
+%(30.5cm / 255). O JNDD corresponde ao número de níveis de profundidade despercebido. O JNDD é o nível mínimo da tela em 
+%que a disparidade é zero, e aumenta para perto e longe do plano \textit{clipping}, que pode ser explicado pela Lei de Weber. Os 
+%valores JNDD na Tabela são dependentes de exibição e deve ser verificada para um tipo diferente de visualização 3D.
+%
+%
+%\subsection{Explicação dos resultados Percepção de profundidade}
+%
+%Durante o processo de codificação e decodificação, os valores dos \textit{pixel} mudaram, causando 
+%distorções na visão estereoscópica. Essas distorções desencadeiam mudanças na profundidade percebida. 
+%Contudo, o JNDD sugere que os observadores não percebem uma mudança de profundidade até o nível 
+%de profundidade, que é aumentada ou reduzida em pelo menos 16 níveis (\~ 7\%). Assim, as mudanças de \textit{pixels} 
+%na imagem de profundidade não causam distorções na percepção de profundidade, a menos que essas mudanças excedam um 
+%limite particular. Este limiar corresponde ao valor JNDD, medido em unidades de níveis de profundidade.
+%
+%\subsubsection{Determinação das Regiões de Distorções da Profundiade Perceptível}
+%
+%Ao analisar o efeito de erros dos \textit{pixels} na percepção da profundidade, é importante identificar as regiões 
+%em que há distorção perceptível. Para este fim, nós produzimos um Mapa Distorção, que destaca as posições dos 
+%\textit{pixels} com uma distorção perceptível. Sendo $X$ a imagem original e $Y$ as imagens distorcidas na profundidade. 
+%A distorção perceptível ($E$), causada por uma mudança do valor do \textit{pixel} localizado na posição $(i, j)$ é 
+%calculada como dado na equação~\ref{eq:perceivable}~\cite{Silva2010}.
+%
+%\begin{equation}
+%E(i,j)=\left\{\begin{array}{ccc}
+%0 & \mbox{se} & |X(i,j) - Y(i,j)| < D_{JND}\\
+%|X(i,j) - Y(i,j)| - D_{JND} & \mbox{se} & |X(i,j) - Y(i,j)| \geq D_{JND}\\
+%\end{array}\right.
+%\label{eq:perceivable}
+%\end{equation}
+%
+%
+%Na Equação~\ref{eq:perceivable}, JNDD é a diferença apenas perceptível na profundidade ou o número de níveis de profundidade 
+%despercebida correspondente à profundidade $(i, j)$, denotada por $X (i, j)$. Este JNDD é calculado de acordo com os valores 
+%obtidos experimentalmente. Idealmente, JNDD deve mudar de acordo com o nível de profundidade de cada pixel $(X (i, j)$, neste 
+%caso. No entanto, para reduzir a complexidade computacional, calculamos JNDD discretamente, considerando-se um conjunto 
+%específico de caixas. Estas caixas são ilustradas na equação~\ref{eq:DJND}.
+%
+%\begin{equation}
+% D_{JND} =\left\{\begin{array}{cccc}
+%21 & \mbox{se} & 0  \leq X(i,j) < 64 & :Bin1\\
+%19 & \mbox{se} & 64  \leq X(i,j) < 128 & :Bin2\\
+%18 & \mbox{se} & 128  \leq X(i,j) < 192 & :Bin3\\
+%20 & \mbox{se} & 192  \leq X(i,j) < 255 & :Bin4\\
+%\end{array}\right.
+%\label{eq:DJND}
+%\end{equation}
+%
+%O valor $D_{JND}$ para cada uma das caixas identificadas na equação~\ref{eq:DJND} é calculada como a média do número de 
+%níveis de profundidade imperceptível, ao nível de profundidade com início e final para cada bin. 
+%
+%\section{Avaliação da Qualidade Objetiva em Imagens Estéreo usando a Disparidade}
+%
+%% author={Jiachen Yang and Chunping Hou and Yuan Zhou and Zhuoyun Zhang and Jichang Guo}, 
+%% booktitle={3DTV Conference: The True Vision - Capture, Transmission and Display of 3D Video, 2009}, 
+%% title={Objective quality assessment method of stereo images}, 
+%
+%Na visualização de uma imagem 2D, os dois olhos veem a mesma imagem. Enquanto que para uma imagem estéreo, 
+%os dois olhos veem duas imagens (esquerda e direita, $L$ e $R$, respectivamente) com a disparidade padrão 
+%($D$, (Como os dados da imagem não pode ser negativo, é avaliado o valor absoluto)) e dado por : 
+%
+%\begin{equation}
+% D = |R-L|
+%\end{equation}
+%
+%A disparidade absoluta da imagem é a informação diferente que os dois olhos veem na imagem estéreo.  
+%Se a disparidade absoluta da imagem é uma imagem com o valor 0 (todo preto), ou seja, as duas imagens são 
+%completamente iguais e não existe disparidade, o par de imagens não faz sentido 
+%física para estéreo, de acordo com o princípio de característica física do olho humano (os olhos 
+%não podem perceber o estéreo ao ver duas imagens idênticas).
+%
+%Em~\cite{Jiachen2009}, é avaliado a qualidade da imagem estéreo a partir de dois aspectos: a avaliação objetiva 
+%da qualidade de imagem e avaliação objetiva do par estéreo. Portanto o indicador de avaliação objetiva da imagem 
+%estéreo  tem duas partes, uma é a qualidade da imagem, e a outra é sentido estéreo.
+%
+%\subsection{Avaliação de qualidade da Imagem (IQA -- \textit{Image Quality Assessment})}
+%
+%Nessa avaliação segui-se o método da PSNR. E defini-se o valor do IQA como a média aritmética da avaliação da 
+%PSNR nas imagens esquerda e direita.
+%
+%\begin{equation}
+% \mbox{IQA} = \frac{(\mbox{PSNR}_L + \mbox{PSNR}_R)}{2}
+%\end{equation}
+%
+%
+%\subsection{Avaliação do sentido estéreo (SSA -- Stereo Sense Assessment)}
+%
+%A avaliação objetiva do sentido estéreo segue o método da PSNR~\cite{Jiachen2009}. O modelo de avaliação objetiva da 
+%qualidade da imagem estéreo é realizada da seguinte forma: Em primeiro lugar, temos a disparidade absoluta 
+%da imagem original e processada, $X_1$ e $X_2$ (Equação~\ref{eq:x1}~e~\ref{eq:x2} ). 
+%
+%\begin{equation}
+% X_1 = |R_o-L_o|
+%\label{eq:x1}
+%\end{equation}
+%
+%\begin{equation}
+% X_2 = |R_p-L_p|
+%\label{eq:x2}
+%\end{equation}
+%
+%Em segundo lugar, remove-se os ruídos suaves e os sinais com baixa magnitude a partir da  
+%disparidade absoluta da imagem original ($X_1$), de modo a diminuir a interferência. Desde a 
+%existência da visão estéreo, a disparidade com baixa magnitude pode ser suprimida 
+%ou aumentada. Devido a isso, o sinal de baixa magnitude não pode servir como avaliação. Então 
+%podemos calcular a condição de distribuição da disparidade da imagem original~\cite{Jiachen2009}.
+%
+%Em terceiro lugar, nós combinamos a condição de distribuição disparidade da imagem 
+%original $X_1$ e $X_2$, e é calculado a $\mbox{PSNR}_M$ na posição da disparidade dos dois olhos 
+%como SSA, dado por:
+%
+%\begin{equation}
+% SSA = \mbox{PSNR}_M = 10\log_{10}\dfrac{(2^n - 1)^2}{\mbox{MSE}_M}
+%\end{equation}
+%
+%\begin{equation}
+%\mbox{MSE}_M = \dfrac{\sum_M [X_1 (x,y) - X_2 (x,y)]^2}{\mbox{Numero de}~M}
+%\end{equation}
+% 
+%Os resultados apresentados em~\cite{Jiachen2009} apresentam que o IQA é adequado para a avaliação 
+%da qualidade da imagem e o SSA é adequado para a qualidade estéreo sentido, então a combinação das 
+%duas métricas pode ser definido como o modelo objetivo de avaliação.
+%
+%\section{Predição da sensação da profundidade}
+%
+%% author={Yasakethu, S.L.P. and De Silva, D.V.S.X. and Fernando, W.A.C. and Kondoz, A.}, 
+%% journal={Electronics Letters}, 
+%% title={Predicting sensation of depth in 3D video}, 
+%
+%Em~\cite{Yasakethu2010} é apresentado um novo modelo de avaliação da qualidade para prever a sensação de profundidade em vídeos 3D 
+%no formato de vídeo de cor (monocular) com o acréscimo do mapa de profundidade em escala de cinza. A técnica proposta 
+%é capaz de avaliar as contribuições tanto monoscópica e estereoscópico para a percepção de profundidade. Os 
+%resultados mostram que a sensação de profundidade pode ser efetivamente modelada com o modelo proposto, 
+%combinando características visualmente importantes para o cérebro.
+%
+%Esse novo modelo surgi da avaliação da qualidade de vídeo 3D não ser completamente investigada até esta data. 
+%Hoje é difícil avaliar a qualidade de vídeo 3D 
+%sem recorrer a testes subjetivos. Estes teste subjetivos de avaliação demoram mais tempo 
+%e esforço para medir a qualidade usando observadores humanos. Isso tem alguns efeitos negativos sobre o 
+%desenvolvimento e avanço das tecnologias de vídeo 3D e produtos de consumo 3D. Embora alguns pesquisadores 
+%usam atualmente a PSNR para avaliar a qualidade de vídeo 3D, as limitações de PSNR na avaliação da qualidade têm sido 
+%demonstrados pela Video Experts Group Qualidade (VQEG)~\cite{Yasakethu2010}.
+%
+%\subsection{Modelagem da técnica proposta} 
+%
+%A sensação de profundidade de um vídeo 3D é afetado tanto pelo vídeo
+%(sinais monocular) e quanto pelo mapa de profundidade (pistas binocular). Experimentos com estereograma de ponto aleatório mostram que  
+%as profundidades binoculares e as monoculares são independentemente percebidas. 
+%De maneira semelhante, o cérebro humano terá a percepção independente da degradação monocular e binocular 
+%em um vídeo 3D~\cite{Yasakethu2010}. Assim, a sensação de percepção de profundidade pode ser modelada como segue:
+%
+%\begin{equation}
+%D_{tot} = D_{M}^{\alpha}D_{B}^{\beta}
+%\label{sens_perc}
+%\end{equation}
+%em que o $D_{tot}$ refere-se a sensação avaliada objetivamente da percepção da profundidade e $D_M$ e $D_B$ referem-se 
+%à percepção de profundidade objetivamente avaliada devido aos sinais monocular e binocular, respectivamente e 
+%$\alpha$ e $\beta$ são constantes positivas. Nesse método foi proposto usar a \textit{Video quality metric} (VQM)~\cite{Pinson2004}, para avaliar 
+%a contribuição da cor do vídeo na sensação geral de profundidade, devido ao seu excelente desempenho 
+%em testes de validação VQEG Fase II~\cite{Yasakethu2010}. 
+%
+%O uso de métricas de qualidade objetiva existentes em 2D não é 
+%adequado para avaliar a contribuição do mapa de profundidade das \textbf{pistas} binocular (estereoscopia, por 
+%exemplo). Isto porque os mapas não são imagens de profundidade natural. Assim, é proposto um modelo de 
+%distorção da disparidade (DDM -- \textit{Disparity Distortion Model}) composta de três técnicas de medição entre o original 
+%e o correspondente mapa de profundidade processado após a degradação~\cite{Yasakethu2010}. 
+%
+%Quanto a experiência com vídeos 3D, o sistema visual humano (HVS) identifica a sensação de profundidade com o devido reconhecimento 
+%visual dos planos de profundidade do conteúdo estéreo. As distâncias relativas dos diferentes planos de profundidade e a 
+%consistência do conteúdo em planos identificados são o auxilio na visualização da profundidade do conteúdo estéreo. 
+%Para identificar a profundidade, os olhos convergem para uma região, combinando a informação visual projetada em ambas as retinas. 
+%No entanto, as células binoculares aparecem pela primeira vez numa fase tardia das vias visuais, a área $V1$ do córtex cerebral. 
+%Nesta fase, apenas as informações estruturais extraídas separadamente para cada olho estão disponíveis para 
+%o cérebro, para a dedução de disparidade da imagem. Assim, acredita-se que HVS é altamente otimizado em extrair 
+%informação estrutural a partir do campo de visão para a percepção de profundidade.
+%
+%A tentativa de projetar um modelo de qualidade objetiva é combinar esses recursos visuais importantes, para o 
+%cérebro. O diagrama do sistema proposto de avaliação da qualidade é apresentado na Figura~\ref{prop_measurement}. O $X$ e $Y$ referem-se 
+%aos sinais de disparidade original e degradada (mapas de profundidade), respectivamente. O sistema separa a tarefa da 
+%técnica de medição em três comparações:
+%
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[scale=0.4]{imagens/prop_measurement}
+%\caption{Diagrama de bloco do sistema de avaliação~\cite{Yasakethu2010}.}
+%\label{prop_measurement}
+%\end{figure}
+%
+%
+%
+%\begin{itemize}
+%\item $M_1$: a distorção da distância relativa no eixo de profundidade entre os planos de profundidade; 
+%\item $M_2$: a distorção da consistência da profundidade percebida dos conteúdos nos planos de profundidade, e 
+%\item $M_3$: erros estruturais do mapa de profundidade. 
+%\end{itemize}
+%
+%Para identificar os planos de profundidade visualmente reconhecido, um histograma do sinal de disparidade sem distorções é examinado. 
+%Examinando a distribuição dos valores de disparidade por \textit{pixel} do sinal, os planos de profundidade visualmente 
+%reconhecidos são identificados. Depois de identificar a variação de \textit{pixels} em planos diferentes de profundidade, o mapa 
+%de profundidade é segmentado. Primeiro, a medida $M_1$ é avaliada, um valor de profundidade $z$ é representado por um valor 
+%$m$ de 8-\textit{bit} sem sinal e a relação entre $m$ e $z$ é a seguinte~\cite{Yasakethu2010}:
+%
+%\begin{equation}
+% z = \dfrac{m}{255} (k_{near}W + k_{far}W) - k_{far}W
+%\end{equation}
+%$k_{near}$ e $k_{far}$ especificam o intervalo da informação de profundidade, respectivamente, atrás e na frente da imagem, 
+%em relação à exibição de largura $W$. A intensidade média dos planos de profundidade segmentados são calculados para 
+%ambos os sinais original e degradado, $m_{x}^{i}$ e $m_{y}^{i}$ , em que $i$ denota o índice de plano de profundidade.
+%
+%Assim, a distorção da distância relativa (DRD -- \textit{Distortion of the ralative distance}) no eixo de profundidade para 
+%os planos de profundidade $i$ e $i + 1$, em comparação com o mapa de profundidade original, pode ser identificados como
+%
+%\begin{equation}
+%\mbox{DRD}^{i,i+1} = \dfrac{k_{near}W + k_{far}W}{255} |(m_x^i - m_x^{i+1})-(m_y^i - m_y^{i+1})|         
+%\end{equation}
+%
+%Somando os valores das DRD para todos os planos de profundidade adjacente é avaliado a medida $M_1$:
+%
+%\begin{equation}
+% M_1 = \sum_{i=1}^{n} \mbox{DRD}^{i , i+1}
+%\end{equation}
+%em que $n$ refere ao número de planos de profundidade visualmente reconhecido. Em segundo lugar, é removido a 
+%intensidade média dos sinais $X^i$ e $Y^i$. $X^i$ e $Y^i$ referem-se aos sinais de disparidade do plano de profundidade 
+%$i$th. A intenção é modelar as três técnicas de medição relativamente independente. Para modelar a distorção 
+%da consistência da profundidade percebida avaliamos o desvio padrão do sinal de erro de cada um dos planos de
+%profundidade identificadas. A soma dos desvio padrões do erro para todos os planos de profundidade define $M_2$:
+%
+%\begin{equation}
+%M_2 = \sum_{i=1}^{n} \left[\dfrac{1}{N} \sum_{j=1}^{N} (e^i_j - \mu_e^i)\right]^{\frac{1}{2}} 
+%\end{equation}
+%em que $e^i = x^i - y^i$. O $\mu_e^i$ é o valor médio do sinal de erro para o plano $i$ e $j$, $N$ refere-se ao \textit{pixel} indexado 
+%e o número total de \textit{pixels} do plano de profundidade correspondente. Em terceiro lugar, para avaliar $M_3$, após 
+%a remoção da intensidade média de sinais $X$ e $Y$, que estão normalizados pelo seu desvio padrão próprio, assim, os 
+%dois sinais que estão sendo comparados têm desvio padrão unitário. A comparação da estrutura é conduzida nesses 
+%sinais de profundidade da imagem normalizados. Cada imagem de profundidade é dividida em macroblocos de 16 $\times$ 16  
+%e o erro estrutural é calculado em uma base de macrobloco. Erro estrutural do quadro de profundidade é avaliada 
+%como o erro médio estrutural ao longo dos macroblocos e é definido da seguinte forma:
+%
+%\begin{equation}
+%M_3 = \dfrac{1}{m} \sum_{j=1}^{m} \dfrac{\sigma_{xy}^{i} +k_1}{\sigma_x^j \times \sigma_y^j + k_1}
+%\end{equation}
+%$\sigma_{x}$, $\sigma_{y}$ e $\sigma_{xy}$ representam os desvios-padrões e a covariância dos sinais $X$ e $Y$. 
+%$m$ e $j$ referem-se ao número de macroblocos e seu índice, respectivamente. Uma constante pequena é introduzida 
+%no numerador e no denominador para evitar a instabilidade quando $\sigma_x^j \times \sigma_y^j$ está muito próximo 
+%de zero. Nós escolhemos $k_1 = (c \times l)^2$, em que $c$ é a faixa dinâmica dos valores dos \textit{pixels} 
+%(255 por 8 \textit{bits} de representação) e $l$ como $0,001$. Finalmente, os três componentes relativamente 
+%independentes são combinados e o valor médio é calculado para produzir um modelo de distorção total da disparidade 
+%(DDM) para a sequência inteira de profundidade:
+%
+%\begin{equation}
+% \mbox{DDM}(X,Y) = \dfrac{1}{L} \sum_{j=1}^{L} \dfrac{M_3 (x,y)}{M_1 (x,y) M_2 (x,y) + k_2}
+%\end{equation}
+%Uma constante, $k_2 = 1$, é introduzida no denominador para limitar a avaliação da qualidade da profundidade entre 
+%0 e 1, e para evitar instabilidade quando $M_1 \times M_2$ está perto de zero. $L$ e $j$ referem-se ao número de quadros e 
+%seu índice. DDM = 1 e DDM = 0 implica na máxima e na mínima sensação de profundidade a partir do mapa de profundidade, 
+%respectivamente. Assim, como mostrado na equação~\ref{sens_perc}, a sensação geral de profundidade a partir de vídeo 3D pode ser 
+%modelada como segue:
+%
+%\begin{equation}
+% D_{tot} = \mbox{VQM}^{\alpha}\mbox{DDM}^{\beta}
+%\label{sens_perc_final}
+%\end{equation}
+%
+%\subsection{Resultados}
+%Experiências subjetivas foram realizadas de acordo com o método DSCQS, 
+%como descrito na Recomendação ITU-BT.500-11~\cite{itu_500}, para investigar o desempenho do modelo proposto. Várias sequências de
+% vídeo 3D, com características de movimento diferentes, foram consideradas e o conjunto de estímulos continha 75 sequências 
+% de vídeo modificada e a versão original, sem distorções da cena. A classificação de qualidade média de vídeo prestados 
+% à esquerda e direita com PSNR, SSIM~\cite{bovik2004} e VQM~\cite{Pinson2004} foram usados para comparação de desempenho do modelo proposto. 
+%
+%A relação entre as classificações subjetivas de sensação de profundidade e os modelos de avaliação foram aproximados por uma função 
+% logística simétrica descrito em~\cite{itu_500}. O desempenho de cada modelo, aproximada usando a função simétrica de logística, é 
+% apresentado na Tabela 1. Métricas de desempenho de comparação (CC, RMSE, SSE) para cada técnica de previsão são avaliadas 
+% para todas as sequências de vídeo para uma análise mais geral de qualidade. O $\alpha$ e $\beta$ em~\ref{sens_perc_final} são avaliados experimentalmente, 
+% variando cada parâmetro de $0 - 5$ em passos de 1 e  $\alpha = \beta = 1$ revelou a melhor correlação com as classificações subjetivas. Resultados 
+% implicam que o modelo proposto é mais adequado para predizer a sensação de profundidade de cor e vídeo baseada profundidade 
+% 3D em comparação com as metodologias existentes.
+% 
+%%  Conclusão: Esta carta tem abordado a possibilidade de modelagem da sensação de profundidade de cor e profundidade de vídeo 3D, 
+%%  o que poderia acelerar o desenvolvimento de serviços de vídeo 3D e produtos de consumo. Nós apresentamos um quadro de avaliação 
+%%  de qualidade que poderia estimar separadamente as contribuições monoscópica e estereoscópica. Enquanto o primeiro avalia as 
+%%  distorções monoscópicas percebidas causada pelo borramento, ruído, e alterar o contraste, o último avalia a degradação percebida visualmente 
+%%  reconhecido os planos de profundidade do conteúdo 3D. Resultados implicam que o modelo composto proposto pode ser efetivamente usado 
+%%  para prever a sensação de profundidade de cor e vídeo baseada profundidade 3D.
+%
+%
+%
+%
+%

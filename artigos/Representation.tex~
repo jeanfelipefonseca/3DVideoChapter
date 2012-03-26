@@ -1,0 +1,134 @@
+\chapter{Representação de vídeos 3D}
+
+% author={Mu? andller, K. and Merkle, P. and Wiegand, T.}, 
+% journal={Proceedings of the IEEE}, 
+% title={3-D Video Representation Using Depth Maps}, 
+
+A tecnologia atual de exibição de vídeo 3D consiste de telas planas, oferecendo apenas a ilusão de profundidade, 
+representando as imagens que são vistas pelos dois olhos com um ângulo de paralaxe~\cite{Konrad2007}. A paralaxe 
+é o ângulo entre as linhas de visão que leva à disparidade entre as duas imagens da retina. 
+
+Hoje a maioria dos \textit{displays} 3D são \textit{displays} estéreos que requer exatamente dois pontos de 
+vista a cada instante. Um display estéreo para vários visualizadores especiais requer óculos 3-D que filtram 
+a visão correspondente para os olhos esquerdo e direito de cada espectador~\cite{Benzie2007}. De um ponto de vista 
+da compressão, uma abordagem simples para representar efetivamente um sinal de vídeo estéreo é dada tratando 
+como dois sinais de vídeo com dependência estatística. A dependência estatística entre as duas visões podem 
+ser exploradas por meio de técnicas de compressão conhecidas.
+
+Para alguns \textit{displays} stereos, a disparidade na configuração da câmera estéreo pode não coincidir com 
+a  melhor paralaxe de visualização natural no \textit{display} 3-D. Assim, um dos dois pontos de vista precisa 
+ser reposicionado. Este processo é chamado estéreo \textit{repurposing}. 
+
+Normalmente, os dois pontos de vistas 
+adquiridos constituem uma boa base para o calculo de um outro ponto de vista entre eles, utilizando informações 
+de geometria da cena adicionais, como dados de profundidade ou disparidade.
+
+\textbf{ Visto que não são in-between 
+os pontos de vista adquiridos são mais críticas como conteúdo de fundo é revelado, onde nenhuma informação a 
+partir de qualquer ponto de vista é disponível.} 
+
+Além disso, o problema é mais grave da geração da visão é quando precisa ser feito utilizando vistas comprimidas 
+com o ruído de quantização, como tipicamente afeta o processo de estimativa de profundidade ou a disparidade dos 
+dados que são necessários para a síntese de vista. Outro problema com a estimativa da profundidade no receptor 
+é que ele geralmente requer consideráveis recursos computacionais e algoritmos diferentes que produzem resultados 
+diferentes. Uma última consideração deve ser dada ao fato de que o proprietário do conteúdo teria controle limitado 
+sobre a qualidade resultante exibida em caso de uma estimação diferente da profundidade e da visualização de algoritmos 
+de síntese serem usados nas extremidades da recepção~\cite{andller2011}.
+
+A adição do \textit{display} estéreo e também do \textit{display multiview} estão cada vez mais 
+disponíveis~\cite{Benzie2007,Konrad2007}. Como o \textit{display multiview} normalmente não exige óculos 3-D, 
+um dos maiores obstáculos na aceitação do usuário da 3DV é superada. No entanto, um \textit{display multiview} exige 
+a disponibilidade de muitos pontos de visualização. Por exemplo, protótipos atuais emitem oito ou nove pontos de 
+visualização. Espera-se que a melhoria da qualidade de \textit{displays multiview} será regido por um aumento de pontos 
+de visualização e podemos esperar \textit{displays} com 50 ou mais pontos de visualização no futuro. Por isso, 
+é necessário um formato que permite a geração de números arbitrários de pontos de visualização, enquanto a 
+taxa de \textit{bits} de transmissão é constante. 
+
+A multi visualização com base em um sinal de vídeo estereo 
+no receptor sofre do mesmo problema que o \textit{repurposing stereo}. Aqui o problema é realmente pior do 
+que o estéreo \textit{repurposing}, como muitos pontos de vista precisam ser gerados para exibe a multi 
+visualização~\cite{Konrad2007}. Assim, um usuário percebe muitos pares de visualização, que consistem em 
+duas visões sintetizadas por uma série de posições de visualizações, enquanto o par de visualização do 
+\textit{stereo repurposed} consiste de uma visão original e uma sintetizada.
+
+Uma abordagem para superar os problemas com a geração de visualização no receptor é estimar os 
+pontos de vista dos usuários e transmitir um sinal que permita a síntese de visão direta ao receptor. Tal 
+sinal tem que estar relacionada com a geometria da cena. Neste trabalho, consideramos mapas de profundidade, 
+em combinação com os sinais de vídeo estéreo como uma representação eficiente para a síntese de visão no receptor. 
+
+
+\section{Soluções em 3DV com base em sinais estereo}
+
+Um sinal de vídeo estéreo capturado por duas câmaras de entrada é primeiro pré-processada, como apresentado na 
+Figura~\ref{sistema_base}. Isto inclui uma possível retificação do alinhamento da vista esquerda e direita~\cite{andller2011}, 
+assim como cor e correção de contraste, por possíveis diferenças entre as câmeras de entrada. O formato 3-D 
+é chamado de vídeo estéreo convencional (CSV -- \textit{conventional stereo video}) para a vista esquerda e direita. 
+Este formato é codificado por métodos de codificação de \textit{multiview}, como especificado no perfil high do 
+H.264/AVC, em que as dependências temporais de cada ponto de vista, bem como dependências entre ambas as vistas 
+são explorados para uma compressão eficiente.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=1]{imagens/sistema_base}
+\caption{Primeira geração do sistema 3DV baseado em vídeo colorido estereoscópico~\cite{andller2011}.}
+\label{sistema_base}
+\end{figure}
+
+Soluções padronizadas para o CSV tem seu mercado no cinema 3-D, \textit{Blu-Ray Disc}, e \textit{broadcast}. 
+Enquanto o cinema 3-D é baseado em JPEG-2000, a especificação de Disco Blu-Ray 3-D é baseado no perfil high 
+do H.264/AVC. Estes sistemas \textit{stereo} oferecem uma solução 3-D robusta e fácil, visto que os formatos 
+e a codificação 3-D incluem apenas dados de vídeo estéreo. Assim, o processamento complexo, como o fornecimento 
+e estimativa da geometria 3-D da cena ou as adicionais síntese de exibição não são necessários e métodos de 
+codificação podem ser otimizados para as estatísticas de dados de cor do vídeo. Por outro lado, esses 
+sistemas são restritos a mostra estéreo que necessitam de óculos.
+
+
+\subsection{Comparação do \textit{display} 3DV} 
+
+Uma grande força para a tecnologia 3DV será a disponibilidade de alta qualidade autostereoscópica (sem óculos) 
+\textit{display multiview}. Aqui, um claro benefício do \textit{displays multiview} é a exibição estereoscópica, 
+que pode ser obtida para múltiplos usuário. Atualmente, tipos de visualização estéreo e multiview mostram 
+vantagens e desvantagens específicas, que são resumidas na Tabela~\ref{comp_display}.
+
+\begin{table}[!h]
+\caption{Comparação das propriedades dos displays Multi e stereo usuários}
+\label{comp_display}
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+Propriedade &\textit{Display Stereo}& \textit{Display} Multi-usuário \\ \hline
+\hline
+Ajuda  & Requerido  & Não  \\ 
+ Visualização &  principalmente & requerido \\ \hline
+Efeito & Não & \textbf{Sim} \\ 
+\textbf{olhar ao redor}&  &  \\ \hline
+Resolução por & A\textbf{lto} & baixo \\ 
+ visualizador &  &  \\ \hline
+Profundidade de  & \textbf{Alta} & baixa \\ 
+cena percebida &  & \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+Aqui, as principais propriedades de aceitação do usuário são dadas e as entradas em negrito indicam que 
+tipo de exibição melhor atende-los. Olhando para estas preferências do usuário, a exibição para múltiplos 
+usuários têm o potencial para se tornar a primeira escolha para 3DV, como eles não exigem ajuda na 
+visualização, como óculos estéreo para cenários multiusuário, dando uma impressão mais natural 3-D. Se 
+os usuários se movem em frente da tela, eles esperam o efeito do "olhar ao redor", ou seja, eles querem 
+ser capazes de ver o fundo recém-revelada por trás de objetos em primeiro plano. Isso só pode ser 
+oferecido pela exibição para múltiplos usuários, por eles fornecem múltiplos pares estéreo com conteúdo 
+um pouco diferente para cada posição de visualização. Note que estas duas primeiras propriedades são de 
+natureza sistemática, isto é, relacionadas com as limitações de vídeo estéreo convencional e, portanto, 
+apenas suportado pela exibição para múltiplos usuários.
+
+No entanto, para que os displays multiview se tornem amplamente aceitável, as desvantagens precisam ser 
+eliminadas. Cada display geralmente sofre de uma resolução de tela limitada em geral, sendo o número de 
+amostras disponíveis ser dividida em todas as vistas $N$. Isto leva a um problema de otimização para o 
+número escolhido de pontos de vista, uma vez que por um lado, apenas alguns pontos de vista dão uma 
+resolução mais alta \textit{per-view} e, por outro lado, pontos de visualização são mais necessários 
+para melhorar a visualização 3-D. A solução para isso é a fabricação de \textit{displays} de ultra alta 
+definição 3-D para múltiplos usuários, em que, por exemplo, 50 pontos de vista pode ser oferecido com 
+cada visualização em alta resolução. Isso também melhora o problema do ângulo de visualização de telas 
+\textit{multiview} atuais, pois a faixa de visualização torna-se mais amplo.
+
